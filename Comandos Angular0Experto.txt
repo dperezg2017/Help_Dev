@@ -70,3 +70,4 @@ ruta proyecto a subir> git status
 ruta proyecto a subir> git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
 ruta proyecto a subir> git remote add origin link@que_te_da_giyhub_para_subir.git 
 ruta proyecto a subir> git push -u origin master
+ejemplo.
