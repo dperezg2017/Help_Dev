@@ -68,7 +68,7 @@ VM arguments
 
 
 
-
+https://github.com/in28minutes/in28minutes.com/blob/master/_posts/2017-10-16-spring-micro-services.md#step-01---part-2---setting-up-limits-microservice%E2%80%8B
 
 
 
