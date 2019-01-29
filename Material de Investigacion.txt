@@ -61,8 +61,10 @@ http://localhost:8080/v2/api-docs
 http://localhost:8080/swagger-ui.html
 http://localhost:8080/h2-console/login.jsp?jsessionid=eea42da717ae6ef8beca08a81f7b4cef
 
-
-
+====================
+VM arguments 
+=====================
+-Dserver.port=8002
 
 
 
