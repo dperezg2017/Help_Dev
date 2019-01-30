@@ -1,1 +1,19 @@
-
+=========================================================================================================
+GIT HUB - deben estar en la ruta del proyecto.
+=========================================================================================================
+#Subir Proyecto de cero: 
+git init
+git add *
+git status 
+git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
+git remote add origin https://github.com/dperezg2017/Help_Dev.git
+git push -u origin master
+#Subir cambios de Proyecto : 
+git add *
+git status 
+git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
+git push
+#Actualizar Proyecto:
+git pull
+#Descargar proyecto de gitHub:
+git clone https://github.com/dperezg2017/Help_Dev.git
