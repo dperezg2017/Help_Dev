@@ -1,7 +1,9 @@
 =========================================================================================================
 Microservicios - SpringBoot
 =========================================================================================================
+
 # Actuator: 
+--------------------------------------------------------------------------------------------------------
 Paso1: en el properties => management.endpoints.web.exposure.include=*
 Paso2: pom.xml: 
 		<dependency>
@@ -14,9 +16,36 @@ Paso2: pom.xml:
 		</dependency>
 Paso3: Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/refresh 
        Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/refresh ó http://localhost:8080/application/refresh
-# Opcionales
+* Opcionales
 Si en caso se muestra problema de authorizacion, agregar en el properties => management.security.enabled=false
 
+# Spring Cloud Bus 
+--------------------------------------------------------------------------------------------------------
+Se debe implementar con MQRabbit - 
+Paso1: Iniciar MQRabbit (Revisar procedimiento lineas mas abajo)
+Paso2: Agregar la dependecia en "Limits-Service" y "Spring-cloud-config-server"
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+		</dependency>
+Paso3: Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/bus-refresh
+       Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/bus/refresh
+* Opcionales
+El Bus, esta estable en la version de SpringBoot => "2.0.2.RELEASE"
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.2.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<!-- for 2.1.0 <spring-cloud.version>Greenwich.M1</spring-cloud.version> -->
+		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
+	</properties>
+	
 =========================================================================================================
 GIT HUB - deben estar en la ruta del proyecto.
 =========================================================================================================
