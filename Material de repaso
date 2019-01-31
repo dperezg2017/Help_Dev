@@ -1,7 +1,26 @@
 =========================================================================================================
+Microservicios - SpringBoot
+=========================================================================================================
+# Actuator: 
+Paso1: en el properties => management.endpoints.web.exposure.include=*
+Paso2: pom.xml: 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-hal-browser</artifactId>
+		</dependency>
+Paso3: Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/refresh 
+       Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/refresh ó http://localhost:8080/application/refresh
+# Opcionales
+Si en caso se muestra problema de authorizacion, agregar en el properties => management.security.enabled=false
+
+=========================================================================================================
 GIT HUB - deben estar en la ruta del proyecto.
 =========================================================================================================
-#Subir Proyecto de cero: 
+# Subir Proyecto de cero: 
 git init
 git add *
 git status 
@@ -15,7 +34,7 @@ git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
 git push
 #Actualizar Proyecto:
 git pull
-#Descargar proyecto de gitHub:
+# Descargar proyecto de gitHub:
 git clone https://github.com/dperezg2017/Help_Dev.git
 
 =========================================================================================================
