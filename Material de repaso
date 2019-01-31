@@ -118,3 +118,8 @@ Para ver que los servicios esten en el zipkin, debera agregar las dependencias:
 			<groupId>org.springframework.amqp</groupId>
 			<artifactId>spring-rabbit</artifactId>
 		</dependency>
+Opcionales:
+Para ver la interfaz: 
+Paso1: en el CMD, escribir => rabbitmq-plugins enable rabbitmq_management
+Paso2: ir a = > http://localhost:15672/#/queues
+Paso3: registrarse con usuario y clave => guest
