@@ -67,6 +67,7 @@ Paso 3 Agregar en el Controller, una excepcion.
   public LimitConfiguration fallbackRetrieveConfiguration() {
     return new LimitConfiguration(999, 9);
   }
+  Explicacion: Si no se agrega la linea:  @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration"), se mostrara la excepcion, pero le estamos diciendo, que si ocurre excepcion, vaya al metodo X. para abstener a una excepcion en ejecucion.
 =========================================================================================================
 GIT HUB - deben estar en la ruta del proyecto.
 =========================================================================================================
