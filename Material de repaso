@@ -1,5 +1,6 @@
 =========================================================================================================
 Microservicios - SpringBoot
+https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spring-micro-services.md
 =========================================================================================================
 
 # Actuator: 
@@ -46,6 +47,27 @@ El Bus, esta estable en la version de SpringBoot => "2.0.2.RELEASE"
 		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
 	</properties>
 	
+# Hystrix
+--------------------------------------------------------------------------------------------------------
+Paso1: Agregar la dependencia: 
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+<!-- 			<artifactId>spring-cloud-starter-hystrix</artifactId> -->
+		</dependency>
+
+Paso2: Agregar la anotacion "@EnableHystrix" en la clase Main del servicio "limits-service"
+Paso 3 Agregar en el Controller, una excepcion.
+  @GetMapping("/fault-tolerance-example")
+  @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration")
+  public LimitConfiguration retrieveConfiguration() {
+    throw new RuntimeException("Not available");
+  }
+
+  public LimitConfiguration fallbackRetrieveConfiguration() {
+    return new LimitConfiguration(999, 9);
+  }
+
 =========================================================================================================
 GIT HUB - deben estar en la ruta del proyecto.
 =========================================================================================================
