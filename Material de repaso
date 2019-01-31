@@ -67,7 +67,6 @@ Paso 3 Agregar en el Controller, una excepcion.
   public LimitConfiguration fallbackRetrieveConfiguration() {
     return new LimitConfiguration(999, 9);
   }
-
 =========================================================================================================
 GIT HUB - deben estar en la ruta del proyecto.
 =========================================================================================================
