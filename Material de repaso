@@ -137,5 +137,6 @@ http://www.tic2.org/WebTecnica/Programas/SOperativos/Linux/Comandos/LinuxComando
 --------------------------------------------------------------------------------------------------------
 Para crear nuevo proyecto :  "ng new SPA" y levantarlo => "ng serve -o" en el CMD
 Para generar nuevo componentes : "ng g c navbar"  ,donde g:generate y c:component
+Pa agregar Boostrap: "npm install bootstrap"
 
 
