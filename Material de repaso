@@ -139,12 +139,14 @@ Para crear nuevo proyecto :  "ng new SPA" y levantarlo => "ng serve -o" en el CM
 Para generar nuevo componentes : "ng g c navbar"  ,donde g:generate y c:component
 Pa agregar Boostrap: "npm install bootstrap --save" , "npm install jquery --save" y "npm install popper,js --save"
 Modificar file: "angular.json"
-           "styles": [
+            "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery/jquery.slim.min.js",
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
 
 
