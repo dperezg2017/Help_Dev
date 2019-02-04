@@ -149,4 +149,4 @@ Modificar file: "angular.json"
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
 
-
+Para no agrega Styles en mi componente: "ng g c heroes -is" se agrega la palabra "-is"
