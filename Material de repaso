@@ -123,6 +123,20 @@ Para ver la interfaz:
 Paso1: en el CMD, escribir => rabbitmq-plugins enable rabbitmq_management
 Paso2: ir a = > http://localhost:15672/#/queues
 Paso3: registrarse con usuario y clave => guest
+
+# Rabbit Simulador  - http://tryrabbitmq.com/?queue_id=cola2&queue_name=cola3
+--------------------------------------------------------------------------------------------------------
+Se realizaron las pruebas para ver la diferencia de Exchange: topic,fanout,direct 
+direct: tienes que enviarle exactamente como se llame el "routing key" para que pueda pasar por dicha cola. 
+	example: Binding1 { "routing key": orange }    Binding2 { "routing key": orange.big }
+		 Producer {"routing key": orange }
+fanout: ovbia el nombre de los "routing key". igual se lleva enviar los mensaje a los consumers
+	example: Binding1 { "routing key": orange }    Binding2 { "routing key": orange.big }
+		 Producer {"routing key":  }
+topic: tiene el #: remplasa 0 o letras, *:remplaza letras, en el ejemplo pasa por los dos binding: une el exchange con la cola.
+	example: Binding1 { "routing key": orange.* }    Binding2 { "routing key": orange.big }
+		 Producer {"routing key": orange.green }		 
+		 
 =========================================================================================================
 Angular - v6
 http://www.tic2.org/WebTecnica/Programas/SOperativos/Linux/Comandos/LinuxComandosEquivalencias.htm
