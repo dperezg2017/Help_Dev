@@ -133,9 +133,9 @@ direct: tienes que enviarle exactamente como se llame el "routing key" para que 
 fanout: ovbia el nombre de los "routing key". igual se lleva enviar los mensaje a los consumers
 	example: Binding1 { "routing key": orange }    Binding2 { "routing key": orange.big }
 		 Producer {"routing key":  }
-topic: tiene el #: remplasa 0 o letras, *:remplaza letras, en el ejemplo pasa por los dos binding: une el exchange con la cola.
+topic: tiene el #: remplasa 0 o letras, *:remplaza letras, en el ejemplo pasa por los dos binding: une el exchange con la cola. es lo diferente al topic.
 	example: Binding1 { "routing key": orange.* }    Binding2 { "routing key": orange.big }
-		 Producer {"routing key": orange.green }		 
+		 Producer {"routing key": orange.big }		 
 		 
 =========================================================================================================
 Angular - v6
