@@ -1,3 +1,12 @@
+_Docker_
+========
+https://onedrive.live.com/?authkey=%21ANAqKS_syP3u2Os&id=2F5823B4594339C3%2116706&cid=2F5823B4594339C3 - virtual ubuntu con docker
+user: docker   clave: lepanto | sudo: docker   clave: lepanto | 
+#### Inciar Docker: 
+systemctl status docker 
+systemctl stop docker 
+systemctl start docker 
+
 Microservicios - _SpringBoot_ :sunglasses: 
 =============================
 https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spring-micro-services.md
@@ -160,10 +169,7 @@ Para agregar Boostrap: "npm install bootstrap --save" , "npm install jquery --sa
 Para no agrega Styles en mi componente: "ng g c heroes -is" se agrega la palabra "-is"
 
 
-_Docker_
-========
-https://onedrive.live.com/?authkey=%21ANAqKS_syP3u2Os&id=2F5823B4594339C3%2116706&cid=2F5823B4594339C3 - virtual ubuntu con docker
-user: docker   clave: lepanto | sudo: docker   clave: lepanto | 
+
 
 
 
