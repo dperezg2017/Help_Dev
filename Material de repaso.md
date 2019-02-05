@@ -2,7 +2,7 @@ Microservicios - _SpringBoot_
 =============================
 https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spring-micro-services.md
 
-# Actuator: 
+## Actuator ##
 Paso1: en el properties => management.endpoints.web.exposure.include=*
 Paso2: pom.xml: 
 		<dependency>
@@ -18,10 +18,10 @@ Paso3: Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator
 * Opcionales
 Si en caso se muestra problema de authorizacion, agregar en el properties => management.security.enabled=false
 
-# Spring Cloud Bus 
+## Spring Cloud Bus ##
 Se debe implementar con MQRabbit - 
 Paso1: Iniciar MQRabbit (Revisar procedimiento lineas mas abajo)
-Paso2: Agregar la dependecia en "Limits-Service" y "Spring-cloud-config-server"
+### Paso2: Agregar la dependecia en "Limits-Service" y "Spring-cloud-config-server"
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
@@ -45,7 +45,7 @@ El Bus, esta estable en la version de SpringBoot => "2.0.2.RELEASE"
 	</properties>
 	
 # Hystrix
-Paso1: Agregar la dependencia: 
+####Paso1: Agregar la dependencia: 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
