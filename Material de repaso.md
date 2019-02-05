@@ -13,9 +13,10 @@ https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spr
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-rest-hal-browser</artifactId>
 		</dependency>
-###### Paso3: - Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/refresh 
-- Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/refresh ó http://localhost:8080/application/refresh
-* Opcionales
+###### Paso3: 
+Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/refresh 
+Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/refresh ó http://localhost:8080/application/refresh
+##### Opcionales
 Si en caso se muestra problema de authorizacion, agregar en el properties => management.security.enabled=false.
 
 ### Spring Cloud Bus ##
@@ -26,8 +27,9 @@ Se debe implementar con MQRabbit -
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
-###### Paso3: - Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/bus-refresh
-       - Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/bus/refresh
+###### Paso3: 
+Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/bus-refresh
+Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/bus/refresh
 ##### Opcionales
 ###### El Bus, esta estable en la version de SpringBoot => "2.0.2.RELEASE"
 	<parent>
@@ -90,20 +92,20 @@ VM _Argumentos_
 
 RabbitMQ _Colas_ 
 ================
-######Instalar RabbitMQ
-######Instalar 1: http://www.erlang.org/downloads
-######Instalar 2: https://www.rabbitmq.com/install-windows.html
-######Video: https://www.youtube.com/watch?v=gKzKUmtOwR4
+###### Instalar RabbitMQ
+###### Instalar 1: http://www.erlang.org/downloads
+###### Instalar 2: https://www.rabbitmq.com/install-windows.html
+###### Video: https://www.youtube.com/watch?v=gKzKUmtOwR4
 
 
-######paso1: https://zipkin.io/pages/quickstart.html  
-######paso2: click ultima version para descargar "zipkin-server-2.12.0-exec.jar" ,varia la version
-######paso3: abrir el CMD, ubicarte donde se encuentra el .Jar y escribir lo siguiente:
-######set RABBIT_URI=amqp://localhost
-######java -jar zipkin-server-2.12.0-exec.jar
-######paso4: ingresar: http://localhost:9411/zipkin/   
-######Recomendacion:
-######Para ver que los servicios esten en el zipkin, debera agregar las dependencias:
+###### paso1: https://zipkin.io/pages/quickstart.html  
+###### paso2: click ultima version para descargar "zipkin-server-2.12.0-exec.jar" ,varia la version
+###### paso3: abrir el CMD, ubicarte donde se encuentra el .Jar y escribir lo siguiente:
+###### set RABBIT_URI=amqp://localhost
+###### java -jar zipkin-server-2.12.0-exec.jar
+###### paso4: ingresar: http://localhost:9411/zipkin/   
+###### Recomendacion:
+###### Para ver que los servicios esten en el zipkin, debera agregar las dependencias:
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
@@ -112,22 +114,22 @@ RabbitMQ _Colas_
 			<groupId>org.springframework.amqp</groupId>
 			<artifactId>spring-rabbit</artifactId>
 		</dependency>
-#####Opcionales:
+##### Opcionales:
 Para ver la interfaz: 
-######Paso1: en el CMD, escribir => rabbitmq-plugins enable rabbitmq_management
-######Paso2: ir a = > http://localhost:15672/#/queues
-######Paso3: registrarse con usuario y clave => guest
+###### Paso1: en el CMD, escribir => rabbitmq-plugins enable rabbitmq_management
+###### Paso2: ir a = > http://localhost:15672/#/queues
+###### Paso3: registrarse con usuario y clave => guest
 
 ### Rabbit Simulador  - http://tryrabbitmq.com/?queue_id=cola2&queue_name=cola3
 
 Se realizaron las pruebas para ver la diferencia de Exchange: topic,fanout,direct 
-#####direct: tienes que enviarle exactamente como se llame el "routing key" para que pueda pasar por dicha cola. 
+##### direct: tienes que enviarle exactamente como se llame el "routing key" para que pueda pasar por dicha cola. 
 	example: Binding1 { "routing key": orange }    Binding2 { "routing key": orange.big }
 		 Producer {"routing key": orange }
-#####fanout: ovbia el nombre de los "routing key". igual se lleva enviar los mensaje a los consumers
+##### fanout: ovbia el nombre de los "routing key". igual se lleva enviar los mensaje a los consumers
 	example: Binding1 { "routing key": orange }    Binding2 { "routing key": orange.big }
 		 Producer {"routing key":  }
-#####topic: tiene el #: remplasa 0 o letras, *:remplaza letras, en el ejemplo pasa por los dos binding: une el exchange con la cola. es lo diferente al topic.
+##### topic: tiene el #: remplasa 0 o letras, *:remplaza letras, en el ejemplo pasa por los dos binding: une el exchange con la cola. es lo diferente al topic.
 	example: Binding1 { "routing key": orange.* }    Binding2 { "routing key": orange.big }
 		 Producer {"routing key": orange.big }		 
 
@@ -143,10 +145,10 @@ http://www.tic2.org/WebTecnica/Programas/SOperativos/Linux/Comandos/LinuxComando
 
 ##### Si te falta librerias: npm update   ó  (dependiendo)   npm install --save-dev @angular-devkit/build-angular
 ## Proyecto
-######Para crear nuevo proyecto :  "ng new SPA" y levantarlo => "ng serve -o" en el CMD
-######Para generar nuevo componentes : "ng g c navbar"  ,donde g:generate y c:component
-######Pa agregar Boostrap: "npm install bootstrap --save" , "npm install jquery --save" y "npm install popper,js --save"
-######Modificar file: "angular.json"
+###### Para crear nuevo proyecto :  "ng new SPA" y levantarlo => "ng serve -o" en el CMD
+###### Para generar nuevo componentes : "ng g c navbar"  ,donde g:generate y c:component
+###### Pa agregar Boostrap: "npm install bootstrap --save" , "npm install jquery --save" y "npm install popper,js --save"
+###### Modificar file: "angular.json"
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -156,7 +158,7 @@ http://www.tic2.org/WebTecnica/Programas/SOperativos/Linux/Comandos/LinuxComando
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
-######Para no agrega Styles en mi componente: "ng g c heroes -is" se agrega la palabra "-is"
+###### Para no agrega Styles en mi componente: "ng g c heroes -is" se agrega la palabra "-is"
 
 
 _Docker_
