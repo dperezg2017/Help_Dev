@@ -14,8 +14,8 @@ https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spr
 			<artifactId>spring-data-rest-hal-browser</artifactId>
 		</dependency>
 ###### Paso3: 
-Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/refresh 
-Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/refresh ó http://localhost:8080/application/refresh
+* Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/refresh 
+(*) Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/refresh ó http://localhost:8080/application/refresh
 ##### Opcionales
 Si en caso se muestra problema de authorizacion, agregar en el properties => management.security.enabled=false.
 
@@ -101,11 +101,10 @@ RabbitMQ _Colas_
 ###### paso1: https://zipkin.io/pages/quickstart.html  
 ###### paso2: click ultima version para descargar "zipkin-server-2.12.0-exec.jar" ,varia la version
 ###### paso3: abrir el CMD, ubicarte donde se encuentra el .Jar y escribir lo siguiente:
-###### set RABBIT_URI=amqp://localhost
-###### java -jar zipkin-server-2.12.0-exec.jar
-###### paso4: ingresar: http://localhost:9411/zipkin/   
-###### Recomendacion:
-###### Para ver que los servicios esten en el zipkin, debera agregar las dependencias:
+ set RABBIT_URI=amqp://localhost
+ java -jar zipkin-server-2.12.0-exec.jar
+ paso4: ingresar: http://localhost:9411/zipkin/   
+##### Recomendacion: Para ver que los servicios esten en el zipkin, debera agregar las dependencias:
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
@@ -145,9 +144,9 @@ http://www.tic2.org/WebTecnica/Programas/SOperativos/Linux/Comandos/LinuxComando
 
 ##### Si te falta librerias: npm update   ó  (dependiendo)   npm install --save-dev @angular-devkit/build-angular
 ## Proyecto
-###### Para crear nuevo proyecto :  "ng new SPA" y levantarlo => "ng serve -o" en el CMD
-###### Para generar nuevo componentes : "ng g c navbar"  ,donde g:generate y c:component
-###### Pa agregar Boostrap: "npm install bootstrap --save" , "npm install jquery --save" y "npm install popper,js --save"
+Para crear nuevo proyecto :  "ng new SPA" y levantarlo => "ng serve -o" en el CMD
+Para generar nuevo componentes : "ng g c navbar"  ,donde g:generate y c:component
+Para agregar Boostrap: "npm install bootstrap --save" , "npm install jquery --save" y "npm install popper,js --save"
 ###### Modificar file: "angular.json"
             "styles": [
               "src/styles.css",
