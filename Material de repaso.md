@@ -6,7 +6,11 @@ user: docker   clave: lepanto | sudo: docker   clave: lepanto |
 - systemctl status docker 
 - systemctl stop docker 
 - systemctl start docker 
-- systemctl enable docker  //si el sistema rebota
+- systemctl enable docker  // cuando el sistema arranque, lo permita autenticar
+#### CentOs version <= 6
+- service docker status  
+- service docker start
+
 
 Microservicios - _SpringBoot_ :sunglasses: 
 =============================
