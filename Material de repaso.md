@@ -16,7 +16,7 @@ user: docker   clave: lepanto | sudo: docker   clave: lepanto |
 - docker ps  	 // ver los contenedores prendidos y apagados
 - docker ps -l 	 // ver el ultimo contenedor que se modifico
 - docker ps -n 4 // ver el ultimo 4 contenedor que se modificaron
-
+- docker ps -a -q // mostrar los ID's
 
 
 
