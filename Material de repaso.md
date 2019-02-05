@@ -3,8 +3,8 @@ Microservicios - _SpringBoot_
 https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spring-micro-services.md
 
 ## Actuator ##
-#### Paso1: en el properties => management.endpoints.web.exposure.include=*
-#### Paso2: pom.xml: 
+####### Paso1: en el properties => management.endpoints.web.exposure.include=*
+##### Paso2: pom.xml: 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
