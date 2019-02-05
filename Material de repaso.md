@@ -92,10 +92,10 @@ VM _Argumentos_
 
 RabbitMQ _Colas_ 
 ================
- Instalar RabbitMQ
- Instalar 1: http://www.erlang.org/downloads
- Instalar 2: https://www.rabbitmq.com/install-windows.html
- Video: https://www.youtube.com/watch?v=gKzKUmtOwR4
+ - Instalar RabbitMQ
+ - Instalar 1: http://www.erlang.org/downloads
+ - Instalar 2: https://www.rabbitmq.com/install-windows.html
+ - Video: https://www.youtube.com/watch?v=gKzKUmtOwR4
 
 
 ###### paso1: https://zipkin.io/pages/quickstart.html  
@@ -142,7 +142,7 @@ http://www.tic2.org/WebTecnica/Programas/SOperativos/Linux/Comandos/LinuxComando
 - cd my-dream-app
 - ng serve
 
-##### Si te falta librerias: npm update   ó  (dependiendo)   npm install --save-dev @angular-devkit/build-angular
+Si te falta librerias: npm update   ó  (dependiendo)   npm install --save-dev @angular-devkit/build-angular
 ## Proyecto
 Para crear nuevo proyecto :  "ng new SPA" y levantarlo => "ng serve -o" en el CMD
 Para generar nuevo componentes : "ng g c navbar"  ,donde g:generate y c:component
@@ -157,7 +157,7 @@ Para agregar Boostrap: "npm install bootstrap --save" , "npm install jquery --sa
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
-###### Para no agrega Styles en mi componente: "ng g c heroes -is" se agrega la palabra "-is"
+Para no agrega Styles en mi componente: "ng g c heroes -is" se agrega la palabra "-is"
 
 
 _Docker_
