@@ -14,8 +14,8 @@ https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spr
 			<artifactId>spring-data-rest-hal-browser</artifactId>
 		</dependency>
 ###### Paso3: 
-* Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/refresh 
-(*) Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/refresh ó http://localhost:8080/application/refresh
+- Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/refresh 
+- Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/refresh ó http://localhost:8080/application/refresh
 ##### Opcionales
 Si en caso se muestra problema de authorizacion, agregar en el properties => management.security.enabled=false.
 
@@ -28,8 +28,8 @@ Se debe implementar con MQRabbit -
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
 ###### Paso3: 
-Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/bus-refresh
-Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/bus/refresh
+- Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/bus-refresh
+- Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/bus/refresh
 ##### Opcionales
 ###### El Bus, esta estable en la version de SpringBoot => "2.0.2.RELEASE"
 	<parent>
