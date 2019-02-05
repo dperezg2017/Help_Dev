@@ -146,7 +146,7 @@ http://www.tic2.org/WebTecnica/Programas/SOperativos/Linux/Comandos/LinuxComando
 - ng new my-dream-app
 - cd my-dream-app
 - ng serve
-
+Si te falta librerias: npm update   ó  (dependiendo)   npm install --save-dev @angular-devkit/build-angular
 # Proyecto
 --------------------------------------------------------------------------------------------------------
 Para crear nuevo proyecto :  "ng new SPA" y levantarlo => "ng serve -o" en el CMD
