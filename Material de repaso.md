@@ -163,7 +163,7 @@ Para no agrega Styles en mi componente: "ng g c heroes -is" se agrega la palabra
 _Docker_
 ========
 https://onedrive.live.com/?authkey=%21ANAqKS_syP3u2Os&id=2F5823B4594339C3%2116706&cid=2F5823B4594339C3 - virtual ubuntu con docker
-
+user: docker   clave: lepanto | sudo: docker   clave: lepanto | 
 
 
 
