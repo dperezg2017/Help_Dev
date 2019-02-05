@@ -10,8 +10,10 @@ user: docker   clave: lepanto | sudo: docker   clave: lepanto |
 #### CentOs version <= 6
 - service docker status  
 - service docker start
-
-
+#### Comando Basicos
+- docker images ##### ver las imagenes
+- docker ps ###### ver los contenedores prendidos
+- docker ps ##### ver los contenedores prendidos y apagados
 Microservicios - _SpringBoot_ :sunglasses: 
 =============================
 https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spring-micro-services.md
