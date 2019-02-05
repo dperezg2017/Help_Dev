@@ -54,7 +54,7 @@ Se debe implementar con MQRabbit -
 <!-- 			<artifactId>spring-cloud-starter-hystrix</artifactId> -->
 		</dependency>
 ###### Paso2: Agregar la anotacion "@EnableHystrix" en la clase Main del servicio "limits-service"
-###### Paso 3 Agregar en el Controller, una excepcion.
+###### Paso3 Agregar en el Controller, una excepcion.
   @GetMapping("/fault-tolerance-example")
   @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration")
   public LimitConfiguration retrieveConfiguration() {
@@ -92,18 +92,18 @@ VM _Argumentos_
 
 RabbitMQ _Colas_ 
 ================
-###### Instalar RabbitMQ
-###### Instalar 1: http://www.erlang.org/downloads
-###### Instalar 2: https://www.rabbitmq.com/install-windows.html
-###### Video: https://www.youtube.com/watch?v=gKzKUmtOwR4
+ Instalar RabbitMQ
+ Instalar 1: http://www.erlang.org/downloads
+ Instalar 2: https://www.rabbitmq.com/install-windows.html
+ Video: https://www.youtube.com/watch?v=gKzKUmtOwR4
 
 
 ###### paso1: https://zipkin.io/pages/quickstart.html  
 ###### paso2: click ultima version para descargar "zipkin-server-2.12.0-exec.jar" ,varia la version
 ###### paso3: abrir el CMD, ubicarte donde se encuentra el .Jar y escribir lo siguiente:
- set RABBIT_URI=amqp://localhost
- java -jar zipkin-server-2.12.0-exec.jar
- paso4: ingresar: http://localhost:9411/zipkin/   
+ - set RABBIT_URI=amqp://localhost
+ - java -jar zipkin-server-2.12.0-exec.jar
+###### paso4: ingresar: http://localhost:9411/zipkin/   
 ##### Recomendacion: Para ver que los servicios esten en el zipkin, debera agregar las dependencias:
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
