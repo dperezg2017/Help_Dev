@@ -3,8 +3,8 @@ Microservicios - _SpringBoot_
 https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spring-micro-services.md
 
 ## Actuator ##
-Paso1: en el properties => management.endpoints.web.exposure.include=*
-Paso2: pom.xml: 
+#### Paso1: en el properties => management.endpoints.web.exposure.include=*
+#### Paso2: pom.xml: 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -13,23 +13,23 @@ Paso2: pom.xml:
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-rest-hal-browser</artifactId>
 		</dependency>
-Paso3: Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/refresh 
+#### Paso3: Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/refresh. 
        Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/refresh ó http://localhost:8080/application/refresh
 * Opcionales
-Si en caso se muestra problema de authorizacion, agregar en el properties => management.security.enabled=false
+Si en caso se muestra problema de authorizacion, agregar en el properties => management.security.enabled=false.
 
 ## Spring Cloud Bus ##
 Se debe implementar con MQRabbit - 
-Paso1: Iniciar MQRabbit (Revisar procedimiento lineas mas abajo)
-### Paso2: Agregar la dependecia en "Limits-Service" y "Spring-cloud-config-server"
+#### Paso1: Iniciar MQRabbit (Revisar procedimiento lineas mas abajo)
+#### Paso2: Agregar la dependecia en "Limits-Service" y "Spring-cloud-config-server"
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
-Paso3: Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/bus-refresh
+#### Paso3: Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/bus-refresh
        Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/bus/refresh
 * Opcionales
-El Bus, esta estable en la version de SpringBoot => "2.0.2.RELEASE"
+#### El Bus, esta estable en la version de SpringBoot => "2.0.2.RELEASE"
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -44,16 +44,16 @@ El Bus, esta estable en la version de SpringBoot => "2.0.2.RELEASE"
 		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
 	</properties>
 	
-# Hystrix
-####Paso1: Agregar la dependencia: 
+## Hystrix
+#### Paso1: Agregar la dependencia: 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
 <!-- 			<artifactId>spring-cloud-starter-hystrix</artifactId> -->
 		</dependency>
 
-Paso2: Agregar la anotacion "@EnableHystrix" en la clase Main del servicio "limits-service"
-Paso 3 Agregar en el Controller, una excepcion.
+#### Paso2: Agregar la anotacion "@EnableHystrix" en la clase Main del servicio "limits-service"
+#### Paso 3 Agregar en el Controller, una excepcion.
   @GetMapping("/fault-tolerance-example")
   @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration")
   public LimitConfiguration retrieveConfiguration() {
@@ -63,27 +63,28 @@ Paso 3 Agregar en el Controller, una excepcion.
   public LimitConfiguration fallbackRetrieveConfiguration() {
     return new LimitConfiguration(999, 9);
   }
-  Explicacion: Si no se agrega la linea:  @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration"), se mostrara la excepcion, pero le estamos diciendo, que si ocurre excepcion, vaya al metodo X. para abstener a una excepcion en ejecucion.
+####  Explicacion: Si no se agrega la linea:  @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration"), se mostrara la excepcion, pero le estamos diciendo, que si ocurre excepcion, vaya al metodo X. para abstener a una excepcion en ejecucion.
 
-GIT HUB - deben estar en la ruta del proyecto.
-# Subir Proyecto de cero: 
-git init
-git add *
-git status 
-git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
-git remote add origin https://github.com/dperezg2017/Help_Dev.git
-git push -u origin master
-#Subir cambios de Proyecto : 
-git add *
-git status 
-git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
-git push
-#Actualizar Proyecto:
-git pull
-# Descargar proyecto de gitHub:
-git clone https://github.com/dperezg2017/Help_Dev.git
+_GIT HUB_ - deben estar en la ruta del proyecto
+===============================================
+## Subir Proyecto de cero: 
+- git init
+- git add *
+- git status 
+- git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
+- git remote add origin https://github.com/dperezg2017/Help_Dev.git
+- git push -u origin master
+### Subir cambios de Proyecto : 
+- git add *
+- git status 
+- git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
+- git push
+### Actualizar Proyecto:
+- git pull
+### Descargar proyecto de gitHub:
+- git clone https://github.com/dperezg2017/Help_Dev.git
 
-VM Argumentos
+## VM Argumentos
 -Dserver.port=8001 
 MQ - Colas
 Instalar RabbitMQ
