@@ -1,10 +1,6 @@
-=========================================================================================================
 Microservicios - SpringBoot
 https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spring-micro-services.md
-=========================================================================================================
-
 # Actuator: 
---------------------------------------------------------------------------------------------------------
 Paso1: en el properties => management.endpoints.web.exposure.include=*
 Paso2: pom.xml: 
 		<dependency>
@@ -21,7 +17,6 @@ Paso3: Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator
 Si en caso se muestra problema de authorizacion, agregar en el properties => management.security.enabled=false
 
 # Spring Cloud Bus 
---------------------------------------------------------------------------------------------------------
 Se debe implementar con MQRabbit - 
 Paso1: Iniciar MQRabbit (Revisar procedimiento lineas mas abajo)
 Paso2: Agregar la dependecia en "Limits-Service" y "Spring-cloud-config-server"
@@ -48,7 +43,6 @@ El Bus, esta estable en la version de SpringBoot => "2.0.2.RELEASE"
 	</properties>
 	
 # Hystrix
---------------------------------------------------------------------------------------------------------
 Paso1: Agregar la dependencia: 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -68,9 +62,8 @@ Paso 3 Agregar en el Controller, una excepcion.
     return new LimitConfiguration(999, 9);
   }
   Explicacion: Si no se agrega la linea:  @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration"), se mostrara la excepcion, pero le estamos diciendo, que si ocurre excepcion, vaya al metodo X. para abstener a una excepcion en ejecucion.
-=========================================================================================================
+
 GIT HUB - deben estar en la ruta del proyecto.
-=========================================================================================================
 # Subir Proyecto de cero: 
 git init
 git add *
@@ -88,14 +81,9 @@ git pull
 # Descargar proyecto de gitHub:
 git clone https://github.com/dperezg2017/Help_Dev.git
 
-=========================================================================================================
 VM Argumentos
-=========================================================================================================
 -Dserver.port=8001 
-
-=========================================================================================================
 MQ - Colas
-=========================================================================================================
 Instalar RabbitMQ
 Instalar 1: http://www.erlang.org/downloads
 Instalar 2: https://www.rabbitmq.com/install-windows.html
@@ -125,7 +113,7 @@ Paso2: ir a = > http://localhost:15672/#/queues
 Paso3: registrarse con usuario y clave => guest
 
 # Rabbit Simulador  - http://tryrabbitmq.com/?queue_id=cola2&queue_name=cola3
---------------------------------------------------------------------------------------------------------
+
 Se realizaron las pruebas para ver la diferencia de Exchange: topic,fanout,direct 
 direct: tienes que enviarle exactamente como se llame el "routing key" para que pueda pasar por dicha cola. 
 	example: Binding1 { "routing key": orange }    Binding2 { "routing key": orange.big }
@@ -137,10 +125,9 @@ topic: tiene el #: remplasa 0 o letras, *:remplaza letras, en el ejemplo pasa po
 	example: Binding1 { "routing key": orange.* }    Binding2 { "routing key": orange.big }
 		 Producer {"routing key": orange.big }		 
 		 
-=========================================================================================================
 Angular - v6
 http://www.tic2.org/WebTecnica/Programas/SOperativos/Linux/Comandos/LinuxComandosEquivalencias.htm
-=========================================================================================================
+
 - Instalar NodeJS
 - npm install -g @angular/cli
 - ng new my-dream-app
@@ -148,7 +135,7 @@ http://www.tic2.org/WebTecnica/Programas/SOperativos/Linux/Comandos/LinuxComando
 - ng serve
 Si te falta librerias: npm update   ó  (dependiendo)   npm install --save-dev @angular-devkit/build-angular
 # Proyecto
---------------------------------------------------------------------------------------------------------
+
 Para crear nuevo proyecto :  "ng new SPA" y levantarlo => "ng serve -o" en el CMD
 Para generar nuevo componentes : "ng g c navbar"  ,donde g:generate y c:component
 Pa agregar Boostrap: "npm install bootstrap --save" , "npm install jquery --save" y "npm install popper,js --save"
@@ -165,10 +152,10 @@ Modificar file: "angular.json"
 
 Para no agrega Styles en mi componente: "ng g c heroes -is" se agrega la palabra "-is"
 
-=========================================================================================================
+
 Docker - v6
 https://onedrive.live.com/?authkey=%21ANAqKS_syP3u2Os&id=2F5823B4594339C3%2116706&cid=2F5823B4594339C3 - virtual ubuntu con docker
-=========================================================================================================
+
 
 
 
