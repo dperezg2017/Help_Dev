@@ -18,7 +18,12 @@ user: docker   clave: lepanto | sudo: docker   clave: lepanto |
 - docker ps -n 4 // ver el ultimo 4 contenedor que se modificaron
 - docker ps -a -n 3 -s// ver el ultimo 3 contenedor que se modificaron con la oclumna SIZE(tamaño)
 - docker ps -a -q // mostrar los ID's
-
+- docker ps -a -f "name=amazing_dirac"  // filtrar por nombre generado
+- docker start -i e57354da7acf // e57354da7acf: es el CONTAINER_ID del contenedor
+- docker run -d nginx  	       // -d: descarga y lo deja corriendo en modo background
+- docker pull ubuntu:trusty    // descarga con la version trusty
+- docker rm  deef7bbf4093      // remover un contenedor por CONTAINER_ID ó NAMES
+- docker rmi -f fce289e99eb9   //Eliminar Imagen  -f: forzar
 
 
 Microservicios - _SpringBoot_ :sunglasses: 
