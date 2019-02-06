@@ -24,6 +24,16 @@ user: docker   clave: lepanto | sudo: docker   clave: lepanto |
 - docker pull ubuntu:trusty    // descarga con la version trusty
 - docker rm  deef7bbf4093      // remover un contenedor por CONTAINER_ID ó NAMES
 - docker rmi -f fce289e99eb9   //Eliminar Imagen  -f: forzar
+- docker run -it --name mi_ubuntu_ctm ubuntu bash   // NAME: mi_ubuntu_ctm, ya no sera aleatorio
+- docker pull python   // descargo python, pro defecto latest la ultima version
+- docker run -it --name mi_python python 	// le pongo un alias y se define com NAME y ya no se genera aleatorio y comienza correr
+- docker exec -it mi_python bash		// ejecutar python con el nombre que le di
+- docker run -d ubuntu sh -c "while true; do date; done"   // subo imagen, como background y comando linux ".."
+- docker logs 206c --tail 5 	// mostrar los ultimo 5 lineas del log 206c: 4primeros digitos del CONTAINER_ID
+- docker kill 206c   // matar un contenedor
+- docker top 0a2  // para ver lso recursos del contenedor, que esta consumiendo mas
+- docker stats // se vee lso recursos que esta consumiendo los contenedores que estan prendidos.
+
 
 
 Microservicios - _SpringBoot_ :sunglasses: 
