@@ -37,7 +37,14 @@ user: docker   clave: lepanto | sudo: docker   clave: lepanto |
 - docker inspect 39ca > container1.txt   // inspect: detalle del contenedor y generar txt en la ruta.
 - docker run -d -P nginx  // lo hacemos publico, por defecto nginx es http://localhost:32768/
 - docker run -d --name nginx2 -p 8080:80 nginx  // le damos nombre al contenedor y mapeamos el puerto http://localhost:8080/
-
+- docker network // red
+- docker network inspect bridge  // ver detalle de la red "bridge"
+- docker stop nginx2  // parar contenedor activo
+- docker network create red1  // crear red , default:bridge
+- docker network create --subnet=192.168.0.0/16 red2  // crear red, con ip 
+- docker run -it --name ubuntua --network red1 ubuntu   // corro imagen con red que cree
+- docker network connect red2 ubuntua // ubuntua puede trabajar con contenedores de la red1 y la red2
+-  docker network disconnect red2 ubuntua  //desconectar a la red
 
 
 
