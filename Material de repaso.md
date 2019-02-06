@@ -33,6 +33,11 @@ user: docker   clave: lepanto | sudo: docker   clave: lepanto |
 - docker kill 206c   // matar un contenedor
 - docker top 0a2  // para ver lso recursos del contenedor, que esta consumiendo mas
 - docker stats // se vee lso recursos que esta consumiendo los contenedores que estan prendidos.
+- while true; do date; done // coamndos linos, para realizar un bucle y asi ver el recurso que consume ese contenedor
+- docker inspect 39ca > container1.txt   // inspect: detalle del contenedor y generar txt en la ruta.
+- docker run -d -P nginx  // lo hacemos publico, por defecto nginx es http://localhost:32768/
+- docker run -d --name nginx2 -p 8080:80 nginx  // le damos nombre al contenedor y mapeamos el puerto http://localhost:8080/
+
 
 
 
