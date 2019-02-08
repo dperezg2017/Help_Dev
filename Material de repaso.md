@@ -56,10 +56,12 @@ user: docker   clave: lepanto | sudo: docker   clave: lepanto |
 -  docker run -it --name mysql_client --rm --network red1 mysql bash //" "
 -  mysql -h mysql_server -u root -p    // poner la clave "secret"
 ###### conectamso wordpress y mysql
-- docker run -d --name mysql_wp --rm --network red1 -e MYSQL_ROOT_PASSWORD=secret mysql  //iniciamos mysql
+- docker run -d --name mysql_wp --rm --network red1 -e MYSQL_ROOT_PASSWORD=secret mysql:5.7  //iniciamos mysql , la 5.7 aguanta wordpress
 - docker run -d --name wp --rm --network red1 -e WORDPRESS_DB_HOST=mysql_wp -e WORDPRESS_DB_PASSWORD=secret -p 8080:80 wordpress // corremos wordpress, con los parametros, poniendo los datos del mysql que levantamos. 
-
-
+- - docker  network rm red1 // no funciona, hay que para los contenedores asociados, viendo "docker network inspect red1"
+- docker stop mysql_wp  // parar el contenedor de mysql, no saldra en "docker ps -a" ya que lo iniciamos con --rm
+- docker stop ws  // parar el contenedor de worpress, no saldra en "docker ps -a" ya que lo iniciamos con --rm
+- docker  network rm red1 // ya se puede borrar la red1, ya que paramos los contenededores asociados
 
 
 
