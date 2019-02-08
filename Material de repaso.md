@@ -44,7 +44,23 @@ user: docker   clave: lepanto | sudo: docker   clave: lepanto |
 - docker network create --subnet=192.168.0.0/16 red2  // crear red, con ip 
 - docker run -it --name ubuntua --network red1 ubuntu   // corro imagen con red que cree
 - docker network connect red2 ubuntua // ubuntua puede trabajar con contenedores de la red1 y la red2
--  docker network disconnect red2 ubuntua  //desconectar a la red
+- docker network disconnect red2 ubuntua  //desconectar a la red
+- docker run -it --rm  --name b1 busybox   // se coloca --rm para que lo elimine el contenedor despues de salir.
+- docker run -it --rm  --name b2 busybox   // se coloca --rm para que lo elimine el contenedor despues de salir.
+- docker run -it --rm --name b3 --link b1:maquina1 busybox  // enlace a la ip de la maquina b1 y le pones un alias y despues de salir del contenedor, que lo remueva.
+##### docker mySQL
+- docker run -d --name mysql_server --rm --network red1 -e MYSQL_ROOT_PASSWORD=secret mysql  //  -d: modod background, se pasa variable de entorno con valor "secret"
+- docker exec -it mysql_server bash  // inicio el mysqlServer, con el nombre que le coloque "mysql_server"
+- mysql -u root -p  // entrar al servidor y escribir la clave "secret"
+###### me conecto de un cliente al servidorMysql
+-  docker run -it --name mysql_client --rm --network red1 mysql bash //" "
+-  mysql -h mysql_server -u root -p    // poner la clave "secret"
+###### conectamso wordpress y mysql
+- docker run -d --name mysql_wp --rm --network red1 -e MYSQL_ROOT_PASSWORD=secret mysql  //iniciamos mysql
+- docker run -d --name wp --rm --network red1 -e WORDPRESS_DB_HOST=mysql_wp -e WORDPRESS_DB_PASSWORD=secret -p 8080:80 wordpress // corremos wordpress, con los parametros, poniendo los datos del mysql que levantamos. 
+
+
+
 
 
 
