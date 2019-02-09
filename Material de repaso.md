@@ -48,6 +48,7 @@ user: docker   clave: lepanto | sudo: docker   clave: lepanto |
 - docker run -it --rm  --name b1 busybox   // se coloca --rm para que lo elimine el contenedor despues de salir.
 - docker run -it --rm  --name b2 busybox   // se coloca --rm para que lo elimine el contenedor despues de salir.
 - docker run -it --rm --name b3 --link b1:maquina1 busybox  // enlace a la ip de la maquina b1 y le pones un alias y despues de salir del contenedor, que lo remueva.
+- docker rm $(docker ps -a -q)  //borrar todos los contenededores apagados -f: forzar
 ##### docker mySQL
 - docker run -d --name mysql_server --rm --network red1 -e MYSQL_ROOT_PASSWORD=secret mysql  //  -d: modod background, se pasa variable de entorno con valor "secret"
 - docker exec -it mysql_server bash  // inicio el mysqlServer, con el nombre que le coloque "mysql_server"
@@ -55,13 +56,39 @@ user: docker   clave: lepanto | sudo: docker   clave: lepanto |
 ###### me conecto de un cliente al servidorMysql
 -  docker run -it --name mysql_client --rm --network red1 mysql bash //" "
 -  mysql -h mysql_server -u root -p    // poner la clave "secret"
-###### conectamso wordpress y mysql
+###### conectamos wordpress y mysql
 - docker run -d --name mysql_wp --rm --network red1 -e MYSQL_ROOT_PASSWORD=secret mysql:5.7  //iniciamos mysql , la 5.7 aguanta wordpress
 - docker run -d --name wp --rm --network red1 -e WORDPRESS_DB_HOST=mysql_wp -e WORDPRESS_DB_PASSWORD=secret -p 8080:80 wordpress // corremos wordpress, con los parametros, poniendo los datos del mysql que levantamos. 
-- - docker  network rm red1 // no funciona, hay que para los contenedores asociados, viendo "docker network inspect red1"
+- docker  network rm red1 // no funciona, hay que para los contenedores asociados, viendo "docker network inspect red1"
 - docker stop mysql_wp  // parar el contenedor de mysql, no saldra en "docker ps -a" ya que lo iniciamos con --rm
 - docker stop ws  // parar el contenedor de worpress, no saldra en "docker ps -a" ya que lo iniciamos con --rm
-- docker  network rm red1 // ya se puede borrar la red1, ya que paramos los contenededores asociados
+- docker network rm red1 // ya se puede borrar la red1, ya que paramos los contenededores asociados
+###### volumenes
+- docker volume ls  // vemos lso volumenes que tenemos, es para alojar todo lo que se edita o se guarda en el contenedor que se tiene levantado
+- docker volume prune  // borra los volumenes que tenemos en el listado. 
+- docker rm `docker ps -qa`
+- docker volume prune
+###### volumenes en linux 
+- linux> cd /var/lib/docker/volumes/
+- linux> ls -l
+- linux> docker run -d --rm -p 80:80 --name cloud1 owncloud
+- linux> ls -l
+- linux> #cd
+- linux> ls -l  // hacer cambio en la pagina localhost, y ver nuevamente la lista.
+- linux> docker volume ls // se encunetra levantado, que se hicieron cambios ahi.
+- linux> docker volume inspect 8900e560bd60b64da85cc2700c5d8ec8a670cd05c0dfb4fdfa827e0e99
+fa0eb5 > v1.txt  // el codigo es el id
+- linux> docker inspect cloud1 > cloud1.json
+- linux> docker stop cloud1  // paramo el contenedor
+- linux> docker volume ls // no esta
+###### modificaciones en contenedores
+- docker run -it --name ubuntu1 bash
+- apt-get update  // ya que no podemos usar el comando "wget http://www.google.com
+- apt-get install wget
+- wget http://www.google.com // ya se puede ejecutar el siguiente comando.le damos exit, lo tenemos almacenado en "docker ps -a"
+- docker start -i ubuntu1 //solo aqui tenemos la actualizacion con wget, "ubuntu1" si creas otros contenedores de la imagen1, no tendra la actualizacion que tiene el contenedor ubuntu1
+- docker diff ubuntu1  //vemos los cambios que ha tenido el contenedor
+
 
 
 
