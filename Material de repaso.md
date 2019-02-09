@@ -1,5 +1,6 @@
 _Angular 7 - Spring_
 ====================
+caracter multilinea:  `  `   //*para template:  `  ` 
 ### parte Angular 7 ### 
 ###### descargamos utilitarios: Atom, Angular CLI, typescript, nodeJS.
 - apm install angular-2-typescript-snippets
@@ -11,11 +12,12 @@ _Angular 7 - Spring_
 - apm install file-icons
 - cd ~/.atom/packages /*despues*/ git clone https://github.com/emmetio/emmet-atom /*despues*/ cd emmet-atom /*despues*/ npm install
 - apm install minimap
-- npm install --save @angular/material @angular/cdk @angular/animations  //para mi
+- ide-typescript ///*para dar formato*
+- npm install --save @angular/material @angular/cdk @angular/animations  //*para mi*
 
 ###### Comenzando Angular7 ###### 
-- ng new clientes-app  |*creando un proyecto angular*
-- ng serve -o   |*levantamos el proyecto*
+- ng new clientes-app  		// *creando un proyecto angular*
+- ng serve -o   		// *levantamos el proyecto*
 
 
 
