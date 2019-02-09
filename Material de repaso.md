@@ -89,9 +89,22 @@ fa0eb5 > v1.txt  // el codigo es el id
 - docker start -i ubuntu1 //solo aqui tenemos la actualizacion con wget, "ubuntu1" si creas otros contenedores de la imagen1, no tendra la actualizacion que tiene el contenedor ubuntu1
 - docker diff ubuntu1  //vemos los cambios que ha tenido el contenedor
 - docker commit ubuntu1 mi_ubuntu_deyviz  // hicimos que copie una imagen de nombre "mi_ubuntu_deyviz" con los cambios y actualizaciones que se hizo en el contenedor "ubuntu1".
-- 
-
-
+####### si queremos usar docker en LINUX: ubuntu
+- sudo apt update 
+- sudo apt upgrade
+- sudo apt-get install apt-transport-https ca-certificates curl gnupg software-properties-common
+- sudo apt-get install docker-ce
+- // si sale error. =>
+- curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add –
+- sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu cosmic nightly "
+- sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+- sudo apt install docker-ce
+- sudo systemctl enable docker
+- sudo systemctl start docker
+- sudo systemctl status docker
+- docker -v
+utilitarios:
+- apt-get install systemd
 
 
 
