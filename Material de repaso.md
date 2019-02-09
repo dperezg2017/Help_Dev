@@ -1,6 +1,6 @@
 _Angular 7 - Spring_
 ====================
-caracter multilinea:  `  `   //*para template:  `  ` 
+caracter multilinea:  `  `   //*para template:  "`  `" 
 ### parte Angular 7 ### 
 ###### descargamos utilitarios: Atom, Angular CLI, typescript, nodeJS.
 - apm install angular-2-typescript-snippets
