@@ -1,3 +1,28 @@
+_Angular 7 - Spring_
+====================
+### parte Angular 7 ### 
+###### descargamos utilitarios: Atom, Angular CLI, typescript, nodeJS.
+- apm install angular-2-typescript-snippets
+- apm install atom-typescript
+- apm install atom-bootstrap3
+- apm install atom-bootstrap4
+- apm install v-bootstrap4
+- apm install platformio-ide-terminal
+- apm install file-icons
+- cd ~/.atom/packages /*despues*/ git clone https://github.com/emmetio/emmet-atom /*despues*/ cd emmet-atom /*despues*/ npm install
+- apm install minimap
+- npm install --save @angular/material @angular/cdk @angular/animations  //para mi
+
+
+
+
+
+
+
+
+
+
+
 _Docker_
 ========
 https://onedrive.live.com/?authkey=%21ANAqKS_syP3u2Os&id=2F5823B4594339C3%2116706&cid=2F5823B4594339C3 - virtual ubuntu con docker
