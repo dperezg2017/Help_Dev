@@ -13,6 +13,10 @@ _Angular 7 - Spring_
 - apm install minimap
 - npm install --save @angular/material @angular/cdk @angular/animations  //para mi
 
+###### Comenzando Angular7 ###### 
+- ng new clientes-app  /* creando un proyecto angular*/
+- ng serve -o   /*levantamos el proyecto*/
+
 
 
 
