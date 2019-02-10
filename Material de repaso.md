@@ -60,11 +60,10 @@ spring.datasource.password=sasa
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
 spring.jpa.hibernate.ddl-auto=create-drop  
-/** 
 - create: se crea cuando se levanta la App, si se baja, no se elimina.
 - create-drop: se crea cuando se levanta la App, si se baja,se elimina.
 - none: no hace nada, asume que tiene las tablas creadas.
-- update: crea todo el sistema lka primera vez, luego va actualizando**
+- update: crea todo el sistema lka primera vez, luego va actualizando
 ```
 
 
