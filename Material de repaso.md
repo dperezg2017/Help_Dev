@@ -37,12 +37,19 @@ caracter multilinea:  `  `   //*para template:  `  `
 ### FRONTED & BACKEND ### 
 Envia URI Http al servidor. 
 ---
-Verbos: GET, GET, POST,GET,GET,PUT,DELETE
-URI:
-Action o Handler:
+Verbos: 		GET, GET, POST,GET,GET,PUT,DELETE
+URI:    		/clientes, /clientes/create, /clientes,/clientes/{id},/clientes/{id}/edit,/clientes/{id},/clientes/{id}
+Action o Handler: 	index(),create(),store(),show(),edit(),update(),destroy()
 ---
 
-
+---
+layout:     post
+title:      Spring Boot Microservices and RESTful Web Services Tutorial for Beginners
+date:       2017-10-16 12:31:19
+summary:    Learn how to create awesome Microservices and RESTful web services with Spring, Spring Boot and Spring Cloud. 
+categories: Spring Boot, REST Service, Spring Cloud
+permalink:  /microservices-and-restful-services-with-spring-boot-for-beginners
+---
 
 
 
