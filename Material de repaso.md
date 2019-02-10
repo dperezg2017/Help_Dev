@@ -58,7 +58,10 @@ spring.datasource.url=jdbc:mysql://localhost/db_spring_boot_backend
 spring.datasource.username=root
 spring.datasource.password=sasa
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.database-platform=org.hibernate.dialect.MySQL57DBDialect
+#spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+- .MySQL5InnoDBDialect	: entrando a esta clase, vemos que esta obsoleta por "@Deprecated"
+- .MySQL57Dialect	: esta, no se encuentra obsoleta. 
 spring.jpa.hibernate.ddl-auto=create-drop  
 - create	: se crea cuando se levanta la App, si se baja, no se elimina.
 - create-drop   : se crea cuando se levanta la App, si se baja,se elimina.
