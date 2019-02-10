@@ -24,9 +24,10 @@ caracter multilinea:  `  `   //*para template:  `  `
 - angular 5: import {Observable} from 'rxjs/Observable'; import {of} from 'rxjs/Observable/of'; 
 - angular 6: import {of,Observable} from 'rxjs';
 
-###### directiva para saber redireccionar
+- *directiva para saber redireccionar*
 ```xml
 <router-outlet></router-outlet>  
+```
 
 ###### Opcionales
 - Desde la versión 6 y 7 de angular se pasó a llamar angular.json, pero en versiones anteriores de angular se llamaba angular.cli.json
