@@ -63,7 +63,8 @@ Envia URI Http al servidor.
 - TIMESTAMP	: Fecha y Hora
 @Transactional(readOnly=true)
 -readOnly: de solo lectura, transaccion por que mandara una solicitud a la BD. pero recordar que CrudRepository ya viene con transaccionalidad.
-
+@Autowired		: para Inyectar, queda guardado en el contenedor de spring. usarlo para un service, controller, etc. si se tiene mas de una, se usa un @Qualifier
+@Service		: es un estereotipo de @Component
 ```
 ## Properties
 ```properties
@@ -84,6 +85,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
 Opcionales:
 - Doc JPA: *cORE CONCEPTS*
 https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
+- cors: intercambio de recursos de origen curzados, intercambiar datos, flujos, string, archivos, dominio, hoja de estilos ,css, cualquier tipo de recursos, de un dominio a otro. contro lde acceso Http, para acceder a ciertos recurdo backend. serviciso que estan alojado en otro dominio. ya es un estandar para compartir entre diferentes dominios.
 
 
 
