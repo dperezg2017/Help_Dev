@@ -61,6 +61,8 @@ Envia URI Http al servidor.
 - DATE 		: Fecha
 - TIME 		: Hora
 - TIMESTAMP	: Fecha y Hora
+@Transactional(readOnly=true)
+-readOnly: de solo lectura, transaccion por que mandara una solicitud a la BD. pero recordar que CrudRepository ya viene con transaccionalidad.
 
 ```
 ## Properties
