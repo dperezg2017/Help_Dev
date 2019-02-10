@@ -41,11 +41,11 @@ Envia URI Http al servidor.
 | ------------- | ------------- | ------------- |
 |GET| /clientes		|index()	|
 |GET| /clientes/create	|create()	|
-|GET| /clientes		|store()	|
+|POST| /clientes		|store()	|
 |GET| /clientes/{id}	|show()	|
 |GET| /clientes/{id}/edit|edit()	|
-|GET| /clientes/{id}	|update()	|
-|GET| /clientes/{id}	|destroy()	|
+|PUT| /clientes/{id}	|update()	|
+|DELETE| /clientes/{id}	|destroy()	|
 
 
 
