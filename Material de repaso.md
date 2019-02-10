@@ -32,11 +32,15 @@ caracter multilinea:  `  `   //*para template:  `  `
 ```xml
 <router-outlet></router-outlet>  
 ```
-
 ###### Opcionales
 - Desde la versión 6 y 7 de angular se pasó a llamar angular.json, pero en versiones anteriores de angular se llamaba angular.cli.json
-
-
+### FRONTED & BACKEND ### 
+Envia URI Http al servidor. 
+---
+Verbos: GET, GET, POST,GET,GET,PUT,DELETE
+URI:
+Action o Handler:
+---
 
 
 
