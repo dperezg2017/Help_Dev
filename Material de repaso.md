@@ -14,6 +14,10 @@ caracter multilinea:  `  `   //*para template:  `  `
 - apm install minimap
 - ide-typescript ///*para dar formato*
 - npm install --save @angular/material @angular/cdk @angular/animations  //*para mi*
+###### descargamos utilitarios: Atom, Angular CLI, typescript, nodeJS.  
+- npm install bootstrap --save
+- npm install jquery --save
+- npm install popper.js --save
 
 ###### Comenzando Angular7 ###### 
 - ng new clientes-app  		// *creando un proyecto angular*
