@@ -1,6 +1,6 @@
 _Angular 7 - Spring_
 ====================
-caracter multilinea:  `  `   //*para template:  "`  `" 
+caracter multilinea:  `  `   //*para template:  `  ` 
 ### parte Angular 7 ### 
 ###### descargamos utilitarios: Atom, Angular CLI, typescript, nodeJS.
 - apm install angular-2-typescript-snippets
@@ -18,6 +18,11 @@ caracter multilinea:  `  `   //*para template:  "`  `"
 ###### Comenzando Angular7 ###### 
 - ng new clientes-app  		// *creando un proyecto angular*
 - ng serve -o   		// *levantamos el proyecto*
+- ng g service cliente  	// *creando un servicio
+- ng g class footer.component   // generando un clase
+###### Hacer la aplicaccion reactivo - se actualice en tiempo real , stream I/O
+- angular 5: import {Observable} from 'rxjs/Observable'; import {of} from 'rxjs/Observable/of'; 
+- angular 6: import {of,Observable} from 'rxjs';
 
 
 
