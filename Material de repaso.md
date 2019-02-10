@@ -46,8 +46,11 @@ Envia URI Http al servidor.
 |GET| /clientes/{id}/edit|edit()	|
 |PUT| /clientes/{id}	|update()	|
 |DELETE| /clientes/{id}	|destroy()	|
-
-
+## Anotaciones: 
+- @SpringBootConfiguration : configuracion automatica, application.properties
+- @EnableAutoConfiguration : habilitar la configuracion
+- @ComponentScan		 : busca y registra en el contenedor de Spring todas las clases anotadas con @RestControles, @Controller, @Component, @Repository, @Service.
+- 
 
 _Docker_
 ========
