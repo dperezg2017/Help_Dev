@@ -36,11 +36,6 @@ caracter multilinea:  `  `   //*para template:  `  `
 - Desde la versión 6 y 7 de angular se pasó a llamar angular.json, pero en versiones anteriores de angular se llamaba angular.cli.json
 ### FRONTED & BACKEND ### 
 Envia URI Http al servidor. 
----
-Verbos: 		GET, GET, POST,GET,GET,PUT,DELETE
-URI:    		/clientes, /clientes/create, /clientes,/clientes/{id},/clientes/{id}/edit,/clientes/{id},/clientes/{id}
-Action o Handler: 	index(),create(),store(),show(),edit(),update(),destroy()
----
 
 |     Verbos       |     URI          |   Action o Handler  |		
 | ------------- | ------------- | ------------- |
