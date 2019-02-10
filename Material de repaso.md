@@ -48,9 +48,13 @@ Envia URI Http al servidor.
 |DELETE| /clientes/{id}	|destroy()	|
 ## Anotaciones: 
 ```java
-- @SpringBootConfiguration : configuracion automatica, application.properties
-- @EnableAutoConfiguration : habilitar la configuracion
-- @ComponentScan	   : busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
+@SpringBootConfiguration : configuracion automatica, application.properties.
+@EnableAutoConfiguration : habilitar la configuracion.
+@ComponentScan	   : busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+- AUTO		: genera de forma automatica
+- IDENTITY	: mySQL, mySQLServer, las llavesy ID se geenran de forma incremental, BD en memoria, embebida, H2.
+- SEQUENCE	: Oracle, PostgreSQL
 ```
 ## Properties
 ```properties
