@@ -1,7 +1,7 @@
 _Angular 7 - Spring_
 ====================
 caracter multilinea:  `  `   //*para template:  `  ` 
-### parte Angular 7 ### 
+### FRONTED ### 
 ###### descargamos utilitarios: Atom, Angular CLI, typescript, nodeJS.
 - apm install angular-2-typescript-snippets
 - apm install atom-typescript
@@ -34,7 +34,9 @@ caracter multilinea:  `  `   //*para template:  `  `
 ```
 ###### Opcionales
 - Desde la versión 6 y 7 de angular se pasó a llamar angular.json, pero en versiones anteriores de angular se llamaba angular.cli.json
-### FRONTED & BACKEND ### 
+
+
+### BACKEND ### 
 Envia URI Http al servidor. 
 
 |     Verbos       |     URI          |   Action o Handler  |		
@@ -55,6 +57,11 @@ Envia URI Http al servidor.
 - AUTO		: genera de forma automatica
 - IDENTITY	: mySQL, mySQLServer, las llavesy ID se geenran de forma incremental, BD en memoria, embebida, H2.
 - SEQUENCE	: Oracle, PostgreSQL
+@Temporal(TemporalType.DATE)	
+- DATE 		: Fecha
+- TIME 		: Hora
+- TIMESTAMP	: Fecha y Hora
+
 ```
 ## Properties
 ```properties
@@ -72,8 +79,9 @@ spring.jpa.hibernate.ddl-auto=create-drop
 - none		: no hace nada, asume que tiene las tablas creadas.
 - update	: crea todo el sistema lka primera vez, luego va actualizando
 ```
-
-
+Opcionales:
+- Doc JPA: *cORE CONCEPTS*
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 
 
 
