@@ -54,11 +54,11 @@ Envia URI Http al servidor.
 ```
 ## Properties
 ```properties
-spring.datasource.url=jdbc:mysql://localhost/db_spring_boot_backend
+spring.datasource.url=jdbc:mysql://localhost/db_springboot_backend?useSSL=false
 spring.datasource.username=root
 spring.datasource.password=sasa
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-spring.jpa.database-platform=org.hibernate.dialect.MySQL57DBDialect
+spring.jpa.database-platform=org.hibernate.dialect.MySQL57Dialect
 #spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
 - .MySQL5InnoDBDialect	: entrando a esta clase, vemos que esta obsoleta por "@Deprecated"
 - .MySQL57Dialect	: esta, no se encuentra obsoleta. 
