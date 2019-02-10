@@ -25,6 +25,7 @@ caracter multilinea:  `  `   //*para template:  `  `
 - angular 6: import {of,Observable} from 'rxjs';
 
 ###### directiva para saber redireccionar
+```xml
 <router-outlet></router-outlet>  
 
 ###### Opcionales
