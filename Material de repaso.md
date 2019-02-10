@@ -42,8 +42,8 @@ URI:    		/clientes, /clientes/create, /clientes,/clientes/{id},/clientes/{id}/e
 Action o Handler: 	index(),create(),store(),show(),edit(),update(),destroy()
 ---
 
-|     Verbos       |     URI          |   Action o Handler      |		
-| ------------- | ------------- |
+|     Verbos       |     URI          |   Action o Handler  |		
+| ------------- | ------------- | ------------- |
 |GET| /clientes		|index()	|
 |GET| /clientes/create	|create()	|
 |GET| /clientes		|store()	|
