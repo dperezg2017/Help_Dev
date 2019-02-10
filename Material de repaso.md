@@ -24,7 +24,7 @@ caracter multilinea:  `  `   //*para template:  `  `
 - angular 5: import {Observable} from 'rxjs/Observable'; import {of} from 'rxjs/Observable/of'; 
 - angular 6: import {of,Observable} from 'rxjs';
 
-###### *directiva para saber redireccionar
+###### directiva para saber redireccionar
 <router-outlet></router-outlet>  
 
 ###### Opcionales
