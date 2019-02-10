@@ -50,7 +50,7 @@ Envia URI Http al servidor.
 ```java
 - @SpringBootConfiguration : configuracion automatica, application.properties
 - @EnableAutoConfiguration : habilitar la configuracion
-- @ComponentScan		 : busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
+- @ComponentScan	   : busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
 ```
 ## Properties
 ```properties
@@ -60,10 +60,10 @@ spring.datasource.password=sasa
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
 spring.jpa.hibernate.ddl-auto=create-drop  
-- create: se crea cuando se levanta la App, si se baja, no se elimina.
-- create-drop: se crea cuando se levanta la App, si se baja,se elimina.
-- none: no hace nada, asume que tiene las tablas creadas.
-- update: crea todo el sistema lka primera vez, luego va actualizando
+- create	: se crea cuando se levanta la App, si se baja, no se elimina.
+- create-drop   : se crea cuando se levanta la App, si se baja,se elimina.
+- none		: no hace nada, asume que tiene las tablas creadas.
+- update	: crea todo el sistema lka primera vez, luego va actualizando
 ```
 
 
