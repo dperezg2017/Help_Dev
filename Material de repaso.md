@@ -60,7 +60,7 @@ spring.datasource.password=sasa
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
 spring.jpa.hibernate.ddl-auto=create-drop
-```xml
+```
 
 
 
