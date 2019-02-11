@@ -32,6 +32,10 @@ caracter multilinea:  `  `   //*para template:  `  `
 ```xml
 <router-outlet></router-outlet>  
 ```
+-*casteo Observable*
+```xml
+return this.http.get<Cliente[]>(this.urlEndPoint);
+```
 ###### Opcionales
 - Desde la versión 6 y 7 de angular se pasó a llamar angular.json, pero en versiones anteriores de angular se llamaba angular.cli.json
 
@@ -65,6 +69,8 @@ Envia URI Http al servidor.
 -readOnly: de solo lectura, transaccion por que mandara una solicitud a la BD. pero recordar que CrudRepository ya viene con transaccionalidad.
 @Autowired		: para Inyectar, queda guardado en el contenedor de spring. usarlo para un service, controller, etc. si se tiene mas de una, se usa un @Qualifier
 @Service		: es un estereotipo de @Component
+@CrossOrigin(origins= {"http://localhost:4200"}) : Se agrega en el controlador, para permitir manejo de datos con el siguiente dominio. 
+
 ```
 ## Properties
 ```properties
