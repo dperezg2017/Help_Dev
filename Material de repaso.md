@@ -70,6 +70,8 @@ Envia URI Http al servidor.
 @Autowired		: para Inyectar, queda guardado en el contenedor de spring. usarlo para un service, controller, etc. si se tiene mas de una, se usa un @Qualifier
 @Service		: es un estereotipo de @Component
 @CrossOrigin(origins= {"http://localhost:4200"}) : Se agrega en el controlador, para permitir manejo de datos con el siguiente dominio. 
+@PrePersist		: en la clase @Entity, se le pone el @PrePersist al metodo que va generar un valor, para una @Column
+@ResponseStatus		: @ResponseStatus(HttpStatus.CREATED), si todo sale bien, nos muestra code:201 de creado, entre otros como .CREATE , .OK ,etc. 
 
 ```
 ## Properties
