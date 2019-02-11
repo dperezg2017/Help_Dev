@@ -88,9 +88,9 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 - cors: intercambio de recursos de origen curzados, intercambiar datos, flujos, string, archivos, dominio, hoja de estilos ,css, cualquier tipo de recursos, de un dominio a otro. contro lde acceso Http, para acceder a ciertos recurdo backend. serviciso que estan alojado en otro dominio. ya es un estandar para compartir entre diferentes dominios.
 1) Prefligth request. 
 - Se envia un GET, para ver que tipo de permisos tiene mi dominio.
-2)Prefligth response
+2) Prefligth response
 - Le devuelve que tipo de permisos tiene
-3)Request 
+3) Request 
 - se envia el recurso que necesita, y valida si tiene permiso apra obtener ese recurso de mi dominio.
 4) Response
 - Devuelve la repsuesta, si es un Rest o un archivo,video,etc. 
