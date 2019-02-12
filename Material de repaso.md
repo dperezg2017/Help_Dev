@@ -38,7 +38,7 @@ return this.http.get<Cliente[]>(this.urlEndPoint);
 ```
 ###### Opcionales
 - Desde la versión 6 y 7 de angular se pasó a llamar angular.json, pero en versiones anteriores de angular se llamaba angular.cli.json
-
+- Binding: Poblar y enlazar
 
 ### BACKEND ### 
 Envia URI Http al servidor. 
@@ -91,7 +91,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
 - update	: crea todo el sistema lka primera vez, luego va actualizando
 ```
 Opcionales:
-- Doc JPA: *cORE CONCEPTS*
+- Doc JPA: *Core Concepts*
 https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 - cors: intercambio de recursos de origen curzados, intercambiar datos, flujos, string, archivos, dominio, hoja de estilos ,css, cualquier tipo de recursos, de un dominio a otro. contro lde acceso Http, para acceder a ciertos recurdo backend. serviciso que estan alojado en otro dominio. ya es un estandar para compartir entre diferentes dominios.
 ```
