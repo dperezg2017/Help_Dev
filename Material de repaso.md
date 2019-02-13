@@ -14,6 +14,7 @@ caracter multilinea:  `  `   //*para template:  `  `
 - apm install minimap
 - ide-typescript ///*para dar formato*
 - npm install --save @angular/material @angular/cdk @angular/animations  //*para mi*
+- npm install weetaler2 --save     //*si sucede error* npm install --save sweetalert2@7.26.9
 ###### descargamos utilitarios: Atom, Angular CLI, typescript, nodeJS.  
 - npm install bootstrap --save
 - npm install jquery --save
