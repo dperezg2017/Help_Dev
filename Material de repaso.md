@@ -405,11 +405,6 @@ Para no agrega Styles en mi componente: "ng g c heroes -is" se agrega la palabra
 
 _REGEX_ 
 =======
-- n(1..2,2..3)    	=> regex="^[0-9]{1,2}(\.[0-9]{2,3})?$" 
-- 2.1 ó 2.0       	=> regex="^2\.(0|1)$"
-- letra,numero,-,_	=> regex="^[a-z0-9_-]{3,16}$"
-- correo 		=> regex="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"
-
 
 |     Sintaxis  	|     REGEX     				  |   	
 | ---------------	| -------------------------			  |
@@ -417,3 +412,4 @@ _REGEX_
 |2.1 ó 2.0        	| ^2\.(0|1)$					  |
 |letra,numero,-,_     	| ^[a-z0-9_-]{3,16}$				  |
 |correo           	| ^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$ |
+|			|						  |
