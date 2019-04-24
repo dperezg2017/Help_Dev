@@ -19,6 +19,10 @@ caracter multilinea:  `  `   //*para template:  `  `
 - npm install bootstrap --save
 - npm install jquery --save
 - npm install popper.js --save
+###### Angular Material, similar al Bootstrap
+- ng add @angular/material
+- npm install --save @angular/material-moment-adapter
+- npm install --save moment
 
 ###### Comenzando Angular7 ###### 
 - ng new clientes-app  		// *creando un proyecto angular*
