@@ -417,3 +417,20 @@ _REGEX_
 |letra,numero,-,_     	| ^[a-z0-9_-]{3,16}$				  |
 |correo           	| ^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$ |
 |correo2		|^([\w-]+\.)*?[\w-]+@[\w-]+\.([\w-]+\.)*?[\w]+$	  |
+
+_WINDOW_ 
+=======
+##### Matar procesos #####
+	
+- Taskkill /IM <Nombre de imagen> /F
+- Taskkill /PID <Numero> /F
+	
+	
+taskkill .exe /f /fi "proceso que no responde"
+taskkill .exe /f /fi "proceso que no responde"
+###### usando taskill
+- taskkill .exe /f /fi "proceso que no responde" 
+- crear un  .bat :
+@echo off
+ taskkill .exe /f /fi "proceso que no responde" 
+exit
