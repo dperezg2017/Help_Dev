@@ -77,6 +77,13 @@ Envia URI Http al servidor.
 @CrossOrigin(origins= {"http://localhost:4200"}) : Se agrega en el controlador, para permitir manejo de datos con el siguiente dominio. 
 @PrePersist		: en la clase @Entity, se le pone el @PrePersist al metodo que va generar un valor, para una @Column
 @ResponseStatus		: @ResponseStatus(HttpStatus.CREATED), si todo sale bien, nos muestra code:201 de creado, entre otros como .CREATE , .OK ,etc. 
+@PostMapping: para realizar update, create.
+@GetMapping: consultar, selects. 
+@RequestParam: Archivo(multiparam)
+@PathVariable: String, long .. 
+@Valid: validador, que respete segun el Entity @size @notNull @notEmpty @Email
+@RequestBody: cuando se manda una entindad Cliente cliente. ó Person persona, viaja los datos de esa persona.
+
 
 ```
 ## Properties
@@ -109,6 +116,8 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 4) Response
 - Devuelve la repsuesta, si es un Rest o un archivo,video,etc. 
 ```
+## Informacion
+- Path:  window: "C://Temp//uploads" Linux: "\opt\uploads"
 
 
 
