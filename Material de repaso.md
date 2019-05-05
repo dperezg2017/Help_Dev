@@ -63,6 +63,7 @@ Envia URI Http al servidor.
 @EnableAutoConfiguration : habilitar la configuracion.
 @ComponentScan	   	 : busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
 @ManyToOne(fetch=FetchType.LAZY) : LAzy, solo realizara la carga, cuando se le llame con el GET generado
+@JoinColumn(name="region_id") : nombre que le das a la llave foranea
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 - AUTO		: genera de forma automatica, es como un "default"
 - IDENTITY	: mySQL, mySQLServer, las llavesy ID se geenran de forma incremental, BD en memoria, embebida, H2.
