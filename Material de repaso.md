@@ -62,7 +62,7 @@ Envia URI Http al servidor.
 @SpringBootConfiguration : configuracion automatica, application.properties.
 @EnableAutoConfiguration : habilitar la configuracion.
 @ComponentScan	   	 : busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
-@ManyToOne(fetch=FetchType.LAZY) : LAzy, solo realizara la carga, cuando se le llame con el GET generado
+@ManyToOne(fetch=FetchType.LAZY) : LAzy, solo realizara la carga, cuando se le llame con el GET generado, y genera un proxy con la variable, para ello se puede omitir con @JsonIgnoreProperties({"hibernateLazyInitializer","handler"}), asi solo hara caso a las variables que estan en la clase entity.
 @JoinColumn(name="region_id") : nombre que le das a la llave foranea
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 - AUTO		: genera de forma automatica, es como un "default"
