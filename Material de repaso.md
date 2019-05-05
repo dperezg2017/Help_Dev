@@ -63,7 +63,7 @@ Envia URI Http al servidor.
 @EnableAutoConfiguration : habilitar la configuracion.
 @ComponentScan	   	 : busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
 @GeneratedValue(strategy=GenerationType.IDENTITY)
-- AUTO		: genera de forma automatica
+- AUTO		: genera de forma automatica, es como un "default"
 - IDENTITY	: mySQL, mySQLServer, las llavesy ID se geenran de forma incremental, BD en memoria, embebida, H2.
 - SEQUENCE	: Oracle, PostgreSQL
 @Temporal(TemporalType.DATE)	
