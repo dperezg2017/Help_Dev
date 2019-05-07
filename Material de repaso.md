@@ -85,10 +85,15 @@ Envia URI Http al servidor.
 @PathVariable: String, long .. 
 @Valid: validador, que respete segun el Entity @size @notNull @notEmpty @Email
 @RequestBody: cuando se manda una entindad Cliente cliente. ó Person persona, viaja los datos de esa persona.
+```
+## JUnit - Mockito: 
+```java
+@After/before : Hacer que un evento se ejecute antes o despues de cada evento.
+
 
 
 ```
-## Properties
+## Properties: 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost/db_springboot_backend?useSSL=false
 spring.datasource.username=root
