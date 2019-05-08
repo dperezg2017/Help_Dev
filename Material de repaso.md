@@ -88,8 +88,8 @@ Envia URI Http al servidor.
 ```
 ## JUnit - Mockito: 
 ```java
-@After/before : Hacer que un evento se ejecute antes o despues de cada evento.
-
+@After/before : Hacer que un evento se ejecute antes o despues de cada evento en X clase.
+@AfterClass/beforeClass : Hacer que un evento se ejecute antes o despues de todos lo eventos de una clase X.
 
 
 ```
