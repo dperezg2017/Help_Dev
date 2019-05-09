@@ -126,6 +126,7 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 ## Informacion
 - Path:  window: "C://Temp//uploads" Linux: "\opt\uploads"
 - Si se trabaja con JDK9 ó JDK10, y se va usar Auth2, debe añadir JAXB API: 
+```xml
 <dependency>
     <groupId>javax.xml.bind</groupId>
     <artifactId>jaxb-api</artifactId>
@@ -134,7 +135,7 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
     <groupId>org.glassfish.jaxb</groupId>
     <artifactId>jaxb-runtime</artifactId>
 </dependency>
-
+```
 
 
 
