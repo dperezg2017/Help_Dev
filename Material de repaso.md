@@ -125,6 +125,17 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 ```
 ## Informacion
 - Path:  window: "C://Temp//uploads" Linux: "\opt\uploads"
+- Si se trabaja con JDK9 ó JDK10, y se va usar Auth2, debe añadir JAXB API: 
+<dependency>
+    <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.jaxb</groupId>
+    <artifactId>jaxb-runtime</artifactId>
+</dependency>
+
+
 
 
 
@@ -450,3 +461,13 @@ taskkill .exe /f /fi "proceso que no responde"
 @echo off
  taskkill .exe /f /fi "proceso que no responde" 
 exit
+_CONSOLE NAVEGADOR_ 
+===================
+```java
+https://jwt.io/
+let token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRleXZpenogUGVyZXoiLCJpYXQiOjE1MTYyMzkwMjJ9.Gx5C4R0if1YBcY1jmH_EXM1uINHvl20_6nzQ9_EVypQ"
+let payload = token.split(".")[1]
+window.atob(payload) // decode base64
+JSON.parse(window.atob(payload)) // parsear a obj JSON
+```
+##### Observaciones
