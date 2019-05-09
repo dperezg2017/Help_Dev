@@ -59,7 +59,7 @@ Envia URI Http al servidor.
 |DELETE| /clientes/{id}	|destroy()	|
 ## Anotaciones: 
 ```java
-@Bean: se le asigna, a metodos que retorna otro metodo (return new BCryptPasswordEncoder()) 
+@Bean: se le asigna, a metodos que retorna otro metodo (return new BCryptPasswordEncoder()), y despues en otra clase solo se le asigna la anotacion @Autowired.
 @SpringBootConfiguration : configuracion automatica, application.properties.
 @EnableAutoConfiguration : habilitar la configuracion.
 @ComponentScan	   	 : busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
