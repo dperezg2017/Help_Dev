@@ -142,6 +142,7 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 ## Auth2 
 - https://jwt.io/
 - Se usa https://wiki.openssl.org/index.php/Binaries ó java JDK(OpenSSH): se encuentra codigos para certificado RSA para firmar Token JWT. elegimos para window: Win64 OpenSSL v1.1.0j.
+- Pasos para generar firma RSA, despues de la descarga: 
 ```properties
 D:\OpenSSL-Win64\bin>openssl genrsa -out jwt.pem
 Generating RSA private key, 2048 bit long modulus
