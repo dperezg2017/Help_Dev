@@ -88,6 +88,8 @@ Envia URI Http al servidor.
 @PathVariable: String, long .. 
 @Valid: validador, que respete segun el Entity @size @notNull @notEmpty @Email
 @RequestBody: cuando se manda una entindad Cliente cliente. ó Person persona, viaja los datos de esa persona.
+@EnableGlobalMethodSecurity(securedEnabled=true): Habilitar globalmente, para validar roles con anotaciones. y poner encima de cada Servicio rest @Secured({"ROLE_ADMIN","ROLE_USER"})
+
 ```
 ## JUnit - Mockito: 
 ```java
