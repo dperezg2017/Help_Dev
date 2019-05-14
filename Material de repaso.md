@@ -194,9 +194,19 @@ jiD7bew1AmT4knECMEyYI0dJOKm9X5jqVc+zrqTspTIB/o5m8SAfSryDOSkS+R/N
 7QIDAQAB
 -----END PUBLIC KEY-----
 ```
-
-
-
+- implementar CORS: https://docs.spring.io/spring-security/site/docs/5.1.5.RELEASE/reference/htmlsingle/ : 
+```java
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("https://example.com"));
+        configuration.setAllowedMethods(Arrays.asList("GET","POST"));
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
+}
+```
 
 
 
