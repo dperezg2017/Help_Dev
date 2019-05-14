@@ -139,7 +139,9 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
     <artifactId>jaxb-runtime</artifactId>
 </dependency>
 ```
-
+## Auth2 
+- https://jwt.io/
+- Se usa https://wiki.openssl.org/index.php/Binaries ó java JDK(OpenSSH): se encuentra codigos para certificado RSA para firmar Token JWT.
 
 
 
