@@ -29,6 +29,7 @@ caracter multilinea:  `  `   //*para template:  `  `
 - ng serve -o   		// *levantamos el proyecto*
 - ng g service cliente  	// *creando un servicio
 - ng g class footer.component   // generando un clase
+- ng g c usuarios/login --flat=true  // dentro de la carpeta usuarios se genera login
 ###### Hacer la aplicaccion reactivo - se actualice en tiempo real , stream I/O
 - angular 5: import {Observable} from 'rxjs/Observable'; import {of} from 'rxjs/Observable/of'; 
 - angular 6: import {of,Observable} from 'rxjs';
