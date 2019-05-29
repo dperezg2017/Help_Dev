@@ -32,6 +32,7 @@ caracter multilinea:  `  `   //*para template:  `  `
 - ng g c usuarios/login --flat=true  // dentro de la carpeta usuarios se genera login
 - ng g class usuarios/usuario  // crea usuario.ts dentro de la carpeta usuarios.
 - ng g g usuarios/guards/auth // dentro de la carpeta usuarios, crear otra carpeta guardas y ahi los TS. 
+- ng g c facturas/detalleFactura --flat  // --flat: para que no me cree un directorio estra, simplemente dentro de factura
 ###### Hacer la aplicaccion reactivo - se actualice en tiempo real , stream I/O
 - angular 5: import {Observable} from 'rxjs/Observable'; import {of} from 'rxjs/Observable/of'; 
 - angular 6: import {of,Observable} from 'rxjs';
