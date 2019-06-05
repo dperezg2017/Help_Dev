@@ -151,6 +151,7 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 - https://jwt.io/
 - Se usa https://wiki.openssl.org/index.php/Binaries ó java JDK(OpenSSH): se encuentra codigos para certificado RSA para firmar Token JWT. elegimos para window: Win64 OpenSSL v1.1.0j.
 - Pasos para generar firma RSA, despues de la descarga: 
+
 ```properties
 D:\OpenSSL-Win64\bin>openssl genrsa -out jwt.pem
 Generating RSA private key, 2048 bit long modulus
@@ -348,6 +349,7 @@ https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spr
 ### Actuator ##
 ###### Paso1: en el properties => management.endpoints.web.exposure.include=*
 ###### Paso2: pom.xml: 
+```xml
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -356,6 +358,7 @@ https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spr
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-rest-hal-browser</artifactId>
 		</dependency>
+```
 ###### Paso3: 
 - Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/refresh 
 - Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/refresh ó http://localhost:8080/application/refresh
@@ -366,15 +369,18 @@ Si en caso se muestra problema de authorizacion, agregar en el properties => man
 Se debe implementar con MQRabbit - 
 ###### Paso1: Iniciar MQRabbit (Revisar procedimiento lineas mas abajo)
 ###### Paso2: Agregar la dependecia en "Limits-Service" y "Spring-cloud-config-server"
+```xml
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
+```
 ###### Paso3: 
 - Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/bus-refresh
 - Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/bus/refresh
 ##### Opcionales
 ###### El Bus, esta estable en la version de SpringBoot => "2.0.2.RELEASE"
+```xml
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -388,16 +394,20 @@ Se debe implementar con MQRabbit -
 		<!-- for 2.1.0 <spring-cloud.version>Greenwich.M1</spring-cloud.version> -->
 		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
 	</properties>
+```
 	
 ### Hystrix ###
 ###### Paso1: Agregar la dependencia: 
+```xml
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
 <!-- 			<artifactId>spring-cloud-starter-hystrix</artifactId> -->
 		</dependency>
+```
 ###### Paso2: Agregar la anotacion "@EnableHystrix" en la clase Main del servicio "limits-service"
 ###### Paso3 Agregar en el Controller, una excepcion.
+```java
   @GetMapping("/fault-tolerance-example")
   @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration")
   public LimitConfiguration retrieveConfiguration() {
@@ -407,27 +417,35 @@ Se debe implementar con MQRabbit -
   public LimitConfiguration fallbackRetrieveConfiguration() {
     return new LimitConfiguration(999, 9);
   }
+```
 ######  Explicacion: Si no se agrega la linea:  @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration"), se mostrara la excepcion, pero le estamos diciendo, que si ocurre excepcion, vaya al metodo X. para abstener a una excepcion en ejecucion.
 
 _GIT HUB_ - deben estar en la ruta del proyecto
 ===============================================
 ###### Subir Proyecto de cero: 
-- git init
-- git add *
-- git status 
-- git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
-- git remote add origin https://github.com/dperezg2017/Help_Dev.git
-- git push -u origin master
+```git
+git init
+git add *
+git status 
+git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
+git remote add origin https://github.com/dperezg2017/Help_Dev.git
+git push -u origin master
+```
 ###### Subir cambios de Proyecto : 
+```git
 - git add *
 - git status 
 - git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
 - git push
+```
 ###### Actualizar Proyecto:
+```git
 - git pull
+```
 ###### Descargar proyecto de gitHub:
+```git
 - git clone https://github.com/dperezg2017/Help_Dev.git
-
+```
 
 VM _Argumentos_ 
 ===============
@@ -448,6 +466,7 @@ RabbitMQ _Colas_
  - java -jar zipkin-server-2.12.0-exec.jar
 ###### paso4: ingresar: http://localhost:9411/zipkin/   
 ##### Recomendacion: Para ver que los servicios esten en el zipkin, debera agregar las dependencias:
+```xml
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
@@ -456,6 +475,7 @@ RabbitMQ _Colas_
 			<groupId>org.springframework.amqp</groupId>
 			<artifactId>spring-rabbit</artifactId>
 		</dependency>
+```
 ##### Opcionales:
 Para ver la interfaz: 
 ###### Paso1: en el CMD, escribir => rabbitmq-plugins enable rabbitmq_management
@@ -491,6 +511,7 @@ Para crear nuevo proyecto :  "ng new SPA" y levantarlo => "ng serve -o" en el CM
 Para generar nuevo componentes : "ng g c navbar"  ,donde g:generate y c:component
 Para agregar Boostrap: "npm install bootstrap --save" , "npm install jquery --save" y "npm install popper,js --save"
 ###### Modificar file: "angular.json"
+```javascript
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -500,10 +521,8 @@ Para agregar Boostrap: "npm install bootstrap --save" , "npm install jquery --sa
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
+```
 Para no agrega Styles en mi componente: "ng g c heroes -is" se agrega la palabra "-is"
-
-
-
 
 
 _REGEX_ 
@@ -560,7 +579,7 @@ DocumentRoot "${SRVROOT}/htdocs"
 - entry point: (index.js) server.js
 - en el CMD => D:\software\udemy\spring5\angular\clientes-app\dist => ejecutamos =>  npm install express --save
 - se generar archivos package y modificar en => D:\software\udemy\spring5\angular\clientes-app\dist: 
-```properties
+```javascript
 {
   "name": "clientes-app",
   "version": "1.0.0",
@@ -610,13 +629,19 @@ heroku git:remote -a spring-boot2-heroku-test2
 heroku plugins:install java
 heroku addons:create jawsdb
 heroku config:get JAWSDB_URL
-#DDD
+```
+#copiar la linea que se genera ejemplo: 
+mysql://xudqiziahxblm43o:tzcj7aaa7a5w1e80@jw0ch9vofhcajqg7.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/p702bbcywh1sqeum
+#luego cambiar el url,username,password con la cadena generada: 
+```properties
+spring.datasource.url=jdbc:mysql://jw0ch9vofhcajqg7.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/p702bbcywh1sqeum?useSSL=false
+spring.datasource.username=xudqiziahxblm43o
+spring.datasource.password=tzcj7aaa7a5w1e80
 ```
 
 _CONSOLE NAVEGADOR_ 
 ===================
-```java
-```
+```javascript
 https://jwt.io/
 let token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRleXZpenogUGVyZXoiLCJpYXQiOjE1MTYyMzkwMjJ9.Gx5C4R0if1YBcY1jmH_EXM1uINHvl20_6nzQ9_EVypQ"
 let payload = token.split(".")[1]
