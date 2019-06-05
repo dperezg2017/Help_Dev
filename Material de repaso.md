@@ -533,6 +533,12 @@ taskkill .exe /f /fi "proceso que no responde"
 @echo off
  taskkill .exe /f /fi "proceso que no responde" 
 exit
+###### publicando proyecto SpringBoot
+- .\mvnw.cmd clean package
+- java -jar .\target\spring-boot-backend-apirest-0.0.1-SNAPSHOT.jar
+###### publicando proyecto Angular
+- ng build --prod
+
 _CONSOLE NAVEGADOR_ 
 ===================
 ```java
