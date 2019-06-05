@@ -527,7 +527,7 @@ _WINDOW_
 	
 taskkill .exe /f /fi "proceso que no responde"
 taskkill .exe /f /fi "proceso que no responde"
-###### usando taskill
+##### usando taskill
 - taskkill .exe /f /fi "proceso que no responde" 
 - crear un  .bat :
 @echo off
@@ -536,9 +536,9 @@ exit
 ###### publicando proyecto SpringBoot
 - .\mvnw.cmd clean package
 - java -jar .\target\spring-boot-backend-apirest-0.0.1-SNAPSHOT.jar
-###### publicando proyecto Angular
+##### publicando proyecto Angular
 - ng build --prod
-###### publicando Apache Server Lounge
+##### publicando Apache Server Lounge
 - https://www.apachelounge.com/download/  por defecto se guarda en: "c:/Apache24"
 - en el index.html => editar = >  <base href="/app-clientes/">
 - Editar el archivo: httpd.conf  => C:\Apache24\conf
@@ -554,7 +554,7 @@ DocumentRoot "${SRVROOT}/htdocs"
 ```
 - Copiar la carpeta "DIST" genera en angular, y pegar en => C:\Apache24\htdocs  => con el nombre "clientes-app"
 - Abrir CMD en => C:\Apache24\bin y escribir el comando .\httpd.exe
-###### publicando con Node Express
+##### publicando con Node Express
 - en el index.html => editar = >  <base href="/"> y eliminar el archivo 
 - en el CMD => D:\software\udemy\spring5\angular\clientes-app\dist => ejecutamos => npm init 
 - entry point: (index.js) server.js
@@ -595,6 +595,23 @@ app.listen(port,()=>{
 });
 ```
 -  en D:\software\udemy\spring5\angular\clientes-app\dist> => ejecutar = > node .\server.js
+
+##### publicando en HEROKU
+- el archivo import.sql, debe estar en UTF-8
+- modificar properties: 
+```properties
+server.port=${PORT:8080}
+```
+- abrir CMD y escribir ("spring-boot2-heroku-test2" = nombre del proyecto):
+```cmd
+heroku login
+git init
+heroku git:remote -a spring-boot2-heroku-test2
+heroku plugins:install java
+heroku addons:create jawsdb
+heroku config:get JAWSDB_URL
+#DDD
+```
 
 _CONSOLE NAVEGADOR_ 
 ===================
