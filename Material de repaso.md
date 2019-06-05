@@ -622,7 +622,7 @@ app.listen(port,()=>{
 server.port=${PORT:8080}
 ```
 - abrir CMD y escribir ("spring-boot2-heroku-test2" = nombre del proyecto):
-```cmd
+```bat
 heroku login
 git init
 heroku git:remote -a spring-boot2-heroku-test2
@@ -638,7 +638,10 @@ spring.datasource.url=jdbc:mysql://jw0ch9vofhcajqg7.cbetxkdyhwsb.us-east-1.rds.a
 spring.datasource.username=xudqiziahxblm43o
 spring.datasource.password=tzcj7aaa7a5w1e80
 ```
-
+```bat
+.\mvnw clean package
+heroku jar:deploy .\target\spring-boot-backend-apirest-0.0.1-SNAPSHOT.jar
+```
 _CONSOLE NAVEGADOR_ 
 ===================
 ```javascript
