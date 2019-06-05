@@ -594,6 +594,7 @@ app.listen(port,()=>{
 	console.log('El servidor express se ha iniciado en el puerto'+port);
 });
 ```
+-  en D:\software\udemy\spring5\angular\clientes-app\dist> => ejecutar = > node .\server.js
 
 _CONSOLE NAVEGADOR_ 
 ===================
