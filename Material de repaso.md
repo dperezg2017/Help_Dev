@@ -69,6 +69,8 @@ Envia URI Http al servidor.
 @ComponentScan	   	 : busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
 @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL): relacion de * a * y crea la tabla de la relacion, y cascade para que realice todo lo que con lleva auna funcion GUARDAR(guarda informacion, fotos si es que tenia, etc.)
 @ManyToOne(fetch=FetchType.LAZY) : LAzy, solo realizara la carga, cuando se le llame con el GET generado, y genera un proxy con la variable, para ello se puede omitir con @JsonIgnoreProperties({"hibernateLazyInitializer","handler"}), asi solo hara caso a las variables que estan en la clase entity.
+y si se tiene problemas de recursividad, agregar lo siguiente: 
+@JsonIgnoreProperties(value={"facturas","hibernateLazyInitializer","handler"},allowSetters=true)
 @JoinTable(name="users_authorities",joinColumns=@JoinColumn(name="user_id"),inverseJoinColumns=@JoinColumn(name="role_id")	,uniqueConstraints= {@UniqueConstraint(columnNames= {"usuario_id","role_id"})})): sirve para darle nombre a la tabla que se crea de la relacion de * a *, y ponerle nombre a la llave foranea, de las 2 tablas. y que la llaves foraneas sean UNICAS. 
 @JoinColumn(name="region_id") : nombre que le das a la llave foranea
 @GeneratedValue(strategy=GenerationType.IDENTITY)
