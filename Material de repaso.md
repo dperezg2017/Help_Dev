@@ -538,6 +538,19 @@ exit
 - java -jar .\target\spring-boot-backend-apirest-0.0.1-SNAPSHOT.jar
 ###### publicando proyecto Angular
 - ng build --prod
+###### publicando Apache Server Lounge
+- https://www.apachelounge.com/download/  por defecto se guarda en: "c:/Apache24"
+- Editar el archivo: httpd.conf  => C:\Apache24\conf
+- En el httpd.conf, Habilitar  => LoadModule rewrite_module modules/mod_rewrite.so
+- modificar: 
+```properties
+DocumentRoot "${SRVROOT}/htdocs"
+<Directory "${SRVROOT}/htdocs">
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+```
 
 _CONSOLE NAVEGADOR_ 
 ===================
