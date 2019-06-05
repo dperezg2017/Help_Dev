@@ -540,9 +540,10 @@ exit
 - ng build --prod
 ###### publicando Apache Server Lounge
 - https://www.apachelounge.com/download/  por defecto se guarda en: "c:/Apache24"
+- en el index.html => editar = >  <base href="/app-clientes/">
 - Editar el archivo: httpd.conf  => C:\Apache24\conf
 - En el httpd.conf, Habilitar  => LoadModule rewrite_module modules/mod_rewrite.so
-- modificar: 
+- modificar el archivo que crearemos .htaccess y pegamos: 
 ```properties
 DocumentRoot "${SRVROOT}/htdocs"
 <Directory "${SRVROOT}/htdocs">
@@ -551,10 +552,53 @@ DocumentRoot "${SRVROOT}/htdocs"
     Require all granted
 </Directory>
 ```
+- Copiar la carpeta "DIST" genera en angular, y pegar en => C:\Apache24\htdocs  => con el nombre "clientes-app"
+- Abrir CMD en => C:\Apache24\bin y escribir el comando .\httpd.exe
+###### publicando con Node Express
+- en el index.html => editar = >  <base href="/"> y eliminar el archivo 
+- en el CMD => D:\software\udemy\spring5\angular\clientes-app\dist => ejecutamos => npm init 
+- entry point: (index.js) server.js
+- en el CMD => D:\software\udemy\spring5\angular\clientes-app\dist => ejecutamos =>  npm install express --save
+- se generar archivos package y modificar en => D:\software\udemy\spring5\angular\clientes-app\dist: 
+```properties
+{
+  "name": "clientes-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
+```
+- crear el archivo =D:\software\udemy\spring5\angular\clientes-app\dist\server.js y agregar: 
+```javascript
+let express = require('express');
+let path=require('path');
+let app = express();
+let port = 8089;
+
+app.use(express.static('clientes-app'));
+
+
+app.get('*',(req,res,next)=>{
+	res.sendFile(path.resolve('clientes-app/index.html'));
+});
+
+app.listen(port,()=>{
+	console.log('El servidor express se ha iniciado en el puerto'+port);
+});
+```
 
 _CONSOLE NAVEGADOR_ 
 ===================
 ```java
+```
 https://jwt.io/
 let token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRleXZpenogUGVyZXoiLCJpYXQiOjE1MTYyMzkwMjJ9.Gx5C4R0if1YBcY1jmH_EXM1uINHvl20_6nzQ9_EVypQ"
 let payload = token.split(".")[1]
