@@ -644,9 +644,9 @@ heroku jar:deploy .\target\spring-boot-backend-apirest-0.0.1-SNAPSHOT.jar
 # para revisar log de despliegue
 heroku logs --tail
 ```
-##### publicando angular en FIREHOST
-crear config.ts en => D:\software\udemy\spring5\angular\clientes-app\src\app\config\config.ts
-modificar cliente.service.ts en => D:\software\udemy\spring5\angular\clientes-app\src\app\clientes\cliente.service.ts
+##### publicando angular en FIREBASE
+- crear config.ts en => D:\software\udemy\spring5\angular\clientes-app\src\app\config\config.ts
+- modificar cliente.service.ts en => D:\software\udemy\spring5\angular\clientes-app\src\app\clientes\cliente.service.ts
 ```ts
 // D:\software\udemy\spring5\angular\clientes-app\src\app\config\config.ts
 	export const URL_BACKEND='https://spring-boot2-heroku-test2.herokuapp.com';
@@ -684,8 +684,75 @@ src="{{urlBackend}}/api/uploads/img/{{cliente.foto}}" alt="{{cliente.foto}}" cla
 <!-- src="http://localhost:8080/images/no-usuario.png" alt="Sin Foto" class="img-thumbnail rounded" -->
 src="{{urlBackend}}/images/no-usuario.png" alt="Sin Foto" class="img-thumbnail rounded"
 ```
+- en el cmd => ejecuta => ng build --prod
+- "remove project folder" y abrir "open folder" la carpeta dist
+- npm install -g firebase-tools
+- firebase login
+- firebase init
+- selecionamos con la FLECHA del teclado hacia abajo:  (*) Hosting: Configure and deploy Firebase Hosting sites => clic en la tecla SPACE => luego ENTER
+- luego seleccionamos (*) create a new project => ENTER =>
+```bat
+PS D:\software\udemy\spring5\angular\clientes-app> npm install -g firebase-tools
+C:\Users\dperez\AppData\Roaming\npm\firebase -> C:\Users\dperez\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\firebase-tools\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
 
++ firebase-tools@6.11.0
+updated 1 package in 147.797s
+PS D:\software\udemy\spring5\angular\clientes-app> firebase login
+? Allow Firebase to collect anonymous CLI usage and error reporting information? Yes
 
+Visit this URL on any device to log in:
+https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=305737577&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+
+Waiting for authentication...
+
++  Success! Logged in as dperezg2017@gmail.com
+PS D:\software\udemy\spring5\angular\clientes-app> cd .\dist\
+PS D:\software\udemy\spring5\angular\clientes-app\dist> firebase init
+
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\software\udemy\spring5\angular\clientes-app\dist
+
+? Are you ready to proceed? Yes
+? Which Firebase CLI features do you want to set up for this folder? Press Space to select features, then Enter to conf
+irm your choices. Hosting: Configure and deploy Firebase Hosting sites
+
+=== Project Setup
+
+First, let's associate this project directory with a Firebase project.
+You can create multiple project aliases by running firebase use --add,
+but for now we'll just set up a default project.
+
+? Select a default Firebase project for this directory: [create a new project]
+
+=== Hosting Setup
+
+Your public directory is the folder (relative to your project directory) that
+will contain Hosting assets to be uploaded with firebase deploy. If you
+have a build process for your assets, use your build's output directory.
+
+? What do you want to use as your public directory? public
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
++  Wrote public/index.html
+
+i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+i  Writing gitignore file to .gitignore...
+
++  Firebase initialization complete!
+
+Project creation is only available from the Firebase Console
+Please visit https://console.firebase.google.com to create a new project, then run firebase use --add
+PS D:\software\udemy\spring5\angular\clientes-app\dist>
+```
 _CONSOLE NAVEGADOR_ 
 ===================
 ```javascript
