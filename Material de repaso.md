@@ -641,7 +641,51 @@ spring.datasource.password=tzcj7aaa7a5w1e80
 ```bat
 .\mvnw clean package
 heroku jar:deploy .\target\spring-boot-backend-apirest-0.0.1-SNAPSHOT.jar
+# para revisar log de despliegue
+heroku logs --tail
 ```
+##### publicando angular en FIREHOST
+crear config.ts en => D:\software\udemy\spring5\angular\clientes-app\src\app\config\config.ts
+modificar cliente.service.ts en => D:\software\udemy\spring5\angular\clientes-app\src\app\clientes\cliente.service.ts
+```ts
+// D:\software\udemy\spring5\angular\clientes-app\src\app\config\config.ts
+	export const URL_BACKEND='https://spring-boot2-heroku-test2.herokuapp.com';
+
+// D:\software\udemy\spring5\angular\clientes-app\src\app\clientes\cliente.service.ts
+import {URL_BACKEND} from '../config/config';
+	export class ClienteService {
+  	private urlEndPoint: string = URL_BACKEND+'/api/clientes';
+  	}
+	
+ // D:\software\udemy\spring5\angular\clientes-app\src\app\facturas\services\factura.service.ts
+ import { URL_BACKEND } from '../../config/config';
+ 	export class FacturaService {
+	private urlEndPoint:string=URL_BACKEND+'/api/facturas';
+	}
+	
+// D:\software\udemy\spring5\angular\clientes-app\src\app\usuarios\auth.service.ts
+import { URL_BACKEND} from '../config/config';
+	export class AuthService {
+  	login(usuario: Usuario): Observable<any> {
+    	const urlEndpoint = URL_BACKEND+'/oauth/token';
+    		}	
+    	}
+	
+// D:\software\udemy\spring5\angular\clientes-app\src\app\clientes\clientes.component.ts
+import { URL_BACKEND } from '../config/config';
+	export class ClientesComponent implements OnInit {
+  	urlBackend:string=URL_BACKEND;
+	}
+	
+// D:\software\udemy\spring5\angular\clientes-app\src\app\clientes\clientes.component.html	
+<!-- src="http://localhost:8080/api/uploads/img/{{cliente.foto}}" alt="{{cliente.foto}}" class="img-thumbnail rounded" -->
+src="{{urlBackend}}/api/uploads/img/{{cliente.foto}}" alt="{{cliente.foto}}" class="img-thumbnail rounded"
+
+<!-- src="http://localhost:8080/images/no-usuario.png" alt="Sin Foto" class="img-thumbnail rounded" -->
+src="{{urlBackend}}/images/no-usuario.png" alt="Sin Foto" class="img-thumbnail rounded"
+```
+
+
 _CONSOLE NAVEGADOR_ 
 ===================
 ```javascript
