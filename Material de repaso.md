@@ -683,14 +683,35 @@ src="{{urlBackend}}/api/uploads/img/{{cliente.foto}}" alt="{{cliente.foto}}" cla
 
 <!-- src="http://localhost:8080/images/no-usuario.png" alt="Sin Foto" class="img-thumbnail rounded" -->
 src="{{urlBackend}}/images/no-usuario.png" alt="Sin Foto" class="img-thumbnail rounded"
+
+```cmd
+ng build --prod
+# tener la carpeta generada DIST => PUBLIC (todo contenido)
+# ubicarse dentro de la carpeta DIST. 
+npm install -g firebase-tools
+firebase login
+firebase init
+#selecionamos con la FLECHA del teclado hacia abajo:  
+# (*) Hosting: Configure and deploy Firebase Hosting sites
+# que no sebreescriban nuestro index.html si no remplaarlo manualmente, si en caso nos omita ese paso. 
+# creamos proyecto en https://console.firebase.google.com 
+firebase use --add
+# seleccionamos el proyecto creado en https://console.firebase.google.com/project/clientes-app-angular-test/overview
+# escribmos un alias: clientes-app
+firebase deploy
+LOG: 
+```cmd
+
+   1 Set-Location -literalPath 'D:\software\udemy\spring5\angular\clientes-app'
+   2 npm install -g firebase-tools
+   3 firebase login
+   4 cd .\dist\
+   5 dir
+   6 firebase init
+   7 firebase use --add
+   8 firebase deploy
 ```
-- en el cmd => ejecuta => ng build --prod
-- "remove project folder" y abrir "open folder" la carpeta dist
-- npm install -g firebase-tools
-- firebase login
-- firebase init
-- selecionamos con la FLECHA del teclado hacia abajo:  (*) Hosting: Configure and deploy Firebase Hosting sites => clic en la tecla SPACE => luego ENTER
-- luego seleccionamos (*) create a new project => ENTER =>
+
 ```bat
 PS D:\software\udemy\spring5\angular\clientes-app> npm install -g firebase-tools
 C:\Users\dperez\AppData\Roaming\npm\firebase -> C:\Users\dperez\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js
@@ -709,6 +730,18 @@ Waiting for authentication...
 
 +  Success! Logged in as dperezg2017@gmail.com
 PS D:\software\udemy\spring5\angular\clientes-app> cd .\dist\
+PS D:\software\udemy\spring5\angular\clientes-app\dist> dir
+
+
+    Directorio: D:\software\udemy\spring5\angular\clientes-app\dist
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        5/06/2019     00:31                node_modules
+d-----        5/06/2019     21:47                public
+
+
 PS D:\software\udemy\spring5\angular\clientes-app\dist> firebase init
 
      ######## #### ########  ######## ########     ###     ######  ########
@@ -751,7 +784,29 @@ i  Writing gitignore file to .gitignore...
 
 Project creation is only available from the Firebase Console
 Please visit https://console.firebase.google.com to create a new project, then run firebase use --add
-PS D:\software\udemy\spring5\angular\clientes-app\dist>
+PS D:\software\udemy\spring5\angular\clientes-app\dist> firebase use --add
+? Which project do you want to add? clientes-app-angular-7d250
+? What alias do you want to use for this project? (e.g. staging) clientes-app
+
+Created alias clientes-app for clientes-app-angular-7d250.
+Now using alias clientes-app (clientes-app-angular-7d250)
+PS D:\software\udemy\spring5\angular\clientes-app\dist> firebase deploy
+
+=== Deploying to 'clientes-app-angular-7d250'...
+
+i  deploying hosting
+i  hosting[clientes-app-angular-7d250]: beginning deploy...
+i  hosting[clientes-app-angular-7d250]: found 13 files in public
++  hosting[clientes-app-angular-7d250]: file upload complete
+i  hosting[clientes-app-angular-7d250]: finalizing version...
++  hosting[clientes-app-angular-7d250]: version finalized
+i  hosting[clientes-app-angular-7d250]: releasing new version...
++  hosting[clientes-app-angular-7d250]: release complete
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/clientes-app-angular-7d250/overview
+Hosting URL: https://clientes-app-angular-7d250.firebaseapp.com
 ```
 _CONSOLE NAVEGADOR_ 
 ===================
