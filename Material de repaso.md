@@ -1,8 +1,8 @@
 _Angular 7 - Jhipster
 ====================
-######para tener un gestor de dependencias:###### npm install -g yarn
-######para agregar yeoman con yarn:###### yarn global add yo
-######para agregar el generadot jhipster de yeoman:###### yarn global add generator-jhipster
+###### para tener un gestor de dependencias:###### npm install -g yarn
+###### para agregar yeoman con yarn:  yarn global add yo
+###### para agregar el generadot jhipster de yeoman:###### yarn global add generator-jhipster
 
 _Angular 7 - Spring_
 ====================
