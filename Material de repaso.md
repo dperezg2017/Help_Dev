@@ -5,7 +5,7 @@ _Angular 7 - Jhipster
 - Para agregar yeoman con yarn:  yarn global add yo
 - Para agregar el generadot jhipster de yeoman: yarn global add generator-jhipster
 - instalar con el NODEjs: npm install -g generator-jhipster => jhipster => configuracion => yarn start
-- para iniciar la app configurada en jhipster: yarn start
+- para iniciar la app configurada en jhipster: yarn start ==> ./mvnw => credenciales: admin - admin
 
 _Angular 7 - Spring_
 ====================
