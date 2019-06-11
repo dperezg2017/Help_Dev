@@ -1,11 +1,16 @@
 _Angular 7 - Jhipster
 ====================
-
 - Para tener un gestor de dependencias: npm install -g yarn -> yarn global add yo -> yarn global add generator-jhipster
-- Para agregar yeoman con yarn:  yarn global add yo
+- Para agregar yeoman con yarn: yarn global add yo
 - Para agregar el generadot jhipster de yeoman: yarn global add generator-jhipster
-- instalar con el NODEjs: npm install -g generator-jhipster => jhipster => configuracion => yarn start
-- para iniciar la app configurada en jhipster: yarn start => ./mvnw => credenciales: admin - admin
+
+- instalar con el NODEjs: npm install -g generator-jhipster => jhipster => configuracion monolitica
+- para iniciar la app configurada en jhipster:  ./mvnw => credenciales: admin - admin
+###### microservicios
+- crear las carpetas: "REGISTRY" , "GATEWAY", "MICROSERVICIOS"
+- dentro de la carpeta REGISTRY: git clone https://github.com/jhipster/jhipster-registry.git => entramos(cd jhipster-registry)  y verificamos ultima version => git pull => mvn install => npm install => ./mvnw
+- dentro de la carpeta MICROSERVICIO: => jhipster => configuracion (APP Microservicio) => jhipster entity Autor => (configuracion) =>  jhipster entity Libro =>(configuracion) => mvn install => ./mvnw
+
 
 _Angular 7 - Spring_
 ====================
