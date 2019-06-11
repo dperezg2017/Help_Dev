@@ -10,6 +10,7 @@ _Angular 7 - Jhipster
 - crear las carpetas: "REGISTRY" , "GATEWAY", "MICROSERVICIOS"
 - dentro de la carpeta REGISTRY: git clone https://github.com/jhipster/jhipster-registry.git => entramos(cd jhipster-registry)  y verificamos ultima version => git pull => mvn install => npm install => ./mvnw
 - dentro de la carpeta MICROSERVICIO: => jhipster => configuracion (APP Microservicio) => jhipster entity Autor => (configuracion) =>  jhipster entity Libro =>(configuracion) => mvn install => ./mvnw
+- dentro de la carpeta GATEWAY: => jhipster => configuracion(gateway) => modificar (package.json) puerto 9060 -> 9061 => modificar (webpack.dev.js) puerto 9000 -> 9001 => mvn install => npm install => ./mvnw
 
 
 _Angular 7 - Spring_
