@@ -964,4 +964,9 @@ let payload = token.split(".")[1]
 window.atob(payload) // decode base64
 JSON.parse(window.atob(payload)) // parsear a obj JSON
 ```
+_BEYOND COMPARE_ 
+===================
+- ruta que desees: Beyond Compare v3.0 : sftp://user:password@ipadress//opt/jboss7/standalone/deployments
+- ruta home/user: Beyond Compare v3.0 : sftp://user:password@ipadress/opt/jboss7/standalone/deployments
+===================
 ##### Observaciones
