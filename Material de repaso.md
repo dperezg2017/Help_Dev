@@ -972,10 +972,10 @@ _BEYOND COMPARE_
 ##### Observaciones
 _IREPORT_ 
 ===================
-Modificar el archivo: 
-C:\Program Files (x86)\Jaspersoft\iReport-5.5.0\etc\ireport.conf
-#jdkhome="/path/to/jdk"
-jdkhome="C:\Program Files\Java\jdk1.7.0_79"
+####### Modificar el archivo: 
+- C:\Program Files (x86)\Jaspersoft\iReport-5.5.0\etc\ireport.conf
+- #jdkhome="/path/to/jdk"
+- jdkhome="C:\Program Files\Java\jdk1.7.0_79"
 _Balsamiq Mockup_ 
 ===================
 Organization name: leexij@gmail.com 
