@@ -980,3 +980,9 @@ _Balsamiq Mockup_
 ===================
 Organization name: leexij@gmail.com 
 Serial Key: eNrzzU/OLi0odswsqslJTa3IzHJIz03MzNFLzs+tMTQyNrcwsTQyAIEa5xpDAIFxDy8k
+
+_IMAC_ 
+===================
+```mac
+- Reiniciar audio: `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
+```
