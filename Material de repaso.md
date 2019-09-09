@@ -172,6 +172,10 @@ caracter multilinea:  `  `   //*para template:  `  `
 - npm install --save moment
 
 ###### Comenzando Angular7 ###### 
+- ng lint //*Verifica el estandard de programacion en angular
+- ng e2e //*pruebas de punta a punta
+- ng test //* abre nuevo puerto para hacer test, con cierta clase usando jasmine y karma
+- ng build //*compila
 - ng new clientes-app  		// *creando un proyecto angular*
 - ng serve -o   		// *levantamos el proyecto*
 - ng g service cliente  	// *creando un servicio
