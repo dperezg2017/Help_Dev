@@ -196,9 +196,34 @@ caracter multilinea:  `  `   //*para template:  `  `
 ```xml
 return this.http.get<Cliente[]>(this.urlEndPoint);
 ```
+###### Angular / Material 
+version 8 angular. 
+
+npm install --save @angular/material @angular/cdk @angular/animations
+importa eb styles.css : 
+```xml
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body { 
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.basic-container {
+  padding: 30px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+```
+
 ###### Opcionales
 - Desde la versión 6 y 7 de angular se pasó a llamar angular.json, pero en versiones anteriores de angular se llamaba angular.cli.json
 - Binding: Poblar y enlazar
+
 
 ### BACKEND ### 
 Envia URI Http al servidor. 
