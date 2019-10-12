@@ -249,6 +249,9 @@ Envia URI Http al servidor.
 @SpringBootConfiguration : configuracion automatica, application.properties.
 @EnableAutoConfiguration : habilitar la configuracion.
 @ComponentScan	   	 : busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
+@Service: si tengo 2 servicio o mas, y ambos referencio a 1, springboot no va saber cual tomar, para ello colocamos debajo de la anotacion @Primary, o en el llamado con el objeto colocar: 
+agregar al @service => @Service("serviceFeign"), y en objeto que llama desde el rest agregar la anotacion 	@Qualifier("serviceFeign")
+
 @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL): relacion de * a * y crea la tabla de la relacion, y cascade para que realice todo lo que con lleva auna funcion GUARDAR(guarda informacion, fotos si es que tenia, etc.)
 @ManyToOne(fetch=FetchType.LAZY) : LAzy, solo realizara la carga, cuando se le llame con el GET generado, y genera un proxy con la variable, para ello se puede omitir con @JsonIgnoreProperties({"hibernateLazyInitializer","handler"}), asi solo hara caso a las variables que estan en la clase entity.
 y si se tiene problemas de recursividad, agregar lo siguiente: 
@@ -277,6 +280,9 @@ y si se tiene problemas de recursividad, agregar lo siguiente:
 @Valid: validador, que respete segun el Entity @size @notNull @notEmpty @Email
 @RequestBody: cuando se manda una entindad Cliente cliente. ó Person persona, viaja los datos de esa persona.
 @EnableGlobalMethodSecurity(securedEnabled=true): Habilitar globalmente, para validar roles con anotaciones. y poner encima de cada Servicio rest @Secured({"ROLE_ADMIN","ROLE_USER"})
+@EnableFeignClients: inyectar dependencias de Spring Feign, para clase Main. 
+@FeignClient: se usa al activar la anotacion anterior, para conectarse a un microservicio, se usa: 
+@FeignClient(name = "servicio-productos",url = "localhost:8001") el nombre se extrae del .properties del microservicios "spring.application.name=servicio-productos"
 
 ```
 ## JUnit - Mockito: 
