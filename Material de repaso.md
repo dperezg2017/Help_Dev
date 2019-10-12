@@ -1,3 +1,8 @@
+_Microservicios
+====================
+
+
+
 _Angular 7 - Jhipster
 ====================
 - Para tener un gestor de dependencias: npm install -g yarn -> yarn global add yo -> yarn global add generator-jhipster
@@ -240,6 +245,7 @@ Envia URI Http al servidor.
 ## Anotaciones: 
 ```java
 @Bean: se le asigna, a metodos que retorna otro metodo (return new BCryptPasswordEncoder()), y despues en otra clase solo se le asigna la anotacion @Autowired, si en caso hay varios @Bean("authenticationManager"), indicar @Qualifier("authenticationManager") para apuntar al correcto
+@Configuration: permite crear componentes como  RestTemplate que se guarda en @Bean.
 @SpringBootConfiguration : configuracion automatica, application.properties.
 @EnableAutoConfiguration : habilitar la configuracion.
 @ComponentScan	   	 : busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
