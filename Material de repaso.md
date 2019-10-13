@@ -287,6 +287,10 @@ y si se tiene problemas de recursividad, agregar lo siguiente:
 @Transient : va para atributos o campo de una entidad, que indica que ese campo no se va mapear, solo nos sirve para visualizar algo para nosotros. si no se va a mapear como en una tabla o una entidad se coloca esta anotacion.
 @Value : sirve para llamar un valor del properties encima de un campo=> @Value("${server.port}")
 @LoadBalanced: para balancear cargas con el objeto RestTemplate
+@EnableCircuitBreaker: en el main de un microservicio, para activar hystrix. 
+@HystrixCommand(fallbackMethod = "metodoAlternativo"): va encima de un metodo, si en caso falle el metodo, ira a un nuevo metodo llamado metodoAlternativo().
+@EnableZuulProxy: activar la anotacion en el main del zuul server
+
 ```
 ## JUnit - Mockito: 
 ```java
