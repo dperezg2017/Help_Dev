@@ -283,7 +283,8 @@ y si se tiene problemas de recursividad, agregar lo siguiente:
 @EnableFeignClients: inyectar dependencias de Spring Feign, para clase Main. 
 @FeignClient: se usa al activar la anotacion anterior, para conectarse a un microservicio, se usa: 
 @FeignClient(name = "servicio-productos",url = "localhost:8001") el nombre se extrae del .properties del microservicios "spring.application.name=servicio-productos"
-
+@RibbonClient(name = "servicio-productos"), en este caso se trabaja con un microservicio, cuando son mas, agregar el plurar en el main. 
+@Transient : va para atributos o campo de una entidad, que indica que ese campo no se va mapear, solo nos sirve para visualizar algo para nosotros. si no se va a mapear como en una tabla o una entidad se coloca esta anotacion.
 ```
 ## JUnit - Mockito: 
 ```java
