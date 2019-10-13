@@ -285,13 +285,15 @@ y si se tiene problemas de recursividad, agregar lo siguiente:
 @FeignClient(name = "servicio-productos",url = "localhost:8001") el nombre se extrae del .properties del microservicios "spring.application.name=servicio-productos"
 @RibbonClient(name = "servicio-productos"), en este caso se trabaja con un microservicio, cuando son mas, agregar el plurar en el main. 
 @Transient : va para atributos o campo de una entidad, que indica que ese campo no se va mapear, solo nos sirve para visualizar algo para nosotros. si no se va a mapear como en una tabla o una entidad se coloca esta anotacion.
+@Value : sirve para llamar un valor del properties encima de un campo=> @Value("${server.port}")
+@LoadBalanced: para balancear cargas con el objeto RestTemplate
 ```
 ## JUnit - Mockito: 
 ```java
 @After/before : Hacer que un evento se ejecute antes o despues de cada evento en X clase.
 @AfterClass/beforeClass : Hacer que un evento se ejecute antes o despues de todos lo eventos de una clase X.
-
-
+@EnableEurekaServer: agregae en el main, que se desea ser servidor eurka. 
+@EnableEurekaClient: agregar en el main del cliente, para que el eureka server reconozca. 
 ```
 ## Properties: 
 ```properties
