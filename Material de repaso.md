@@ -289,15 +289,17 @@ y si se tiene problemas de recursividad, agregar lo siguiente:
 @LoadBalanced: para balancear cargas con el objeto RestTemplate
 @EnableCircuitBreaker: en el main de un microservicio, para activar hystrix. 
 @HystrixCommand(fallbackMethod = "metodoAlternativo"): va encima de un metodo, si en caso falle el metodo, ira a un nuevo metodo llamado metodoAlternativo().
+@EnableEurekaServer: agregae en el main, que se desea ser servidor eurka. 
+@EnableEurekaClient: agregar en el main del cliente, para que el eureka server reconozca. 
 @EnableZuulProxy: activar la anotacion en el main del zuul server
-
+@EnableConfigServer: en el main para el componente config server. agregar en el properties el parametro, en caso esta en local:
+en window -> spring.cloud.config.server.git.uri=file:///C:/Users/dperez/desktop/config
+en mac o linux -> spring.cloud.config.server.git.uri=file://Users/deyvisperez/deyvizperez/udemy/microservicios-springboot-springcloud-netflix-eureka/config
 ```
 ## JUnit - Mockito: 
 ```java
 @After/before : Hacer que un evento se ejecute antes o despues de cada evento en X clase.
 @AfterClass/beforeClass : Hacer que un evento se ejecute antes o despues de todos lo eventos de una clase X.
-@EnableEurekaServer: agregae en el main, que se desea ser servidor eurka. 
-@EnableEurekaClient: agregar en el main del cliente, para que el eureka server reconozca. 
 ```
 ## Properties: 
 ```properties
@@ -623,7 +625,7 @@ git init
 git add *
 git status 
 git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
-git remote add origin https://github.com/dperezg2017/Help_Dev.git
+git remote add origin https://github.com/dperezg2017/config.git
 git push -u origin master
 ```
 ###### Subir cambios de Proyecto : 
@@ -1033,4 +1035,6 @@ _IMAC_
 ===================
 ```mac
 - Reiniciar audio: `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
+- ver carpetas ocultas: defaults write com.apple.finder AppleShowAllFiles -bool YES && killall Finder
+- 
 ```
