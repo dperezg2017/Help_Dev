@@ -295,6 +295,7 @@ y si se tiene problemas de recursividad, agregar lo siguiente:
 @EnableConfigServer: en el main para el componente config server. agregar en el properties el parametro, en caso esta en local:
 en window -> spring.cloud.config.server.git.uri=file:///C:/Users/dperez/desktop/config
 en mac o linux -> spring.cloud.config.server.git.uri=file://Users/deyvisperez/deyvizperez/udemy/microservicios-springboot-springcloud-netflix-eureka/config
+@RefreshScope : permite refrescar, volver a inyectar, aplicable en un controller encima de la clase. 
 ```
 ## JUnit - Mockito: 
 ```java
