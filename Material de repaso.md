@@ -297,6 +297,7 @@ en window -> spring.cloud.config.server.git.uri=file:///C:/Users/dperez/desktop/
 en mac o linux -> spring.cloud.config.server.git.uri=file://Users/deyvisperez/deyvizperez/udemy/microservicios-springboot-springcloud-netflix-eureka/config
 @RefreshScope : permite refrescar, volver a inyectar, aplicable en un controller encima de la clase. 
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class}): se excluye la conexion a bd, Se hace dentro de una clase main, de un proyecto commons, que solo sera usado como dependencia.
+@EntityScan({"com.formacionbdi.springboot.app.commons.models.entity"}) // clase main, para detectar y reconocer, se separa con comas(,)
 ```
 ## JUnit - Mockito: 
 ```java
