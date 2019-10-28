@@ -298,7 +298,14 @@ en mac o linux -> spring.cloud.config.server.git.uri=file://Users/deyvisperez/de
 @RefreshScope : permite refrescar, volver a inyectar, aplicable en un controller encima de la clase. 
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class}): se excluye la conexion a bd, Se hace dentro de una clase main, de un proyecto commons, que solo sera usado como dependencia.
 @EntityScan({"com.formacionbdi.springboot.app.commons.models.entity"}) // clase main, para detectar y reconocer, se separa con comas(,)
+@RepositoryRestResource(path = "usuarios") // donde se va exportar el crudrepository, va en una interface 
+@RestResource(path = "buscar-username")public Usuario findByUsername(@Param("nombre") String username) // para interface usarlo en ejemplo: http://localhost:8090/api/usuarios/usuarios/search/buscar-username?nombre=admin y ya no: http://localhost:8090/api/usuarios/usuarios/search/findByUsername?username=admin
+
+
 ```
+
+
+
 ## JUnit - Mockito: 
 ```java
 @After/before : Hacer que un evento se ejecute antes o despues de cada evento en X clase.
