@@ -1,0 +1,73 @@
+================================================================================================
+COMPILAR en TYPESCRIPT: 
+================================================================================================
+ruta> tsc app   // compila el .JS
+ruta> tsc app -w  // mantiene enscendido y compila cada momento que vee cambios. 
+ruta>  tsc -init  // proceso que crea el archivo tsconfig.json
+ruta> tsc //
+ruta>npm install systemjs  // installar el node_modules
+ruta>tsc --experimentalDecorators //debido a que sale error al compilar con anotacion como ejemplo @consola o ir al archivo "tsconfig.json" y colocar  "experimentalDecorators": true   
+================================================================================================
+Instalar proyecto Angular  Y  ANGULA CLI
+================================================================================================
+ruta NODEJS> npm install -g @angular/cli
+ruta NODEJS> ng new my-dream.app
+ruta NODEJS> cd my-dream-app
+ruta NODEJS> ng server
+
+ruta CMD> ng new miApp   =>   (Y/N) >N ..
+================================================================================================
+Comandos A iniciar con angular
+================================================================================================
+rutaMiApp> ng serve -o  // agregar -p 8080 si deseo agregarle otro puerto, default:4200
+rutaMiApp> npm install // para recuperar la carpeta "node_modules"
+
+rutamiApp> ng g c components/footers   // g=generate c=components 
+================================================================================================
+Instalando Bootstrap
+================================================================================================
+rutaProyecto> npm install bootstrap --save// instalar bootstrap  agregar en el angular.json   "node_modules/bootstrap/dist/css/bootstrap.min.css"
+rutaProyecto> npm install popper.js --save // 
+rutaProyecto> npm installa JQuery
+Codigo de angular.json: //para descargar boostrap
+            "styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+                "node_modules/jquery/dist/jquery.slim.min.js",
+                "node_modules/popper.js/dist/umd/popper.min.js",
+                "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+			
+==================================================================
+MICROSERVICIOS "SPRING CLOUD"
+==================================================================
+Escala Dinamica UP y Down:
+Servidor de nombres (Eureka)
+Ribbon (Equilibrio de carga lateral del cliente)
+Feign (clientes REST más fáciles)
+Monitoreo:
+Rastreo Zipkin Distribuido
+Netflix AP Gateway
+Fallos: 
+Hystrix
+
+https://github.com/in28minutes/spring-microservices/tree/master/03.microservices/
+
+
+ruta repositorio(carpeta creada)> git init   // creamos repositorio git
+ruta repositorio(carpeta creada)> git add -A  // agregamos el cambio
+ruta repositorio(carpeta creada)> git commit -m "Primer commit en Git" // Hacemos commit y agregamos un comentario.
+ruta repositorio(carpeta creada)> git status   // vemos lo archivos que se comitearan y estado
+
+==================================================================
+COMANDOS GIT PARA SUBIR PROYECTO
+==================================================================
+ruta proyecto a subir> git init
+ruta proyecto a subir> git add *
+ruta proyecto a subir> git status
+ruta proyecto a subir> git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
+ruta proyecto a subir> git remote add origin link@que_te_da_giyhub_para_subir.git 
+ruta proyecto a subir> git push -u origin master
+ejemplo.
