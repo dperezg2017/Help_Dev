@@ -204,10 +204,8 @@ body {
   float: right;
 }
 ```
-
 ## BACKEND
 Verbos cuando se implementa servicios
-
 |     Verbos       |     URI          |   Action o Handler  |
 | ------------- | ------------- | ------------- |
 |GET| /clientes|index()|
@@ -217,7 +215,7 @@ Verbos cuando se implementa servicios
 |GET| /clientes/{id}/edit|edit()|
 |PUT| /clientes/{id}|update()|
 |DELETE| /clientes/{id}|destroy()|
-#### Anotaciones:
+### Anotaciones:
 ```java
 @Bean: se le asigna, a metodos que retorna otro metodo (return new BCryptPasswordEncoder()), y despues en otra clase solo se le asigna la anotacion @Autowired, si en caso hay varios @Bean("authenticationManager"), indicar @Qualifier("authenticationManager") para apuntar al correcto.
 @Configuration permite crear componentes como  RestTemplate que se guarda en @Bean.
@@ -246,7 +244,7 @@ y si se tiene problemas de recursividad, agregar lo siguiente:
 @Service: es un estereotipo de @Component
 @CrossOrigin(origins= {"http://localhost:4200"}) : **Se agrega en el controlador, para permitir manejo de datos con el siguiente dominio. 
 @PrePersist: en la clase @Entity, se le pone el @PrePersist al metodo que va generar un valor, para una @Column
-**@ResponseStatus:@ResponseStatus(HttpStatus.CREATED), si todo sale bien, nos muestra code:201 de creado, entre otros como .CREATE , .OK ,etc. 
+@ResponseStatus:@ResponseStatus(HttpStatus.CREATED), si todo sale bien, nos muestra code:201 de creado, entre otros como .CREATE , .OK ,etc. 
 @PostMapping: para realizar update, create.
 @GetMapping: consultar, selects.
 @RequestParam: Archivo(multiparam)
@@ -275,16 +273,14 @@ en mac o linux -> spring.cloud.config.server.git.uri=file://Users/deyvisperez/de
 @RepositoryRestResource(path = "usuarios") : donde se va exportar el crudrepository, va en una interface 
 @RestResource(path = "buscar-username")
 public Usuario findByUsername(@Param("nombre") String username) : para interface usarlo en ejemplo: http://localhost:8090/api/usuarios/usuarios/search/buscar-username?nombre=admin y ya no: http://localhost:8090/api/usuarios/usuarios/search/findByUsername?username=admin
-**@EnableAuthorizationServer: **para implementar roles, usuarios, token con spring security. asignar en el main
-
-
-
-## JUnit - Mockito: 
+@EnableAuthorizationServer: para implementar roles, usuarios, token con spring security. asignar en el main
+```
+### JUnit - Mockito: 
 ```java
 @After/before : Hacer que un evento se ejecute antes o despues de cada evento en X clase.
 @AfterClass/beforeClass : Hacer que un evento se ejecute antes o despues de todos lo eventos de una clase X.
 ```
-## Properties: 
+### Properties: 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost/db_springboot_backend?useSSL=false
 spring.datasource.username=root
@@ -300,21 +296,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
 - none		: no hace nada, asume que tiene las tablas creadas.
 - update	: crea todo el sistema lka primera vez, luego va actualizando
 ```
-Opcionales:
-- Doc JPA: *Core Concepts*
-https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
-- cors: intercambio de recursos de origen curzados, intercambiar datos, flujos, string, archivos, dominio, hoja de estilos ,css, cualquier tipo de recursos, de un dominio a otro. contro lde acceso Http, para acceder a ciertos recurdo backend. serviciso que estan alojado en otro dominio. ya es un estandar para compartir entre diferentes dominios.
-```
-1) Prefligth request. 
-- Se envia un GET, para ver que tipo de permisos tiene mi dominio.
-2) Prefligth response
-- Le devuelve que tipo de permisos tiene
-3) Request 
-- se envia el recurso que necesita, y valida si tiene permiso apra obtener ese recurso de mi dominio.
-4) Response
-- Devuelve la repsuesta, si es un Rest o un archivo,video,etc. 
-```
-## Informacion
+### Informacion
 - Path:  window: "C://Temp//uploads" Linux: "\opt\uploads"
 - Si se trabaja con JDK9 ó JDK10, y se va usar Auth2, debe añadir JAXB API: 
 ```xml
@@ -394,26 +376,7 @@ jiD7bew1AmT4knECMEyYI0dJOKm9X5jqVc+zrqTspTIB/o5m8SAfSryDOSkS+R/N
     }
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-_Docker_ :pensive:
-========
+## Docker_ :pensive:
 https://onedrive.live.com/?authkey=%21ANAqKS_syP3u2Os&id=2F5823B4594339C3%2116706&cid=2F5823B4594339C3 - virtual ubuntu con docker
 user: docker   clave: lepanto | sudo: docker   clave: lepanto | 
 #### Arrancar Docker: 
