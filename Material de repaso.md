@@ -1,13 +1,21 @@
 
+
 ## Tabla de contenido
 
 - [JHIPSTER](#JHIPSTER).
 - [ANGULAR v7](#ANGULAR-v7).
 - [BACKEND](#BACKEND).
 - [Auth2 - generar RSA256](#Auth2---generar-RSA256).
-- [Insertar enlaces](#insertar-enlaces).
 - [Docker](#Docker_-:pensive:).
 - [Microservicios - _SpringBoot_ :sunglasses:](#Microservicios---_SpringBoot_-:sunglasses:).
+- [GIT HUB](#GIT-HUB---(deben-estar-en-la-ruta-del-proyecto)).
+- [RabbitMQ](#RabbitMQ).
+- [Angular v6](#Angular-v6).
+- [REGEX](#REGEX).
+- [WINDOW](#WINDOW).
+- [CONSOLE NAVEGADO](#CONSOLE-NAVEGADO).
+- [BEYOND COMPARE](#BEYOND-COMPARE).
+- [IREPORT](#IREPORT).
 
 
 ## JHIPSTER
