@@ -295,6 +295,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
 - create-drop   : se crea cuando se levanta la App, si se baja,se elimina.
 - none		: no hace nada, asume que tiene las tablas creadas.
 - update	: crea todo el sistema lka primera vez, luego va actualizando
+-Dserver.port=8001 
 ```
 ### Informacion
 - Path:  window: "C://Temp//uploads" Linux: "\opt\uploads"
@@ -567,49 +568,41 @@ Explicacion: Si no se agrega la linea:  @HystrixCommand(fallbackMethod="fallback
 ## GIT HUB - (deben estar en la ruta del proyecto)
 
 **Subir Proyecto de cero:**
-```git
-git init
-git add *
-git status 
-git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
-git remote add origin https://github.com/dperezg2017/config.git
-git push -u origin master
-```
-###### Subir cambios de Proyecto : 
-```git
-- git add *
-- git status 
-- git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'
-- git push
-```
-###### Actualizar Proyecto:
-```git
-- git pull
-```
-###### Descargar proyecto de gitHub:
-```git
-- git clone https://github.com/dperezg2017/Help_Dev.git
-```
 
-VM _Argumentos_ 
-===============
--Dserver.port=8001 
+ - `$ git init`
+ - `$ git add *`
+ - `$ git status `
+ - `$ git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'` 
+ - `$ git remote add origin https://github.com/dperezg2017/config.git`
+ - `$ git push -u origin master`
 
-RabbitMQ _Colas_ 
-================
+**Subir cambios de Proyecto :**
+ - `$ git add *`
+ - `$ git status `
+ - `$ git commit -m 'Subo la estructura del proyecto al repositorio de GitHub'`
+ - `$ git push`
+
+**Actualizar Proyecto:**
+ - `$ git pull`
+
+** Descargar proyecto de gitHub:**
+ - `$ git clone https://github.com/dperezg2017/Help_Dev.git`
+
+## RabbitMQ 
  - Instalar RabbitMQ
  - Instalar 1: http://www.erlang.org/downloads
  - Instalar 2: https://www.rabbitmq.com/install-windows.html
  - Video: https://www.youtube.com/watch?v=gKzKUmtOwR4
-
-
-###### paso1: https://zipkin.io/pages/quickstart.html  
-###### paso2: click ultima version para descargar "zipkin-server-2.12.0-exec.jar" ,varia la version
-###### paso3: abrir el CMD, ubicarte donde se encuentra el .Jar y escribir lo siguiente:
+ - 
+1. paso [1]: https://zipkin.io/pages/quickstart.html  
+2. paso [2]:  click ultima version para descargar "zipkin-server-2.12.0-exec.jar" ,varia la versión
+3. paso [3]:  abrir el CMD, ubicarte donde se encuentra el .Jar y escribir lo siguiente:
  - set RABBIT_URI=amqp://localhost
  - java -jar zipkin-server-2.12.0-exec.jar
-###### paso4: ingresar: http://localhost:9411/zipkin/   
-##### Recomendacion: Para ver que los servicios esten en el zipkin, debera agregar las dependencias:
+4. paso [4]: ingresar: http://localhost:9411/zipkin/   
+
+**Recomendacion:**
+Para ver que los servicios estén en el zipkin, debera agregar las dependencias:
 ```xml
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -620,27 +613,27 @@ RabbitMQ _Colas_
 			<artifactId>spring-rabbit</artifactId>
 		</dependency>
 ```
-##### Opcionales:
+** Opcionales:**
 Para ver la interfaz: 
-###### Paso1: en el CMD, escribir => rabbitmq-plugins enable rabbitmq_management
-###### Paso2: ir a = > http://localhost:15672/#/queues
-###### Paso3: registrarse con usuario y clave => guest
+1. paso [1]: en el CMD, escribir => rabbitmq-plugins enable rabbitmq_management
+2. paso [2]: ir a = > http://localhost:15672/#/queues
+3. paso [3]: registrarse con usuario y clave => guest
 
 ### Rabbit Simulador  - http://tryrabbitmq.com/?queue_id=cola2&queue_name=cola3
 
 Se realizaron las pruebas para ver la diferencia de Exchange: topic,fanout,direct 
-##### direct: tienes que enviarle exactamente como se llame el "routing key" para que pueda pasar por dicha cola. 
+**direct:** tienes que enviarle exactamente como se llame el "routing key" para que pueda pasar por dicha cola. 
 	example: Binding1 { "routing key": orange }    Binding2 { "routing key": orange.big }
 		 Producer {"routing key": orange }
-##### fanout: ovbia el nombre de los "routing key". igual se lleva enviar los mensaje a los consumers
+**fanout:** ovbia el nombre de los "routing key". igual se lleva enviar los mensaje a los consumers
 	example: Binding1 { "routing key": orange }    Binding2 { "routing key": orange.big }
 		 Producer {"routing key":  }
-##### topic: tiene el #: remplasa 0 o letras, *:remplaza letras, en el ejemplo pasa por los dos binding: une el exchange con la cola. es lo diferente al topic.
+**topic:** tiene el #: remplasa 0 o letras, *:remplaza letras, en el ejemplo pasa por los dos binding: une el exchange con la cola. es lo diferente al topic.
 	example: Binding1 { "routing key": orange.* }    Binding2 { "routing key": orange.big }
 		 Producer {"routing key": orange.big }		 
 
-Angular _version6_ 
-==================
+## Angular v6
+
 http://www.tic2.org/WebTecnica/Programas/SOperativos/Linux/Comandos/LinuxComandosEquivalencias.htm
 
 - Instalar NodeJS
