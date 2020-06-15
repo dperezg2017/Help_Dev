@@ -2,21 +2,21 @@
 
 ## Tabla de contenido
 
-- [JHIPSTER](#JHIPSTER).
-- [ANGULAR v7](#ANGULAR-v7).
-- [BACKEND](#BACKEND).
-- [Auth2 - generar RSA256](#Auth2---generar-RSA256).
-- [Docker_ :pensive:](#Docker_-:pensive:).
-- [Microservicios - _SpringBoot_ :sunglasses:](#Microservicios---_SpringBoot_-:sunglasses:).
-- [GIT HUB](#GIT-HUB---(deben-estar-en-la-ruta-del-proyecto)).
+- [JHipster](#JHIPSTER).
+- [Angular version 7](#ANGULAR-v7).
+- [Backend](#BACKEND).
+- [Auth2 con RSA256](#AUTH2-con-RSA256).
+- [Docker](#DOCKER).
+- [Microservicios con SpringBoot](#MICROSERVICIOS-CON-SPRINGBOOT).
+- [GitHub](# GIT-HUB).
 - [RabbitMQ](#RabbitMQ).
-- [Angular v6](#Angular-v6).
-- [REGEX](#REGEX).
-- [WINDOW](#WINDOW).
-- [CONSOLE NAVEGADO](#CONSOLE-NAVEGADO).
-- [BEYOND COMPARE](#BEYOND-COMPARE).
-- [IREPORT](#IREPORT).
-
+- [Angular version 6](#Angular-v6).
+- [Regiones Expresionales](#REGEX).
+- [Window](#WINDOW).
+- [Console de Navegador](#CONSOLE-DE-NAVEGADOR).
+- [Beyond Compare](#BEYOND-COMPARE).
+- [IReport](#IREPORT).
+- [IMAC](#IMAC).
 
 ## JHIPSTER
 #### instalacion Jhipster
@@ -328,7 +328,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
     <artifactId>jaxb-runtime</artifactId>
 </dependency>
 ```
-## Auth2 - generar RSA256 
+## AUTH2 con RSA256 
 - https://jwt.io/
 - Se usa https://wiki.openssl.org/index.php/Binaries ó java JDK(OpenSSH): se encuentra codigos para certificado RSA para firmar Token JWT. elegimos para window: Win64 OpenSSL v1.1.0j.
 - Pasos para generar firma RSA, despues de la descarga: 
@@ -395,7 +395,7 @@ jiD7bew1AmT4knECMEyYI0dJOKm9X5jqVc+zrqTspTIB/o5m8SAfSryDOSkS+R/N
     }
 }
 ```
-## Docker_ :pensive:
+## DOCKER
 https://onedrive.live.com/?authkey=%21ANAqKS_syP3u2Os&id=2F5823B4594339C3%2116706&cid=2F5823B4594339C3 - virtual ubuntu con docker
 user: docker   clave: lepanto | sudo: docker   clave: lepanto | 
 **comando para arrancar docker: **
@@ -504,7 +504,7 @@ utilitarios:
 
 
 
-## Microservicios - _SpringBoot_ :sunglasses: 
+## MICROSERVICIOS CON SPRINGBOOT
 https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spring-micro-services.md
 
 ### Actuator 
@@ -583,7 +583,7 @@ Se debe implementar con MQRabbit -
 **Nota**
 Explicacion: Si no se agrega la linea:  @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration"), se mostrara la excepcion, pero le estamos diciendo, que si ocurre excepcion, vaya al metodo X. para abstener a una excepcion en ejecucion.
 
-## GIT HUB - (deben estar en la ruta del proyecto)
+## GIT HUB
 
 **Subir Proyecto de cero:**
 
@@ -863,7 +863,7 @@ LOG:
    8 firebase deploy
 ```
 
-## CONSOLE NAVEGADOR
+## CONSOLE DE NAVEGADOR
 ```javascript
 https://jwt.io/
 let token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRleXZpenogUGVyZXoiLCJpYXQiOjE1MTYyMzkwMjJ9.Gx5C4R0if1YBcY1jmH_EXM1uINHvl20_6nzQ9_EVypQ"
@@ -885,7 +885,6 @@ _Balsamiq Mockup_
 Organization name: leexij@gmail.com 
 Serial Key: eNrzzU/OLi0odswsqslJTa3IzHJIz03MzNFLzs+tMTQyNrcwsTQyAIEa5xpDAIFxDy8k
 
-_IMAC_ 
-===================
+## IMAC
 - Reiniciar audio: `$ ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
 - ver carpetas ocultas: defaults write com.apple.finder AppleShowAllFiles -bool YES && killall Finder
