@@ -379,109 +379,109 @@ jiD7bew1AmT4knECMEyYI0dJOKm9X5jqVc+zrqTspTIB/o5m8SAfSryDOSkS+R/N
 ## Docker_ :pensive:
 https://onedrive.live.com/?authkey=%21ANAqKS_syP3u2Os&id=2F5823B4594339C3%2116706&cid=2F5823B4594339C3 - virtual ubuntu con docker
 user: docker   clave: lepanto | sudo: docker   clave: lepanto | 
-#### Arrancar Docker: 
-- systemctl status docker 
-- systemctl stop docker 
-- systemctl start docker 
-- systemctl enable docker  // cuando el sistema arranque, lo permita autenticar
-#### CentOs version <= 6
-- service docker status  
-- service docker start
-#### Comando Basicos
-- docker images  // ver las imagenes
-- docker ps  	 // ver los contenedores prendidos
-- docker ps  	 // ver los contenedores prendidos y apagados
-- docker ps -l 	 // ver el ultimo contenedor que se modifico
-- docker ps -n 4 // ver el ultimo 4 contenedor que se modificaron
-- docker ps -a -n 3 -s// ver el ultimo 3 contenedor que se modificaron con la oclumna SIZE(tamaño)
-- docker ps -a -q // mostrar los ID's
-- docker ps -a -f "name=amazing_dirac"  // filtrar por nombre generado
-- docker start -i e57354da7acf // e57354da7acf: es el CONTAINER_ID del contenedor
-- docker run -d nginx  	       // -d: descarga y lo deja corriendo en modo background
-- docker pull ubuntu:trusty    // descarga con la version trusty
-- docker rm  deef7bbf4093      // remover un contenedor por CONTAINER_ID ó NAMES
-- docker rmi -f fce289e99eb9   //Eliminar Imagen  -f: forzar
-- docker run -it --name mi_ubuntu_ctm ubuntu bash   // NAME: mi_ubuntu_ctm, ya no sera aleatorio
-- docker pull python   // descargo python, pro defecto latest la ultima version
-- docker run -it --name mi_python python 	// le pongo un alias y se define com NAME y ya no se genera aleatorio y comienza correr
-- docker exec -it mi_python bash		// ejecutar python con el nombre que le di
-- docker run -d ubuntu sh -c "while true; do date; done"   // subo imagen, como background y comando linux ".."
-- docker logs 206c --tail 5 	// mostrar los ultimo 5 lineas del log 206c: 4primeros digitos del CONTAINER_ID
-- docker kill 206c   // matar un contenedor
-- docker top 0a2  // para ver lso recursos del contenedor, que esta consumiendo mas
-- docker stats // se vee lso recursos que esta consumiendo los contenedores que estan prendidos.
+**comando para arrancar docker: **
+- `$ systemctl status docker` 
+- `$ systemctl stop docker` 
+- `$ systemctl start docker `
+- `$ systemctl enable docker`  // cuando el sistema arranque, lo permita autenticar
+**CentOs version <= 6**
+- `$ service docker status ` 
+- `$ service docker start`
+**comando básicos docker:**
+- `$ docker images`  // ver las imagenes
+- `$ docker ps`  	 // ver los contenedores prendidos
+- `$ docker ps`  	 // ver los contenedores prendidos y apagados
+- `$ docker ps -l `	 // ver el ultimo contenedor que se modifico
+- `$ docker ps -n 4` // ver el ultimo 4 contenedor que se modificaron
+- `$ docker ps -a -n 3 -s`// ver el ultimo 3 contenedor que se modificaron con la oclumna SIZE(tamaño)
+- `$ docker ps -a -q` // mostrar los ID's
+- `$ docker ps -a -f "name=amazing_dirac"`  // filtrar por nombre generado
+- `$ docker start -i e57354da7acf // e57354da7acf`: es el CONTAINER_ID del contenedor
+- `$ docker run -d nginx`  	       // -d: descarga y lo deja corriendo en modo background
+- `$ docker pull ubuntu:trusty `   // descarga con la version trusty
+- `$ docker rm  deef7bbf4093 `     // remover un contenedor por CONTAINER_ID ó NAMES
+- `$ docker rmi -f fce289e99eb9`   //Eliminar Imagen  -f: forzar
+- `$ docker run -it --name mi_ubuntu_ctm ubuntu bash`   // NAME: mi_ubuntu_ctm, ya no sera aleatorio
+- `$ docker pull python`   // descargo python, pro defecto latest la ultima version
+- `$ docker run -it --name mi_python python `	// le pongo un alias y se define com NAME y ya no se genera aleatorio y comienza correr
+- `$ docker exec -it mi_python bash`		// ejecutar python con el nombre que le di
+- `$ docker run -d ubuntu sh -c "while true; do date; done"`   // subo imagen, como background y comando linux ".."
+- `$ docker logs 206c --tail 5` 	// mostrar los ultimo 5 lineas del log 206c: 4primeros digitos del CONTAINER_ID
+- `$ docker kill 206c`   // matar un contenedor
+- `$ docker top 0a2`  // para ver lso recursos del contenedor, que esta consumiendo mas
+- `$ docker stats` // se vee lso recursos que esta consumiendo los contenedores que estan prendidos.
 - while true; do date; done // coamndos linos, para realizar un bucle y asi ver el recurso que consume ese contenedor
-- docker inspect 39ca > container1.txt   // inspect: detalle del contenedor y generar txt en la ruta.
-- docker run -d -P nginx  // lo hacemos publico, por defecto nginx es http://localhost:32768/
-- docker run -d --name nginx2 -p 8080:80 nginx  // le damos nombre al contenedor y mapeamos el puerto http://localhost:8080/
-- docker network // red
-- docker network inspect bridge  // ver detalle de la red "bridge"
-- docker stop nginx2  // parar contenedor activo
-- docker network create red1  // crear red , default:bridge
-- docker network create --subnet=192.168.0.0/16 red2  // crear red, con ip 
-- docker run -it --name ubuntua --network red1 ubuntu   // corro imagen con red que cree
-- docker network connect red2 ubuntua // ubuntua puede trabajar con contenedores de la red1 y la red2
-- docker network disconnect red2 ubuntua  //desconectar a la red
-- docker run -it --rm  --name b1 busybox   // se coloca --rm para que lo elimine el contenedor despues de salir.
-- docker run -it --rm  --name b2 busybox   // se coloca --rm para que lo elimine el contenedor despues de salir.
-- docker run -it --rm --name b3 --link b1:maquina1 busybox  // enlace a la ip de la maquina b1 y le pones un alias y despues de salir del contenedor, que lo remueva.
-- docker rm $(docker ps -a -q)  //borrar todos los contenededores apagados -f: forzar
+- `$ docker inspect 39ca > container1.txt `  // inspect: detalle del contenedor y generar txt en la ruta.
+- `$ docker run -d -P nginx ` // lo hacemos publico, por defecto nginx es http://localhost:32768/
+- `$ docker run -d --name nginx2 -p 8080:80 nginx  `// le damos nombre al contenedor y mapeamos el puerto http://localhost:8080/
+- `$ docker network `// red
+- `$ docker network inspect bridge`  // ver detalle de la red "bridge"
+- `$ docker stop nginx2 ` // parar contenedor activo
+- `$ docker network create red1`  // crear red , default:bridge
+- `$ docker network create --subnet=192.168.0.0/16 red2`  // crear red, con ip 
+- `$ docker run -it --name ubuntua --network red1 ubuntu`   // corro imagen con red que cree
+- `$ docker network connect red2 ubuntu` // ubuntua puede trabajar con contenedores de la red1 y la red2
+- `$ docker network disconnect red2 ubuntu`  //desconectar a la red
+- `$ docker run -it --rm  --name b1 busybox  ` // se coloca --rm para que lo elimine el contenedor despues de salir.
+- `$ docker run -it --rm  --name b2 busybox`   // se coloca --rm para que lo elimine el contenedor despues de salir.
+- `$ docker run -it --rm --name b3 --link b1:maquina1 busybox  /`/ enlace a la ip de la maquina b1 y le pones un alias y despues de salir del contenedor, que lo remueva.
+- `$ docker rm $(docker ps -a -q) ` //borrar todos los contenededores apagados -f: forzar
 ##### docker mySQL
-- docker run -d --name mysql_server --rm --network red1 -e MYSQL_ROOT_PASSWORD=secret mysql  //  -d: modod background, se pasa variable de entorno con valor "secret"
-- docker exec -it mysql_server bash  // inicio el mysqlServer, con el nombre que le coloque "mysql_server"
-- mysql -u root -p  // entrar al servidor y escribir la clave "secret"
+- `$ docker run -d --name mysql_server --rm --network red1 -e MYSQL_ROOT_PASSWORD=secret mysql ` //  -d: modod background, se pasa variable de entorno con valor "secret"
+- `$ docker exec -it mysql_server bash ` // inicio el mysqlServer, con el nombre que le coloque "mysql_server"
+- `$ mysql -u root -p  /`/ entrar al servidor y escribir la clave "secret"
 ###### me conecto de un cliente al servidorMysql
--  docker run -it --name mysql_client --rm --network red1 mysql bash //" "
--  mysql -h mysql_server -u root -p    // poner la clave "secret"
+-  `$ docker run -it --name mysql_client --rm --network red1 mysql bash `//" "
+-  `$ mysql -h mysql_server -u root -p `   // poner la clave "secret"
 ###### conectamos wordpress y mysql
-- docker run -d --name mysql_wp --rm --network red1 -e MYSQL_ROOT_PASSWORD=secret mysql:5.7  //iniciamos mysql , la 5.7 aguanta wordpress
-- docker run -d --name wp --rm --network red1 -e WORDPRESS_DB_HOST=mysql_wp -e WORDPRESS_DB_PASSWORD=secret -p 8080:80 wordpress // corremos wordpress, con los parametros, poniendo los datos del mysql que levantamos. 
-- docker  network rm red1 // no funciona, hay que para los contenedores asociados, viendo "docker network inspect red1"
-- docker stop mysql_wp  // parar el contenedor de mysql, no saldra en "docker ps -a" ya que lo iniciamos con --rm
-- docker stop ws  // parar el contenedor de worpress, no saldra en "docker ps -a" ya que lo iniciamos con --rm
-- docker network rm red1 // ya se puede borrar la red1, ya que paramos los contenededores asociados
+- `$ docker run -d --name mysql_wp --rm --network red1 -e MYSQL_ROOT_PASSWORD=secret mysql:5.7  `//iniciamos mysql , la 5.7 aguanta wordpress
+- `$ docker run -d --name wp --rm --network red1 -e WORDPRESS_DB_HOST=mysql_wp -e WORDPRESS_DB_PASSWORD=secret -p 8080:80 wordpress` // corremos wordpress, con los parametros, poniendo los datos del mysql que levantamos. 
+- `$ docker  network rm red1 `// no funciona, hay que para los contenedores asociados, viendo "docker network inspect red1"
+- `$ docker stop mysql_wp  `// parar el contenedor de mysql, no saldra en "docker ps -a" ya que lo iniciamos con --rm
+- `$ docker stop ws ` // parar el contenedor de worpress, no saldra en "docker ps -a" ya que lo iniciamos con --rm
+- `$ docker network rm red1` // ya se puede borrar la red1, ya que paramos los contenededores asociados
 ###### volumenes
-- docker volume ls  // vemos lso volumenes que tenemos, es para alojar todo lo que se edita o se guarda en el contenedor que se tiene levantado
-- docker volume prune  // borra los volumenes que tenemos en el listado. 
-- docker rm `docker ps -qa`
-- docker volume prune
+- `$ docker volume ls ` // vemos lso volumenes que tenemos, es para alojar todo lo que se edita o se guarda en el contenedor que se tiene levantado
+- `$ docker volume prune`  // borra los volumenes que tenemos en el listado. 
+- `$ docker rm docker ps -qa`
+- `$ docker volume prune`
 ###### volumenes en linux 
-- linux> cd /var/lib/docker/volumes/
-- linux> ls -l
-- linux> docker run -d --rm -p 80:80 --name cloud1 owncloud
-- linux> ls -l
-- linux> #cd
-- linux> ls -l  // hacer cambio en la pagina localhost, y ver nuevamente la lista.
-- linux> docker volume ls // se encunetra levantado, que se hicieron cambios ahi.
-- linux> docker volume inspect 8900e560bd60b64da85cc2700c5d8ec8a670cd05c0dfb4fdfa827e0e99
-fa0eb5 > v1.txt  // el codigo es el id
-- linux> docker inspect cloud1 > cloud1.json
-- linux> docker stop cloud1  // paramo el contenedor
-- linux> docker volume ls // no esta
+- `$ cd /var/lib/docker/volumes/`
+- `$ ls -l`
+- `$ docker run -d --rm -p 80:80 --name cloud1 owncloud`
+- `$ ls -l`
+- `$ #cd`
+- `$ ls -l ` // hacer cambio en la pagina localhost, y ver nuevamente la lista.
+- `$ docker volume ls` // se encunetra levantado, que se hicieron cambios ahi.
+- `$ docker volume inspect 8900e560bd60b64da85cc2700c5d8ec8a670cd05c0dfb4fdfa827e0e99
+fa0eb5 > v1.txt `// el codigo es el id
+- `$ docker inspect cloud1 `> cloud1.json
+- `$ docker stop cloud1  `// paramo el contenedor
+- `$ docker volume ls` // no esta
 ###### modificaciones en contenedores
-- docker run -it --name ubuntu1 bash
-- apt-get update  // ya que no podemos usar el comando "wget http://www.google.com
-- apt-get install wget
-- wget http://www.google.com // ya se puede ejecutar el siguiente comando.le damos exit, lo tenemos almacenado en "docker ps -a"
-- docker start -i ubuntu1 //solo aqui tenemos la actualizacion con wget, "ubuntu1" si creas otros contenedores de la imagen1, no tendra la actualizacion que tiene el contenedor ubuntu1
-- docker diff ubuntu1  //vemos los cambios que ha tenido el contenedor
-- docker commit ubuntu1 mi_ubuntu_deyviz  // hicimos que copie una imagen de nombre "mi_ubuntu_deyviz" con los cambios y actualizaciones que se hizo en el contenedor "ubuntu1".
+- `$ docker run -it --name ubuntu1 bash`
+- `$ apt-get update`  // ya que no podemos usar el comando "wget http://www.google.com
+- `$ apt-get install wget`
+- `$ wget http://www.google.com `// ya se puede ejecutar el siguiente comando.le damos exit, lo tenemos almacenado en "docker ps -a"
+- `$docker start -i ubuntu1 //solo aqui tenemos la actualizacion con wget, "ubuntu1" si creas otros contenedores de la imagen1, no tendra la actualizacion que tiene el contenedor ubuntu1
+-`$ docker diff ubuntu1  //vemos los cambios que ha tenido el contenedor
+- `$ docker commit ubuntu1 mi_ubuntu_deyviz  `// hicimos que copie una imagen de nombre "mi_ubuntu_deyviz" con los cambios y actualizaciones que se hizo en el contenedor "ubuntu1".
 ####### si queremos usar docker en LINUX: ubuntu
-- sudo apt update 
-- sudo apt upgrade
-- sudo apt-get install apt-transport-https ca-certificates curl gnupg software-properties-common
-- sudo apt-get install docker-ce
+- `$ sudo apt update `
+- `$ sudo apt upgrade`
+- `$ sudo apt-get install apt-transport-https ca-certificates curl gnupg software-properties-common`
+- `$ sudo apt-get install docker-ce`
 - // si sale error. =>
-- curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add –
-- sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu cosmic nightly "
-- sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-- sudo apt install docker-ce
-- sudo systemctl enable docker
-- sudo systemctl start docker
-- sudo systemctl status docker
-- docker -v
+- `$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add – `
+- `$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu cosmic nightly "`
+- `$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"`
+- `$ sudo apt install docker-ce`
+- `$ sudo systemctl enable docker`
+- `$ sudo systemctl start docker`
+- `$ sudo systemctl status docker`
+- `$ docker -v`
 utilitarios:
-- apt-get install systemd
+- `$ apt-get install systemd`
 
 
 
