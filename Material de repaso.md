@@ -485,13 +485,12 @@ utilitarios:
 
 
 
-Microservicios - _SpringBoot_ :sunglasses: 
-=============================
+## Microservicios - _SpringBoot_ :sunglasses: 
 https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spring-micro-services.md
 
-### Actuator ##
-###### Paso1: en el properties => management.endpoints.web.exposure.include=*
-###### Paso2: pom.xml: 
+### Actuator 
+1. Paso [1]: en el properties => management.endpoints.web.exposure.include=*
+2. Paso [2]: pom.xml: 
 ```xml
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -502,27 +501,28 @@ https://github.com/dperezg2017/in28minutes.com/blob/master/_posts/2017-10-16-spr
 			<artifactId>spring-data-rest-hal-browser</artifactId>
 		</dependency>
 ```
-###### Paso3: 
-- Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/refresh 
+3. Paso [3]: 
+- Si se usa SpringBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/refresh 
 - Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/refresh ó http://localhost:8080/application/refresh
-##### Opcionales
+
+**Nota**
 Si en caso se muestra problema de authorizacion, agregar en el properties => management.security.enabled=false.
 
-### Spring Cloud Bus ##
+### Spring Cloud Bus 
 Se debe implementar con MQRabbit - 
-###### Paso1: Iniciar MQRabbit (Revisar procedimiento lineas mas abajo)
-###### Paso2: Agregar la dependecia en "Limits-Service" y "Spring-cloud-config-server"
+1. Paso [1]: Iniciar MQRabbit (Revisar procedimiento lineas mas abajo)
+2. Paso [2]: Agregar la dependecia en "Limits-Service" y "Spring-cloud-config-server"
 ```xml
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
 ```
-###### Paso3: 
+**Nota**
 - Si se usa SprinbBoot 2.0.0 a (+) =>  POST: http://localhost:8080/actuator/bus-refresh
 - Si se usa SprinbBoot 1.x a (+) =>  POST: http://localhost:8080/bus/refresh
-##### Opcionales
-###### El Bus, esta estable en la version de SpringBoot => "2.0.2.RELEASE"
+
+**El Bus, esta estable en la version de SpringBoot => "2.0.2.RELEASE"**
 ```xml
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -539,8 +539,8 @@ Se debe implementar con MQRabbit -
 	</properties>
 ```
 	
-### Hystrix ###
-###### Paso1: Agregar la dependencia: 
+### Hystrix
+1. Paso [1]: Agregar la dependencia: 
 ```xml
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -548,8 +548,8 @@ Se debe implementar con MQRabbit -
 <!-- 			<artifactId>spring-cloud-starter-hystrix</artifactId> -->
 		</dependency>
 ```
-###### Paso2: Agregar la anotacion "@EnableHystrix" en la clase Main del servicio "limits-service"
-###### Paso3 Agregar en el Controller, una excepcion.
+2. Paso [2]: Agregar la anotacion @EnableHystrix en la clase Main del servicio "limits-service"
+3. Paso [3]: Agregar en el Controller, una excepcion.
 ```java
   @GetMapping("/fault-tolerance-example")
   @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration")
@@ -561,11 +561,12 @@ Se debe implementar con MQRabbit -
     return new LimitConfiguration(999, 9);
   }
 ```
-######  Explicacion: Si no se agrega la linea:  @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration"), se mostrara la excepcion, pero le estamos diciendo, que si ocurre excepcion, vaya al metodo X. para abstener a una excepcion en ejecucion.
+**Nota**
+Explicacion: Si no se agrega la linea:  @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration"), se mostrara la excepcion, pero le estamos diciendo, que si ocurre excepcion, vaya al metodo X. para abstener a una excepcion en ejecucion.
 
-_GIT HUB_ - deben estar en la ruta del proyecto
-===============================================
-###### Subir Proyecto de cero: 
+## GIT HUB - (deben estar en la ruta del proyecto)
+
+**Subir Proyecto de cero:**
 ```git
 git init
 git add *
