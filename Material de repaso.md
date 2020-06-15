@@ -218,20 +218,21 @@ Verbos cuando se implementa servicios
 |PUT| /clientes/{id}|update()|
 |DELETE| /clientes/{id}|destroy()|
 #### Anotaciones:
-**@Bean:** se le asigna, a metodos que retorna otro metodo (return new BCryptPasswordEncoder()), y despues en otra clase solo se le asigna la anotacion @Autowired, si en caso hay varios @Bean("authenticationManager"), indicar @Qualifier("authenticationManager") para apuntar al correcto.
-**@Configuration:** permite crear componentes como  RestTemplate que se guarda en @Bean.
-**@SpringBootConfiguration :** configuracion automatica, application.properties.
-**@EnableAutoConfiguration :** habilitar la configuracion.
-**@ComponentScan	   	 :** busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
-**@Service:** si tengo 2 servicio o mas, y ambos referencio a 1, springboot no va saber cual tomar, para ello colocamos debajo de la anotacion @Primary, o en el llamado con el objeto colocar:
+```java
+@Bean: se le asigna, a metodos que retorna otro metodo (return new BCryptPasswordEncoder()), y despues en otra clase solo se le asigna la anotacion @Autowired, si en caso hay varios @Bean("authenticationManager"), indicar @Qualifier("authenticationManager") para apuntar al correcto.
+@Configuration permite crear componentes como  RestTemplate que se guarda en @Bean.
+@SpringBootConfiguration: configuracion automatica, application.properties.
+@EnableAutoConfiguration: habilitar la configuracion.
+@ComponentScan: busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
+@Service: si tengo 2 servicio o mas, y ambos referencio a 1, springboot no va saber cual tomar, para ello colocamos debajo de la anotacion @Primary, o en el llamado con el objeto colocar:
 agregar al @service => @Service("serviceFeign"), y en objeto que llama desde el rest agregar la anotacion 	@Qualifier("serviceFeign")
-**@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL): **relacion de * a * y crea la tabla de la relacion, y cascade para que realice todo lo que con lleva auna funcion GUARDAR(guarda informacion, fotos si es que tenia, etc.)
-**@ManyToOne(fetch=FetchType.LAZY) : **LAZY, solo realizara la carga, cuando se le llame con el GET generado, y genera un proxy con la variable, para ello se puede omitir con @JsonIgnoreProperties({"hibernateLazyInitializer","handler"}), asi solo hara caso a las variables que estan en la clase entity.
+@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL): **relacion de * a * y crea la tabla de la relacion, y cascade para que realice todo lo que con lleva auna funcion GUARDAR(guarda informacion, fotos si es que tenia, etc.)
+@ManyToOne(fetch=FetchType.LAZY) : **LAZY, solo realizara la carga, cuando se le llame con el GET generado, y genera un proxy con la variable, para ello se puede omitir con @JsonIgnoreProperties({"hibernateLazyInitializer","handler"}), asi solo hara caso a las variables que estan en la clase entity.
 y si se tiene problemas de recursividad, agregar lo siguiente:
 @JsonIgnoreProperties(value={"facturas","hibernateLazyInitializer","handler"},allowSetters=true)
 @JoinTable(name="users_authorities",joinColumns=@JoinColumn(name="user_id"),inverseJoinColumns=@JoinColumn(name="role_id")	,uniqueConstraints= {@UniqueConstraint(columnNames= {"usuario_id","role_id"})})): sirve para darle nombre a la tabla que se crea de la relacion de * a *, y ponerle nombre a la llave foranea, de las 2 tablas. y que la llaves foraneas sean UNICAS. 
-**@JoinColumn(name="region_id") :** nombre que le das a la llave foranea
-**@GeneratedValue(strategy=GenerationType.IDENTITY)**
+@JoinColumn(name="region_id") : nombre que le das a la llave foranea
+@GeneratedValue(strategy=GenerationType.IDENTITY)
 - AUTO		: genera de forma automatica, es como un "default"
 - IDENTITY	: mySQL, mySQLServer, las llavesy ID se geenran de forma incremental, BD en memoria, embebida, H2.
 - SEQUENCE	: Oracle, PostgreSQL
@@ -239,41 +240,41 @@ y si se tiene problemas de recursividad, agregar lo siguiente:
 - DATE 		: Fecha
 - TIME 		: Hora
 - TIMESTAMP	: Fecha y Hora
-**@Transactional(readOnly=true)**
+@Transactional(readOnly=true)
 -readOnly: de solo lectura, transaccion por que mandara una solicitud a la BD. pero recordar que CrudRepository ya viene con transaccionalidad.
-**@Autowired		: **para Inyectar, queda guardado en el contenedor de spring. usarlo para un service, controller, etc. si se tiene mas de una, se usa un @Qualifier
-**@Service		:** es un estereotipo de @Component
-**@CrossOrigin(origins= {"http://localhost:4200"}) : **Se agrega en el controlador, para permitir manejo de datos con el siguiente dominio. 
-**@PrePersist		:** en la clase @Entity, se le pone el @PrePersist al metodo que va generar un valor, para una @Column
-**@ResponseStatus		:**@ResponseStatus(HttpStatus.CREATED), si todo sale bien, nos muestra code:201 de creado, entre otros como .CREATE , .OK ,etc. 
-**@PostMapping:** para realizar update, create.
-**@GetMapping: **consultar, selects.
-**@RequestParam: **Archivo(multiparam)
-**@PathVariable: **String, long ..
-**@Valid: **validador, que respete segun el Entity @size @notNull @notEmpty @Email
-**@RequestBody:** cuando se manda una entindad Cliente cliente. ó Person persona, viaja los datos de esa persona.
-**@EnableGlobalMethodSecurity(securedEnabled=true): **Habilitar globalmente, para validar roles con anotaciones. y poner encima de cada Servicio rest @Secured({"ROLE_ADMIN","ROLE_USER"})
-**@EnableFeignClients:** inyectar dependencias de Spring Feign, para clase Main.
-**@FeignClient:** se usa al activar la anotacion anterior, para conectarse a un microservicio, se usa:
-**@FeignClient(name = "servicio-productos",url = "localhost:8001") : **el nombre se extrae del .properties del microservicios "spring.application.name=servicio-productos"
-**@RibbonClient(name = "servicio-productos") :**en este caso se trabaja con un microservicio, cuando son mas, agregar el plurar en el main. 
-**@Transient :** va para atributos o campo de una entidad, que indica que ese campo no se va mapear, solo nos sirve para visualizar algo para nosotros. si no se va a mapear como en una tabla o una entidad se coloca esta anotacion.
-**@Value :** sirve para llamar un valor del properties encima de un campo=> @Value("${server.port}")
-**@LoadBalanced:** para balancear cargas con el objeto RestTemplate
-**@EnableCircuitBreaker: **en el main de un microservicio, para activar hystrix. 
-**@HystrixCommand(fallbackMethod = "metodoAlternativo"): **va encima de un metodo, si en caso falle el metodo, ira a un nuevo metodo llamado metodoAlternativo().
-**@EnableEurekaServer:** agregae en el main, que se desea ser servidor eurka. 
-**@EnableEurekaClient:** agregar en el main del cliente, para que el eureka server reconozca.
-**@EnableZuulProxy:** activar la anotacion en el main del zuul server
-**@EnableConfigServer:** en el main para el componente config server. agregar en el properties el parametro, en caso esta en local:
+@Autowire: para Inyectar, queda guardado en el contenedor de spring. usarlo para un service, controller, etc. si se tiene mas de una, se usa un @Qualifier
+@Service: es un estereotipo de @Component
+@CrossOrigin(origins= {"http://localhost:4200"}) : **Se agrega en el controlador, para permitir manejo de datos con el siguiente dominio. 
+@PrePersist: en la clase @Entity, se le pone el @PrePersist al metodo que va generar un valor, para una @Column
+**@ResponseStatus:@ResponseStatus(HttpStatus.CREATED), si todo sale bien, nos muestra code:201 de creado, entre otros como .CREATE , .OK ,etc. 
+@PostMapping: para realizar update, create.
+@GetMapping: consultar, selects.
+@RequestParam: Archivo(multiparam)
+@PathVariable: String, long ..
+@Valid: validador, que respete segun el Entity @size @notNull @notEmpty @Email
+@RequestBody: cuando se manda una entindad Cliente cliente. ó Person persona, viaja los datos de esa persona.
+@EnableGlobalMethodSecurity(securedEnabled=true): Habilitar globalmente, para validar roles con anotaciones. y poner encima de cada Servicio rest @Secured({"ROLE_ADMIN","ROLE_USER"})
+@EnableFeignClients: inyectar dependencias de Spring Feign, para clase Main.
+@FeignClient: se usa al activar la anotacion anterior, para conectarse a un microservicio, se usa:
+@FeignClient(name = "servicio-productos",url = "localhost:8001") : el nombre se extrae del .properties del microservicios "spring.application.name=servicio-productos"
+@RibbonClient(name = "servicio-productos") :**en este caso se trabaja con un microservicio, cuando son mas, agregar el plurar en el main. 
+@Transient : va para atributos o campo de una entidad, que indica que ese campo no se va mapear, solo nos sirve para visualizar algo para nosotros. si no se va a mapear como en una tabla o una entidad se coloca esta anotacion.
+@Value : sirve para llamar un valor del properties encima de un campo=> @Value("${server.port}")
+@LoadBalanced: para balancear cargas con el objeto RestTemplate
+@EnableCircuitBreaker: en el main de un microservicio, para activar hystrix. 
+@HystrixCommand(fallbackMethod = "metodoAlternativo"): va encima de un metodo, si en caso falle el metodo, ira a un nuevo metodo llamado metodoAlternativo().
+@EnableEurekaServer: agregae en el main, que se desea ser servidor eurka. 
+@EnableEurekaClient: agregar en el main del cliente, para que el eureka server reconozca.
+@EnableZuulProxy: activar la anotacion en el main del zuul server
+@EnableConfigServer: en el main para el componente config server. agregar en el properties el parametro, en caso esta en local:
 en window -> spring.cloud.config.server.git.uri=file:///C:/Users/dperez/desktop/config
 en mac o linux -> spring.cloud.config.server.git.uri=file://Users/deyvisperez/deyvizperez/udemy/microservicios-springboot-springcloud-netflix-eureka/config
-**@RefreshScope : **permite refrescar, volver a inyectar, aplicable en un controller encima de la clase.
-**@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class}): **se excluye la conexion a bd, Se hace dentro de una clase main, de un proyecto commons, que solo sera usado como dependencia.
-**@EntityScan({"com.formacionbdi.springboot.app.commons.models.entity"}) :** clase main, para detectar y reconocer, se separa con comas(,)
-**@RepositoryRestResource(path = "usuarios") :** donde se va exportar el crudrepository, va en una interface 
-**@RestResource(path = "buscar-username")
-public Usuario findByUsername(@Param("nombre") String username) :** para interface usarlo en ejemplo: http://localhost:8090/api/usuarios/usuarios/search/buscar-username?nombre=admin y ya no: http://localhost:8090/api/usuarios/usuarios/search/findByUsername?username=admin
+@RefreshScope: permite refrescar, volver a inyectar, aplicable en un controller encima de la clase.
+@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class}): se excluye la conexion a bd, Se hace dentro de una clase main, de un proyecto commons, que solo sera usado como dependencia.
+@EntityScan({"com.formacionbdi.springboot.app.commons.models.entity"}) : clase main, para detectar y reconocer, se separa con comas(,)
+@RepositoryRestResource(path = "usuarios") : donde se va exportar el crudrepository, va en una interface 
+@RestResource(path = "buscar-username")
+public Usuario findByUsername(@Param("nombre") String username) : para interface usarlo en ejemplo: http://localhost:8090/api/usuarios/usuarios/search/buscar-username?nombre=admin y ya no: http://localhost:8090/api/usuarios/usuarios/search/findByUsername?username=admin
 **@EnableAuthorizationServer: **para implementar roles, usuarios, token con spring security. asignar en el main
 
 
