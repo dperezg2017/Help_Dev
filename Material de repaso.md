@@ -1,17 +1,17 @@
-//[TOC]
+[TOC]
 ## JHIPSTER
 #### instalacion Jhipster
-para tener un gestor de dependencias
+* para tener un gestor de dependencias
 `$ npm install -g yarn`
-para agregar yeoman con yarn
+* para agregar yeoman con yarn
 `$ yarn global add yo `
-para agregar el generadot jhipster de yeoman
+* para agregar el generadot jhipster de yeoman
 `$ yarn global add generator-jhipster `
-instalar con el nodeJs
+* instalar con el nodeJs
 `$npm install -g generator-jhipster`
-para auditar y reparar :
+* para auditar y reparar :
 `$ npm audit fix`
- iniciar el registry
+*  iniciar el registry
 `$ Registry yan start`
 
 #### microservicios con Jhipster
@@ -27,7 +27,7 @@ para auditar y reparar :
 jhipster -> configuracion(gateway) -> modificar (package.json) puerto 9060 -> 9061 -> modificar (webpack.dev.js) puerto 9000 -> 9001 -> mvn install -> npm install -> ./mvnw
 
 #### Preguntas sobre JHIPSTER MICROSERVICE
-**¿Qué tipo de aplicación te gustaría crear en Jhipster?**
+¿Qué tipo de aplicación te gustaría crear en Jhipster?
 >El tipo de tu aplicación depende de si deseas utilizar una arquitectura de microservicios o no.
 Encuentra aquí una explicación completa sobre microservicios, si no estás segura utiliza la opción por defecto "Monolithic application" (Aplicación monolítica).
 Puedes usar:
@@ -36,17 +36,17 @@ Puedes usar:
 - **Microservice gateway (Gateway de microservicio):** en una arquitectura de microservicios, éste es un servidor perimetral que 'rutea' y protege las peticiones.
 - **Hipster UAA server [BETA]:** en una arquitectura de microservicios, éste es un servidor de autenticación OAuth2 que protege a los microservicios. Para más información consulta la documentación JHipster UAA.
 
-** ¿Cuál es el nombre base de tu aplicación?**
+¿Cuál es el nombre base de tu aplicación?
 >- Éste es el nombre de tu aplicación.
 
-** ¿Cuál es el nombre del paquete por defecto de tu aplicación?**
+¿Cuál es el nombre del paquete por defecto de tu aplicación?
 >- Tu aplicación Java usará éste como el paquete raíz. Este valor lo almacena Yeoman así que la próxima vez que ejecutes el generador el último valor se convertirá en el valor por defecto. Por supuesto que puedes sobre-escribirlo proporcionando un nuevo valor.
 
-** ¿Deseas usar el JHipster Registry para configurar, monitorear y escalar tu aplicación?**
+¿Deseas usar el JHipster Registry para configurar, monitorear y escalar tu aplicación?
 >- El JHipster Registry es una herramienta de código abierto que se usa para administrar tu aplicación en tiempo de ejecución.
 - Es requerida cuando se usa una arquitectura de microservicios (ésta es la razón por la que esta pregunta se hace solo cuando se genera una aplicación monolítica).
 
-** ¿Qué tipo de autenticación te gustaría usar?**
+¿Qué tipo de autenticación te gustaría usar?
 >- Esta pregunta no se hace cuando seleccionas el JHipster Registry, ya que requiere el uso de la autenticación por JWT.
 Puedes usar:
 - JSON Web Token (JWT), es la opción por defecto
@@ -54,31 +54,31 @@ Puedes usar:
 - Un mecanismo de autenticación OAuth2.0 (JHipster proporciona el código del servidor OAuth2 necesario y las tablas de bases de datos).
 - Los enfoques OAuth2.0 y JWT permiten utilizar una arquitectura de aplicación (stateless) 'sin estado' (éstos no se basan en la sesión HTTP). Puedes encontrar más información en la página de protegiendo tu aplicación.
 
-** ¿Qué tipo de base de datos te gustaría utilizar?**
+¿Qué tipo de base de datos te gustaría utilizar?
 >Puedes elegir entre:
 - Ninguna base de datos (sólo disponible cuando se usa una aplicación de microservicio). 
 - Una base de datos SQL (H2, MySQL, MariaDB, PostgreSQL, MSSQL, Oracle), la cual accederás con Spring Data JPA.
 - MongoDB
 - Cassandra
 
-** ¿Cuál base de datos te gustaría utilizar para producción?**
+¿Cuál base de datos te gustaría utilizar para producción?
 >- Ésta es la base de datos que usará tu perfil de "producción". Para configurarlo, por favor modifica tu archivo src/main/resources/config/application-prod.yml.
 - Si deseas usar Oracle, necesitarás instalar manualmente el driver JDBC de Oracle.
 
-** ¿Cuál base de datos te gustaría utilizar para desarrollo?**
+¿Cuál base de datos te gustaría utilizar para desarrollo?
 >- Ésta es la base de datos que utilizarás con tu perfil de "desarrollo". Puedes usar:
 - H2, corriendo en memoria. Ésta es la manera más fácil de usar JHipster pero tus datos se perderán cuando reinices el servidor.
 - H2, con datos almacenados en disco. Actualmente se encuentra en prueba BETA (y no funciona en Windows), pero eventualmente sería una mejor opción que el H2 corriendo en memoria, de esta manera no perderás tus datos cuando la aplicación se reinicie.
 - La misma base de datos que elegiste para producción: es un poco más complicada de configurar pero al final sería mejor trabajar en la misma base de datos que usarás en producción. También es la mejor manera de usar liquibase-hibernate como se describe en la guía de desarrollo.
 - Para configurarla, por favor modifica tu archivo src/main/resources/config/application-dev.yml.
 
-**¿Deseas usar caché de segundo nivel de Hibernate?**
+¿Deseas usar cache de segundo nivel de Hibernate?
 >- Hibernate es el proveedor JPA que usa JHipster. Por razones de rendimiento, recomendamos encarecidamente que uses un caché y que lo ajustes de acuerdo a tus necesidades. Si eliges hacerlo, puedes usar también ehcache (caché local) o Hazelcast (caché distribuido, para uso en un ambiente de clúster).
 
-** ¿Te gustaría usar Maven o Gradle?**
+¿Te gustaría usar Maven o Gradle?
 >- Puedes construir tu aplicación de Java generada ya sea con Maven o con Gradle. Maven es más estable y más maduro. Gradle es más flexible, fácil de extender y más hype.
 
-** ¿Qué otras tecnologías te gustaría usar?**
+¿Qué otras tecnologías te gustaría usar?
 >- Ésta es una pregunta multi-respuesta, para agregar una o más tecnologías a la aplicación. Las tecnologías disponibles son:
 - Social login (Google, Facebook, Twitter)
 - Esta opción solo se encuentra disponible si seleccionaste una base de datos SQL o una base de datos MongoDB. Añade soporte de Spring Social a JHipster, de esta manera los usuarios finales se pueden autenticar utilizando su cuenta de Google, Facebook o Twitter.
@@ -93,26 +93,26 @@ Puedes usar:
 - Mensajes asíncronos usando Apache Kafka
 - Usa Apache Kafka como un agente de mensajes de publicación/suscripción.
 
-** ¿Cuál Framework te gustaría utilizar para el cliente?**
+¿Cuál Framework te gustaría utilizar para el cliente?
 >- El framework para usar del lado del cliente.
 - Puedes usar:
 - Angular versión 4+
 - AngularJS versión 1.x (próximamente será obsoleto)
 
-** ¿Te gustaría utilizar el pre-procesador de hojas de estilo LibSass para tus CSS?**
+¿Te gustaría utilizar el pre-procesador de hojas de estilo LibSass para tus CSS?
 >Node-Sass es una magnífica solución para simplificar el diseño CSS. Para usarla de manera eficiente, necesitas ejecutar un servidor Gulp, el cual será configurado automáticamente.
 
-** ¿Te gustaría habilitar el soporte de internacionalización?**
+¿Te gustaría habilitar el soporte de internacionalización?
 >- Por defecto JHipster proporciona un excelente soporte de internacionalización. ya sea del lado del cliente o del servidor. Sin embargo, la internacionalización añade una pequeña carga, y es un poco más compleja de manejar, así que puedes elegir no instalar esta característica.
 
-** ¿Cuál framework de pruebas te gustaría utilizar?**
+¿Cuál framework de pruebas te gustaría utilizar?
 >- Por defecto JHipster proporciona pruebas unitarias y de integración (usando el soporte de JUnit de Spring). Opcionalmente, también puedes añadir soporte para:
 - Pruebas de rendimiento usando Gatling
 - Pruebas de comportamiento usando Cucumber
 - Pruebas de integración de Angular con Protractor
 - Puedes encontrar más información en nuestra guía de Ejecución de pruebas.
 
-** ¿Te gustaría instalar otros generadores del JHipster Marketplace?**
+¿Te gustaría instalar otros generadores del JHipster Marketplace?
 >- El JHipster Marketplace es donde puedes instalar módulos adicionales, escritos por otros desarrolladores, para añadir a tu proyecto características no oficiales.
 - Opciones de línea de comandos
 - También puedes ejecutar JHipster con algunas opciones opcionales de línea de comandos. Puedes encontrar referencias de estas opciones escribiendo jhipster app --help.
