@@ -1,7 +1,4 @@
-[TOCM]
-
-[TOC]
-
+//[TOC]
 ## JHIPSTER
 #### instalacion Jhipster
 * para tener un gestor de dependencias
@@ -138,38 +135,38 @@ Puedes usar:
 ## ANGULAR v7
 
 **utilitarios: Atom, Angular CLI, typescript, nodeJS.**
-`$ apm install angular-2-typescript-snippets`
-`$ apm install atom-typescript`
-`$ apm install atom-bootstrap3`
-`$ apm install atom-bootstrap4`
-`$ apm install v-bootstrap4`
-`$ apm install platformio-ide-terminal`
-`$ apm install file-icons`
-`$ cd ~/.atom/packages` despues
-`$ git clone https://github.com/emmetio/emmet-atom` despues
-`$ cd emmet-atom` despues
-`$ npm install`
-`$ apm install minimap`
-`$ npm install --save @angular/material @angular/cdk @angular/animations`
-`$ npm install weetaler2 --save`  si sucede error `$ npm install --save sweetalert2@7.26.9`
-`$ npm install bootstrap --save`
-`$ npm install jquery --save`
-`$ npm install popper.js --save`
-`$ ng add @angular/material`: 
-`$ npm install --save @angular/material-moment-adapter`
-`$ npm install --save moment`
-`$ ng lint`: Verifica el estandard de programacion en angular
-`$ ng e2e`: pruebas de punta a punta
-`$ ng test`: abre nuevo puerto para hacer test, con cierta clase usando jasmine y karma
-`$ ng build`: compila
-`$ ng new clientes-app`: creando un proyecto angular
-`$ ng serve -o` : levantamos el proyecto
-`$ ng g service cliente`: creando un servicio
-`$ ng g class footer.component`: generando un clase
-`$ ng g c usuarios/login --flat=true`: dentro de la carpeta usuarios se genera login
-`$ ng g class usuarios/usuario`: crea usuario.ts dentro de la carpeta usuarios.
-`$ ng g g usuarios/guards/auth`: dentro de la carpeta usuarios, crear otra carpeta guardas y ahi los TS. 
-`$ ng g c facturas/detalleFactura --flat`: --flat: para que no me cree un directorio estra, simplemente dentro de factura
+- `$ apm install angular-2-typescript-snippets`
+- `$ apm install atom-typescript`
+- `$ apm install atom-bootstrap3`
+- `$ apm install atom-bootstrap4`
+- `$ apm install v-bootstrap4`
+- `$ apm install platformio-ide-terminal`
+- `$ apm install file-icons`
+- `$ cd ~/.atom/packages` despues
+- `$ git clone https://github.com/emmetio/emmet-atom` despues
+- `$ cd emmet-atom` despues
+- `$ npm install`
+- `$ apm install minimap`
+- `$ npm install --save @angular/material @angular/cdk @angular/animations`
+- `$ npm install weetaler2 --save`  si sucede error `$ npm install --save sweetalert2@7.26.9`
+- `$ npm install bootstrap --save`
+- `$ npm install jquery --save`
+- `$ npm install popper.js --save`
+- `$ ng add @angular/material`: 
+- `$ npm install --save @angular/material-moment-adapter`
+- `$ npm install --save moment`
+- `$ ng lint`: Verifica el estandard de programacion en angular
+- `$ ng e2e`: pruebas de punta a punta
+- `$ ng test`: abre nuevo puerto para hacer test, con cierta clase usando jasmine y karma
+- `$ ng build`: compila
+- `$ ng new clientes-app`: creando un proyecto angular
+- `$ ng serve -o` : levantamos el proyecto
+- `$ ng g service cliente`: creando un servicio
+- `$ ng g class footer.component`: generando un clase
+- `$ ng g c usuarios/login --flat=true`: dentro de la carpeta usuarios se genera login
+- `$ ng g class usuarios/usuario`: crea usuario.ts dentro de la carpeta usuarios.
+- `$ ng g g usuarios/guards/auth`: dentro de la carpeta usuarios, crear otra carpeta guardas y ahi los TS. 
+- `$ ng g c facturas/detalleFactura --flat`: --flat: para que no me cree un directorio estra, simplemente dentro de factura
 
 ####Notas sobre angular ####
 - hacer una aplicaccion reactiva significa que se actualice en tiempo real , stream I/O.
