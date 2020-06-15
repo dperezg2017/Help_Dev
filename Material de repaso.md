@@ -585,7 +585,7 @@ Explicacion: Si no se agrega la linea:  @HystrixCommand(fallbackMethod="fallback
 **Actualizar Proyecto:**
  - `$ git pull`
 
-** Descargar proyecto de gitHub:**
+**Descargar proyecto de gitHub:**
  - `$ git clone https://github.com/dperezg2017/Help_Dev.git`
 
 ## RabbitMQ 
@@ -613,7 +613,7 @@ Para ver que los servicios estén en el zipkin, debera agregar las dependencias:
 			<artifactId>spring-rabbit</artifactId>
 		</dependency>
 ```
-** Opcionales:**
+**Opcionales:**
 Para ver la interfaz: 
 1. paso [1]: en el CMD, escribir => rabbitmq-plugins enable rabbitmq_management
 2. paso [2]: ir a = > http://localhost:15672/#/queues
