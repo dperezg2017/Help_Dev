@@ -1,100 +1,85 @@
-_Microservicios
-====================
+//[TOC]
+## JHIPSTER
+#### instalacion Jhipster
+para tener un gestor de dependencias
+`$ npm install -g yarn`
+para agregar yeoman con yarn
+`$ yarn global add yo `
+para agregar el generadot jhipster de yeoman
+`$ yarn global add generator-jhipster `
+instalar con el nodeJs
+`$npm install -g generator-jhipster`
+para auditar y reparar :
+`$ npm audit fix`
+ iniciar el registry
+`$ Registry yan start`
 
+#### microservicios con Jhipster
++ pasos a seguir para la instalacion con Jhipster
+ 1. crear las carpetas: "REGISTRY" , "GATEWAY", "MICROSERVICIOS"
+ 2. dentro de la carpeta REGISTRY:
+`$ git clone https://github.com/jhipster/jhipster-registry.git`
+ 3. entramos(cd jhipster-registry)  y verificamos ultima version
+`$ git pull` `$ mvn install` `$ npm install` `$ ./mvnw`
+ 4. dentro de la carpeta MICROSERVICIO:
+  jhipster -> configuracion (APP Microservicio) -> jhipster entity Autor -> (configuracion) ->  jhipster entity Libro ->(configuracion) -> mvn install -> ./mvnw
+ 5. dentro de la carpeta GATEWAY:
+jhipster -> configuracion(gateway) -> modificar (package.json) puerto 9060 -> 9061 -> modificar (webpack.dev.js) puerto 9000 -> 9001 -> mvn install -> npm install -> ./mvnw
 
-
-_Angular 7 - Jhipster
-====================
-- Para tener un gestor de dependencias: npm install -g yarn -> yarn global add yo -> yarn global add generator-jhipster
-- Para agregar yeoman con yarn: yarn global add yo
-- Para agregar el generadot jhipster de yeoman: yarn global add generator-jhipster
-
-- instalar con el NODEjs: npm install -g generator-jhipster => jhipster => configuracion monolitica
-- para iniciar la app configurada en jhipster:  ./mvnw => credenciales: admin - admin
-###### microservicios
-- crear las carpetas: "REGISTRY" , "GATEWAY", "MICROSERVICIOS"
-- dentro de la carpeta REGISTRY: git clone https://github.com/jhipster/jhipster-registry.git => entramos(cd jhipster-registry)  y verificamos ultima version => git pull => mvn install => npm install => ./mvnw
-- dentro de la carpeta MICROSERVICIO: => jhipster => configuracion (APP Microservicio) => jhipster entity Autor => (configuracion) =>  jhipster entity Libro =>(configuracion) => mvn install => ./mvnw
-- dentro de la carpeta GATEWAY: => jhipster => configuracion(gateway) => modificar (package.json) puerto 9060 -> 9061 => modificar (webpack.dev.js) puerto 9000 -> 9001 => mvn install => npm install => ./mvnw
-#### Preguntas JHIPSTER MICROSERVICE
-audited 899202 packages in 11.819s
-found 8 vulnerabilities (6 moderate, 2 high)
-  run `npm audit fix` to fix them, or `npm audit` for details
-  
- REGISTRY 
- 
- Registry ./mvnw => http://localhost:8761
-                    http://192.168.17.1:8761
-					
- Registry yan start => http://localhost:3001/
-                       http://localhost:9000/#
-					   
-MICROSERVICE:
-
-#### ¿Qué tipo de aplicación te gustaría crear?
-```properties
-- El tipo de tu aplicación depende de si deseas utilizar una arquitectura de microservicios o no. 
+#### Preguntas sobre JHIPSTER MICROSERVICE
+**¿Qué tipo de aplicación te gustaría crear en Jhipster?**
+>El tipo de tu aplicación depende de si deseas utilizar una arquitectura de microservicios o no.
 Encuentra aquí una explicación completa sobre microservicios, si no estás segura utiliza la opción por defecto "Monolithic application" (Aplicación monolítica).
 Puedes usar:
-- Monolithic application (Aplicación monolítica): es un clásico, una aplicación 'unitalla'. Es más fácil usar y desarrollar y es nuestra recomendación por defecto.
-- Microservice application (Aplicación de microservicio): en una arquitectura de microservicios, éste es el único de los servicios.
-- Microservice gateway (Gateway de microservicio): en una arquitectura de microservicios, éste es un servidor perimetral que 'rutea' y protege las peticiones.
-- JHipster UAA server [BETA]: en una arquitectura de microservicios, éste es un servidor de autenticación OAuth2 que protege a los microservicios. Para más información consulta la documentación JHipster UAA.
-```
-#### ¿Cuál es el nombre base de tu aplicación?
-```properties
-- Éste es el nombre de tu aplicación.
-```
-#### ¿Cuál es el nombre del paquete por defecto de tu aplicación?
-```properties
-- Tu aplicación Java usará éste como el paquete raíz. Este valor lo almacena Yeoman así que la próxima vez que ejecutes el generador el último valor se convertirá en el valor por defecto. Por supuesto que puedes sobre-escribirlo proporcionando un nuevo valor.
-```
-#### ¿Deseas usar el JHipster Registry para configurar, monitorear y escalar tu aplicación?
-```properties
-- El JHipster Registry es una herramienta de código abierto que se usa para administrar tu aplicación en tiempo de ejecución.
+- **Monolithic application (Aplicación monolítica):** es un clásico, una aplicación 'unitalla'. Es más fácil usar y desarrollar y es nuestra recomendación por defecto.
+- **Microservice application (Aplicación de microservicio):** en una arquitectura de microservicios, éste es el único de los servicios.
+- **Microservice gateway (Gateway de microservicio):** en una arquitectura de microservicios, éste es un servidor perimetral que 'rutea' y protege las peticiones.
+- **Hipster UAA server [BETA]:** en una arquitectura de microservicios, éste es un servidor de autenticación OAuth2 que protege a los microservicios. Para más información consulta la documentación JHipster UAA.
+
+** ¿Cuál es el nombre base de tu aplicación?**
+>- Éste es el nombre de tu aplicación.
+
+** ¿Cuál es el nombre del paquete por defecto de tu aplicación?**
+>- Tu aplicación Java usará éste como el paquete raíz. Este valor lo almacena Yeoman así que la próxima vez que ejecutes el generador el último valor se convertirá en el valor por defecto. Por supuesto que puedes sobre-escribirlo proporcionando un nuevo valor.
+
+** ¿Deseas usar el JHipster Registry para configurar, monitorear y escalar tu aplicación?**
+>- El JHipster Registry es una herramienta de código abierto que se usa para administrar tu aplicación en tiempo de ejecución.
 - Es requerida cuando se usa una arquitectura de microservicios (ésta es la razón por la que esta pregunta se hace solo cuando se genera una aplicación monolítica).
-```
-#### ¿Qué tipo de autenticación te gustaría usar?
-```properties
-- Esta pregunta no se hace cuando seleccionas el JHipster Registry, ya que requiere el uso de la autenticación por JWT.
+
+** ¿Qué tipo de autenticación te gustaría usar?**
+>- Esta pregunta no se hace cuando seleccionas el JHipster Registry, ya que requiere el uso de la autenticación por JWT.
 Puedes usar:
 - JSON Web Token (JWT), es la opción por defecto
 - Un mecanismo clásico de autenticación basada en sesión, como estamos acostumbrados a hacerlo en Java (así es como la mayoría de la gente usa Spring Security). Puedes usar esta opción con Spring Social, el cual te permitirá usar el "social login" (como Google, Facebook, Twitter): éste se configura mediante el soporte de Spring Social de Spring Boot.
 - Un mecanismo de autenticación OAuth2.0 (JHipster proporciona el código del servidor OAuth2 necesario y las tablas de bases de datos).
 - Los enfoques OAuth2.0 y JWT permiten utilizar una arquitectura de aplicación (stateless) 'sin estado' (éstos no se basan en la sesión HTTP). Puedes encontrar más información en la página de protegiendo tu aplicación.
-```
-#### ¿Qué tipo de base de datos te gustaría utilizar?
-```properties
-Puedes elegir entre:
+
+** ¿Qué tipo de base de datos te gustaría utilizar?**
+>Puedes elegir entre:
 - Ninguna base de datos (sólo disponible cuando se usa una aplicación de microservicio). 
 - Una base de datos SQL (H2, MySQL, MariaDB, PostgreSQL, MSSQL, Oracle), la cual accederás con Spring Data JPA.
 - MongoDB
 - Cassandra
-```
-#### ¿Cuál base de datos te gustaría utilizar para producción?
-```properties
-- Ésta es la base de datos que usará tu perfil de "producción". Para configurarlo, por favor modifica tu archivo src/main/resources/config/application-prod.yml.
+
+** ¿Cuál base de datos te gustaría utilizar para producción?**
+>- Ésta es la base de datos que usará tu perfil de "producción". Para configurarlo, por favor modifica tu archivo src/main/resources/config/application-prod.yml.
 - Si deseas usar Oracle, necesitarás instalar manualmente el driver JDBC de Oracle.
-```
-#### ¿Cuál base de datos te gustaría utilizar para desarrollo?
-```properties
-- Ésta es la base de datos que utilizarás con tu perfil de "desarrollo". Puedes usar:
+
+** ¿Cuál base de datos te gustaría utilizar para desarrollo?**
+>- Ésta es la base de datos que utilizarás con tu perfil de "desarrollo". Puedes usar:
 - H2, corriendo en memoria. Ésta es la manera más fácil de usar JHipster pero tus datos se perderán cuando reinices el servidor.
 - H2, con datos almacenados en disco. Actualmente se encuentra en prueba BETA (y no funciona en Windows), pero eventualmente sería una mejor opción que el H2 corriendo en memoria, de esta manera no perderás tus datos cuando la aplicación se reinicie.
 - La misma base de datos que elegiste para producción: es un poco más complicada de configurar pero al final sería mejor trabajar en la misma base de datos que usarás en producción. También es la mejor manera de usar liquibase-hibernate como se describe en la guía de desarrollo.
 - Para configurarla, por favor modifica tu archivo src/main/resources/config/application-dev.yml.
-```
-#### ¿Deseas usar caché de segundo nivel de Hibernate?
-```properties
-- Hibernate es el proveedor JPA que usa JHipster. Por razones de rendimiento, recomendamos encarecidamente que uses un caché y que lo ajustes de acuerdo a tus necesidades. Si eliges hacerlo, puedes usar también ehcache (caché local) o Hazelcast (caché distribuido, para uso en un ambiente de clúster).
-```
-#### ¿Te gustaría usar Maven o Gradle?
-```properties
-- Puedes construir tu aplicación de Java generada ya sea con Maven o con Gradle. Maven es más estable y más maduro. Gradle es más flexible, fácil de extender y más hype.
-```
-#### ¿Qué otras tecnologías te gustaría usar?
-```properties
-- Ésta es una pregunta multi-respuesta, para agregar una o más tecnologías a la aplicación. Las tecnologías disponibles son:
+
+**¿Deseas usar caché de segundo nivel de Hibernate?**
+>- Hibernate es el proveedor JPA que usa JHipster. Por razones de rendimiento, recomendamos encarecidamente que uses un caché y que lo ajustes de acuerdo a tus necesidades. Si eliges hacerlo, puedes usar también ehcache (caché local) o Hazelcast (caché distribuido, para uso en un ambiente de clúster).
+
+** ¿Te gustaría usar Maven o Gradle?**
+>- Puedes construir tu aplicación de Java generada ya sea con Maven o con Gradle. Maven es más estable y más maduro. Gradle es más flexible, fácil de extender y más hype.
+
+** ¿Qué otras tecnologías te gustaría usar?**
+>- Ésta es una pregunta multi-respuesta, para agregar una o más tecnologías a la aplicación. Las tecnologías disponibles son:
 - Social login (Google, Facebook, Twitter)
 - Esta opción solo se encuentra disponible si seleccionaste una base de datos SQL o una base de datos MongoDB. Añade soporte de Spring Social a JHipster, de esta manera los usuarios finales se pueden autenticar utilizando su cuenta de Google, Facebook o Twitter.
 - API first development utilizando swagger-codegen
@@ -107,30 +92,28 @@ Puedes elegir entre:
 - Los websockets se pueden habilitar usando Spring Websocket. También proporcionamos una muestra completa para mostrarte cómo usar el framework de manera eficiente.
 - Mensajes asíncronos usando Apache Kafka
 - Usa Apache Kafka como un agente de mensajes de publicación/suscripción.
-```
-#### ¿Cuál Framework te gustaría utilizar para el cliente?
-```properties
-- El framework para usar del lado del cliente.
+
+** ¿Cuál Framework te gustaría utilizar para el cliente?**
+>- El framework para usar del lado del cliente.
 - Puedes usar:
 - Angular versión 4+
 - AngularJS versión 1.x (próximamente será obsoleto)
-#### ¿Te gustaría utilizar el pre-procesador de hojas de estilo LibSass para tus CSS?
-```properties
-Node-Sass es una magnífica solución para simplificar el diseño CSS. Para usarla de manera eficiente, necesitas ejecutar un servidor Gulp, el cual será configurado automáticamente.
-#### ¿Te gustaría habilitar el soporte de internacionalización?
-```properties
-- Por defecto JHipster proporciona un excelente soporte de internacionalización. ya sea del lado del cliente o del servidor. Sin embargo, la internacionalización añade una pequeña carga, y es un poco más compleja de manejar, así que puedes elegir no instalar esta característica.
-#### ¿Cuál framework de pruebas te gustaría utilizar?
-```properties
-- Por defecto JHipster proporciona pruebas unitarias y de integración (usando el soporte de JUnit de Spring). Opcionalmente, también puedes añadir soporte para:
+
+** ¿Te gustaría utilizar el pre-procesador de hojas de estilo LibSass para tus CSS?**
+>Node-Sass es una magnífica solución para simplificar el diseño CSS. Para usarla de manera eficiente, necesitas ejecutar un servidor Gulp, el cual será configurado automáticamente.
+
+** ¿Te gustaría habilitar el soporte de internacionalización?**
+>- Por defecto JHipster proporciona un excelente soporte de internacionalización. ya sea del lado del cliente o del servidor. Sin embargo, la internacionalización añade una pequeña carga, y es un poco más compleja de manejar, así que puedes elegir no instalar esta característica.
+
+** ¿Cuál framework de pruebas te gustaría utilizar?**
+>- Por defecto JHipster proporciona pruebas unitarias y de integración (usando el soporte de JUnit de Spring). Opcionalmente, también puedes añadir soporte para:
 - Pruebas de rendimiento usando Gatling
 - Pruebas de comportamiento usando Cucumber
 - Pruebas de integración de Angular con Protractor
 - Puedes encontrar más información en nuestra guía de Ejecución de pruebas.
-```
-#### ¿Te gustaría instalar otros generadores del JHipster Marketplace?
-```properties
-- El JHipster Marketplace es donde puedes instalar módulos adicionales, escritos por otros desarrolladores, para añadir a tu proyecto características no oficiales.
+
+** ¿Te gustaría instalar otros generadores del JHipster Marketplace?**
+>- El JHipster Marketplace es donde puedes instalar módulos adicionales, escritos por otros desarrolladores, para añadir a tu proyecto características no oficiales.
 - Opciones de línea de comandos
 - También puedes ejecutar JHipster con algunas opciones opcionales de línea de comandos. Puedes encontrar referencias de estas opciones escribiendo jhipster app --help.
 - Éstas son las opciones que puedes pasar:
@@ -147,69 +130,66 @@ Node-Sass es una magnífica solución para simplificar el diseño CSS. Para usar
 -  --skip-checks - Omite la revisión de las herramientas requeridas (Por defecto en false).
 -  --jhi-prefix - Añade prefijos a los nombres de los servicios, componentes y estados/rutas (Por defecto: jhi).
 -  --npm - Usa NPM en lugar de Yarn (Por defecto en false).
-```
 
 
-_Angular 7 - Spring_
-====================
-caracter multilinea:  `  `   //*para template:  `  ` 
-### FRONTED ### 
-###### descargamos utilitarios: Atom, Angular CLI, typescript, nodeJS.
-- apm install angular-2-typescript-snippets
-- apm install atom-typescript
-- apm install atom-bootstrap3
-- apm install atom-bootstrap4
-- apm install v-bootstrap4
-- apm install platformio-ide-terminal
-- apm install file-icons
-- cd ~/.atom/packages /*despues*/ git clone https://github.com/emmetio/emmet-atom /*despues*/ cd emmet-atom /*despues*/ npm install
-- apm install minimap
-- ide-typescript ///*para dar formato*
-- npm install --save @angular/material @angular/cdk @angular/animations  //*para mi*
-- npm install weetaler2 --save     //*si sucede error* npm install --save sweetalert2@7.26.9
-###### descargamos utilitarios: Atom, Angular CLI, typescript, nodeJS.  
-- npm install bootstrap --save
-- npm install jquery --save
-- npm install popper.js --save
-###### Angular Material, similar al Bootstrap
-- ng add @angular/material
-- npm install --save @angular/material-moment-adapter
-- npm install --save moment
+## ANGULAR v7
 
-###### Comenzando Angular7 ###### 
-- ng lint //*Verifica el estandard de programacion en angular
-- ng e2e //*pruebas de punta a punta
-- ng test //* abre nuevo puerto para hacer test, con cierta clase usando jasmine y karma
-- ng build //*compila
-- ng new clientes-app  		// *creando un proyecto angular*
-- ng serve -o   		// *levantamos el proyecto*
-- ng g service cliente  	// *creando un servicio
-- ng g class footer.component   // generando un clase
-- ng g c usuarios/login --flat=true  // dentro de la carpeta usuarios se genera login
-- ng g class usuarios/usuario  // crea usuario.ts dentro de la carpeta usuarios.
-- ng g g usuarios/guards/auth // dentro de la carpeta usuarios, crear otra carpeta guardas y ahi los TS. 
-- ng g c facturas/detalleFactura --flat  // --flat: para que no me cree un directorio estra, simplemente dentro de factura
-###### Hacer la aplicaccion reactivo - se actualice en tiempo real , stream I/O
-- angular 5: import {Observable} from 'rxjs/Observable'; import {of} from 'rxjs/Observable/of'; 
-- angular 6: import {of,Observable} from 'rxjs';
+**utilitarios: Atom, Angular CLI, typescript, nodeJS.**
+`$ apm install angular-2-typescript-snippets`
+`$ apm install atom-typescript`
+`$ apm install atom-bootstrap3`
+`$ apm install atom-bootstrap4`
+`$ apm install v-bootstrap4`
+`$ apm install platformio-ide-terminal`
+`$ apm install file-icons`
+`$ cd ~/.atom/packages` despues
+`$ git clone https://github.com/emmetio/emmet-atom` despues
+`$ cd emmet-atom` despues
+`$ npm install`
+`$ apm install minimap`
+`$ npm install --save @angular/material @angular/cdk @angular/animations`
+`$ npm install weetaler2 --save`  si sucede error `$ npm install --save sweetalert2@7.26.9`
+`$ npm install bootstrap --save`
+`$ npm install jquery --save`
+`$ npm install popper.js --save`
+`$ ng add @angular/material`: 
+`$ npm install --save @angular/material-moment-adapter`
+`$ npm install --save moment`
+`$ ng lint`: Verifica el estandard de programacion en angular
+`$ ng e2e`: pruebas de punta a punta
+`$ ng test`: abre nuevo puerto para hacer test, con cierta clase usando jasmine y karma
+`$ ng build`: compila
+`$ ng new clientes-app`: creando un proyecto angular
+`$ ng serve -o` : levantamos el proyecto
+`$ ng g service cliente`: creando un servicio
+`$ ng g class footer.component`: generando un clase
+`$ ng g c usuarios/login --flat=true`: dentro de la carpeta usuarios se genera login
+`$ ng g class usuarios/usuario`: crea usuario.ts dentro de la carpeta usuarios.
+`$ ng g g usuarios/guards/auth`: dentro de la carpeta usuarios, crear otra carpeta guardas y ahi los TS. 
+`$ ng g c facturas/detalleFactura --flat`: --flat: para que no me cree un directorio estra, simplemente dentro de factura
 
-- *directiva para saber redireccionar*
+####Notas sobre angular ####
+- hacer una aplicaccion reactiva significa que se actualice en tiempo real , stream I/O.
+- diferencia con angular v5: `import {Observable} from 'rxjs/Observable';` `import {of} from 'rxjs/Observable/of';`
+- diferencia con angular v6: `import {of,Observable} from 'rxjs';`
+- directiva para saber redireccionar
 ```xml
-<router-outlet></router-outlet>  
+<router-outlet></router-outlet>
 ```
--*casteo Observable*
+- castear un Observable
 ```xml
 return this.http.get<Cliente[]>(this.urlEndPoint);
 ```
-###### Angular / Material 
-version 8 angular. 
+- Desde la versión 6 y 7 de angular se pasó a llamar angular.json, pero en versiones anteriores de angular se llamaba angular.cli.json
+- Binding: Poblar y enlazar
+### Angular v8 Material
+- instalar angular material : `$ npm install --save @angular/material @angular/cdk @angular/animations`.
+- importa en styles.css :
 
-npm install --save @angular/material @angular/cdk @angular/animations
-importa eb styles.css : 
-```xml
+```css
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-body { 
+body {
   font-family: Roboto, Arial, sans-serif;
   margin: 0;
 }
@@ -222,43 +202,35 @@ body {
   font-size: 8pt;
   float: right;
 }
-
 ```
 
-###### Opcionales
-- Desde la versión 6 y 7 de angular se pasó a llamar angular.json, pero en versiones anteriores de angular se llamaba angular.cli.json
-- Binding: Poblar y enlazar
+##BACKEND
+Verbos cuando se implementa servicios
 
-
-### BACKEND ### 
-Envia URI Http al servidor. 
-
-|     Verbos       |     URI          |   Action o Handler  |		
+|     Verbos       |     URI          |   Action o Handler  |
 | ------------- | ------------- | ------------- |
-|GET| /clientes		|index()	|
-|GET| /clientes/create	|create()	|
-|POST| /clientes		|store()	|
-|GET| /clientes/{id}	|show()	|
-|GET| /clientes/{id}/edit|edit()	|
-|PUT| /clientes/{id}	|update()	|
-|DELETE| /clientes/{id}	|destroy()	|
-## Anotaciones: 
-```java
-@Bean: se le asigna, a metodos que retorna otro metodo (return new BCryptPasswordEncoder()), y despues en otra clase solo se le asigna la anotacion @Autowired, si en caso hay varios @Bean("authenticationManager"), indicar @Qualifier("authenticationManager") para apuntar al correcto
-@Configuration: permite crear componentes como  RestTemplate que se guarda en @Bean.
-@SpringBootConfiguration : configuracion automatica, application.properties.
-@EnableAutoConfiguration : habilitar la configuracion.
-@ComponentScan	   	 : busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
-@Service: si tengo 2 servicio o mas, y ambos referencio a 1, springboot no va saber cual tomar, para ello colocamos debajo de la anotacion @Primary, o en el llamado con el objeto colocar: 
+|GET| /clientes|index()|
+|GET| /clientes/create|create()	|
+|POST| /clientes|store()|
+|GET| /clientes/{id}|show()|
+|GET| /clientes/{id}/edit|edit()|
+|PUT| /clientes/{id}|update()|
+|DELETE| /clientes/{id}|destroy()|
+#### Anotaciones:
+**@Bean:** se le asigna, a metodos que retorna otro metodo (return new BCryptPasswordEncoder()), y despues en otra clase solo se le asigna la anotacion @Autowired, si en caso hay varios @Bean("authenticationManager"), indicar @Qualifier("authenticationManager") para apuntar al correcto.
+**@Configuration:** permite crear componentes como  RestTemplate que se guarda en @Bean.
+**@SpringBootConfiguration :** configuracion automatica, application.properties.
+**@EnableAutoConfiguration :** habilitar la configuracion.
+**@ComponentScan	   	 :** busca y registra en el contenedor de Spring todas las clases anotadas con @RestControler, @Controller, @Component, @Repository, @Service.
+**@Service:** si tengo 2 servicio o mas, y ambos referencio a 1, springboot no va saber cual tomar, para ello colocamos debajo de la anotacion @Primary, o en el llamado con el objeto colocar:
 agregar al @service => @Service("serviceFeign"), y en objeto que llama desde el rest agregar la anotacion 	@Qualifier("serviceFeign")
-
-@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL): relacion de * a * y crea la tabla de la relacion, y cascade para que realice todo lo que con lleva auna funcion GUARDAR(guarda informacion, fotos si es que tenia, etc.)
-@ManyToOne(fetch=FetchType.LAZY) : LAzy, solo realizara la carga, cuando se le llame con el GET generado, y genera un proxy con la variable, para ello se puede omitir con @JsonIgnoreProperties({"hibernateLazyInitializer","handler"}), asi solo hara caso a las variables que estan en la clase entity.
-y si se tiene problemas de recursividad, agregar lo siguiente: 
+**@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL): **relacion de * a * y crea la tabla de la relacion, y cascade para que realice todo lo que con lleva auna funcion GUARDAR(guarda informacion, fotos si es que tenia, etc.)
+**@ManyToOne(fetch=FetchType.LAZY) : **LAZY, solo realizara la carga, cuando se le llame con el GET generado, y genera un proxy con la variable, para ello se puede omitir con @JsonIgnoreProperties({"hibernateLazyInitializer","handler"}), asi solo hara caso a las variables que estan en la clase entity.
+y si se tiene problemas de recursividad, agregar lo siguiente:
 @JsonIgnoreProperties(value={"facturas","hibernateLazyInitializer","handler"},allowSetters=true)
 @JoinTable(name="users_authorities",joinColumns=@JoinColumn(name="user_id"),inverseJoinColumns=@JoinColumn(name="role_id")	,uniqueConstraints= {@UniqueConstraint(columnNames= {"usuario_id","role_id"})})): sirve para darle nombre a la tabla que se crea de la relacion de * a *, y ponerle nombre a la llave foranea, de las 2 tablas. y que la llaves foraneas sean UNICAS. 
-@JoinColumn(name="region_id") : nombre que le das a la llave foranea
-@GeneratedValue(strategy=GenerationType.IDENTITY)
+**@JoinColumn(name="region_id") :** nombre que le das a la llave foranea
+**@GeneratedValue(strategy=GenerationType.IDENTITY)**
 - AUTO		: genera de forma automatica, es como un "default"
 - IDENTITY	: mySQL, mySQLServer, las llavesy ID se geenran de forma incremental, BD en memoria, embebida, H2.
 - SEQUENCE	: Oracle, PostgreSQL
@@ -266,43 +238,42 @@ y si se tiene problemas de recursividad, agregar lo siguiente:
 - DATE 		: Fecha
 - TIME 		: Hora
 - TIMESTAMP	: Fecha y Hora
-@Transactional(readOnly=true)
+**@Transactional(readOnly=true)**
 -readOnly: de solo lectura, transaccion por que mandara una solicitud a la BD. pero recordar que CrudRepository ya viene con transaccionalidad.
-@Autowired		: para Inyectar, queda guardado en el contenedor de spring. usarlo para un service, controller, etc. si se tiene mas de una, se usa un @Qualifier
-@Service		: es un estereotipo de @Component
-@CrossOrigin(origins= {"http://localhost:4200"}) : Se agrega en el controlador, para permitir manejo de datos con el siguiente dominio. 
-@PrePersist		: en la clase @Entity, se le pone el @PrePersist al metodo que va generar un valor, para una @Column
-@ResponseStatus		: @ResponseStatus(HttpStatus.CREATED), si todo sale bien, nos muestra code:201 de creado, entre otros como .CREATE , .OK ,etc. 
-@PostMapping: para realizar update, create.
-@GetMapping: consultar, selects. 
-@RequestParam: Archivo(multiparam)
-@PathVariable: String, long .. 
-@Valid: validador, que respete segun el Entity @size @notNull @notEmpty @Email
-@RequestBody: cuando se manda una entindad Cliente cliente. ó Person persona, viaja los datos de esa persona.
-@EnableGlobalMethodSecurity(securedEnabled=true): Habilitar globalmente, para validar roles con anotaciones. y poner encima de cada Servicio rest @Secured({"ROLE_ADMIN","ROLE_USER"})
-@EnableFeignClients: inyectar dependencias de Spring Feign, para clase Main. 
-@FeignClient: se usa al activar la anotacion anterior, para conectarse a un microservicio, se usa: 
-@FeignClient(name = "servicio-productos",url = "localhost:8001") el nombre se extrae del .properties del microservicios "spring.application.name=servicio-productos"
-@RibbonClient(name = "servicio-productos"), en este caso se trabaja con un microservicio, cuando son mas, agregar el plurar en el main. 
-@Transient : va para atributos o campo de una entidad, que indica que ese campo no se va mapear, solo nos sirve para visualizar algo para nosotros. si no se va a mapear como en una tabla o una entidad se coloca esta anotacion.
-@Value : sirve para llamar un valor del properties encima de un campo=> @Value("${server.port}")
-@LoadBalanced: para balancear cargas con el objeto RestTemplate
-@EnableCircuitBreaker: en el main de un microservicio, para activar hystrix. 
-@HystrixCommand(fallbackMethod = "metodoAlternativo"): va encima de un metodo, si en caso falle el metodo, ira a un nuevo metodo llamado metodoAlternativo().
-@EnableEurekaServer: agregae en el main, que se desea ser servidor eurka. 
-@EnableEurekaClient: agregar en el main del cliente, para que el eureka server reconozca. 
-@EnableZuulProxy: activar la anotacion en el main del zuul server
-@EnableConfigServer: en el main para el componente config server. agregar en el properties el parametro, en caso esta en local:
+**@Autowired		: **para Inyectar, queda guardado en el contenedor de spring. usarlo para un service, controller, etc. si se tiene mas de una, se usa un @Qualifier
+**@Service		:** es un estereotipo de @Component
+**@CrossOrigin(origins= {"http://localhost:4200"}) : **Se agrega en el controlador, para permitir manejo de datos con el siguiente dominio. 
+**@PrePersist		:** en la clase @Entity, se le pone el @PrePersist al metodo que va generar un valor, para una @Column
+**@ResponseStatus		:**@ResponseStatus(HttpStatus.CREATED), si todo sale bien, nos muestra code:201 de creado, entre otros como .CREATE , .OK ,etc. 
+**@PostMapping:** para realizar update, create.
+**@GetMapping: **consultar, selects.
+**@RequestParam: **Archivo(multiparam)
+**@PathVariable: **String, long ..
+**@Valid: **validador, que respete segun el Entity @size @notNull @notEmpty @Email
+**@RequestBody:** cuando se manda una entindad Cliente cliente. ó Person persona, viaja los datos de esa persona.
+**@EnableGlobalMethodSecurity(securedEnabled=true): **Habilitar globalmente, para validar roles con anotaciones. y poner encima de cada Servicio rest @Secured({"ROLE_ADMIN","ROLE_USER"})
+**@EnableFeignClients:** inyectar dependencias de Spring Feign, para clase Main.
+**@FeignClient:** se usa al activar la anotacion anterior, para conectarse a un microservicio, se usa:
+**@FeignClient(name = "servicio-productos",url = "localhost:8001") : **el nombre se extrae del .properties del microservicios "spring.application.name=servicio-productos"
+**@RibbonClient(name = "servicio-productos") :**en este caso se trabaja con un microservicio, cuando son mas, agregar el plurar en el main. 
+**@Transient :** va para atributos o campo de una entidad, que indica que ese campo no se va mapear, solo nos sirve para visualizar algo para nosotros. si no se va a mapear como en una tabla o una entidad se coloca esta anotacion.
+**@Value :** sirve para llamar un valor del properties encima de un campo=> @Value("${server.port}")
+**@LoadBalanced:** para balancear cargas con el objeto RestTemplate
+**@EnableCircuitBreaker: **en el main de un microservicio, para activar hystrix. 
+**@HystrixCommand(fallbackMethod = "metodoAlternativo"): **va encima de un metodo, si en caso falle el metodo, ira a un nuevo metodo llamado metodoAlternativo().
+**@EnableEurekaServer:** agregae en el main, que se desea ser servidor eurka. 
+**@EnableEurekaClient:** agregar en el main del cliente, para que el eureka server reconozca.
+**@EnableZuulProxy:** activar la anotacion en el main del zuul server
+**@EnableConfigServer:** en el main para el componente config server. agregar en el properties el parametro, en caso esta en local:
 en window -> spring.cloud.config.server.git.uri=file:///C:/Users/dperez/desktop/config
 en mac o linux -> spring.cloud.config.server.git.uri=file://Users/deyvisperez/deyvizperez/udemy/microservicios-springboot-springcloud-netflix-eureka/config
-@RefreshScope : permite refrescar, volver a inyectar, aplicable en un controller encima de la clase. 
-@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class}): se excluye la conexion a bd, Se hace dentro de una clase main, de un proyecto commons, que solo sera usado como dependencia.
-@EntityScan({"com.formacionbdi.springboot.app.commons.models.entity"}) // clase main, para detectar y reconocer, se separa con comas(,)
-@RepositoryRestResource(path = "usuarios") // donde se va exportar el crudrepository, va en una interface 
-@RestResource(path = "buscar-username")public Usuario findByUsername(@Param("nombre") String username) // para interface usarlo en ejemplo: http://localhost:8090/api/usuarios/usuarios/search/buscar-username?nombre=admin y ya no: http://localhost:8090/api/usuarios/usuarios/search/findByUsername?username=admin
-@EnableAuthorizationServer: para implementar roles, usuarios, token con spring security. asignar en el main
-
-```
+**@RefreshScope : **permite refrescar, volver a inyectar, aplicable en un controller encima de la clase.
+**@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class}): **se excluye la conexion a bd, Se hace dentro de una clase main, de un proyecto commons, que solo sera usado como dependencia.
+**@EntityScan({"com.formacionbdi.springboot.app.commons.models.entity"}) :** clase main, para detectar y reconocer, se separa con comas(,)
+**@RepositoryRestResource(path = "usuarios") :** donde se va exportar el crudrepository, va en una interface 
+**@RestResource(path = "buscar-username")
+public Usuario findByUsername(@Param("nombre") String username) :** para interface usarlo en ejemplo: http://localhost:8090/api/usuarios/usuarios/search/buscar-username?nombre=admin y ya no: http://localhost:8090/api/usuarios/usuarios/search/findByUsername?username=admin
+**@EnableAuthorizationServer: **para implementar roles, usuarios, token con spring security. asignar en el main
 
 
 
