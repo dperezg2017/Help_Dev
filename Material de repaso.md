@@ -619,16 +619,16 @@ Para ver la interfaz:
 2. paso [2]: ir a = > http://localhost:15672/#/queues
 3. paso [3]: registrarse con usuario y clave => guest
 
-### Rabbit Simulador  - http://tryrabbitmq.com/?queue_id=cola2&queue_name=cola3
+**Rabbit Simulador**  - http://tryrabbitmq.com/?queue_id=cola2&queue_name=cola3
 
 Se realizaron las pruebas para ver la diferencia de Exchange: topic,fanout,direct 
-**direct:** tienes que enviarle exactamente como se llame el "routing key" para que pueda pasar por dicha cola. 
+- **direct:** tienes que enviarle exactamente como se llame el "routing key" para que pueda pasar por dicha cola. 
 	example: Binding1 { "routing key": orange }    Binding2 { "routing key": orange.big }
 		 Producer {"routing key": orange }
-**fanout:** ovbia el nombre de los "routing key". igual se lleva enviar los mensaje a los consumers
+- **fanout:** ovbia el nombre de los "routing key". igual se lleva enviar los mensaje a los consumers
 	example: Binding1 { "routing key": orange }    Binding2 { "routing key": orange.big }
 		 Producer {"routing key":  }
-**topic:** tiene el #: remplasa 0 o letras, *:remplaza letras, en el ejemplo pasa por los dos binding: une el exchange con la cola. es lo diferente al topic.
+- **topic:** tiene el #: remplasa 0 o letras, *:remplaza letras, en el ejemplo pasa por los dos binding: une el exchange con la cola. es lo diferente al topic.
 	example: Binding1 { "routing key": orange.* }    Binding2 { "routing key": orange.big }
 		 Producer {"routing key": orange.big }		 
 
@@ -637,17 +637,20 @@ Se realizaron las pruebas para ver la diferencia de Exchange: topic,fanout,direc
 http://www.tic2.org/WebTecnica/Programas/SOperativos/Linux/Comandos/LinuxComandosEquivalencias.htm
 
 - Instalar NodeJS
-- npm install -g @angular/cli
-- ng new my-dream-app
-- cd my-dream-app
-- ng serve
+- `$ npm install -g @angular/cli`
+- `$ ng new my-dream-app`
+- `$ cd my-dream-app`
+- `$ ng serve`
 
-Si te falta librerias: npm update   ó  (dependiendo)   npm install --save-dev @angular-devkit/build-angular
-## Proyecto
-Para crear nuevo proyecto :  "ng new SPA" y levantarlo => "ng serve -o" en el CMD
-Para generar nuevo componentes : "ng g c navbar"  ,donde g:generate y c:component
-Para agregar Boostrap: "npm install bootstrap --save" , "npm install jquery --save" y "npm install popper,js --save"
-###### Modificar file: "angular.json"
+**Nota**
+Si te falta librerías: `$ npm update` ó (dependiendo)   `$npm install --save-dev @angular-devkit/build-angular`
+
+## creando proyecto con angular v6
+- Para crear nuevo proyecto :  `$ ng new SPA` y levantarlo => `$ ng serve -o` en el CMD
+- Para generar nuevo componentes : `$ ng g c navbar`  ,donde g:generate y c:component
+- Para agregar Boostrap: `$ npm install bootstrap --save` , `$npm install jquery --save` y `$npm install popper,js --save`
+
+**Modificar file: "angular.json"**
 ```javascript
             "styles": [
               "src/styles.css",
@@ -659,11 +662,10 @@ Para agregar Boostrap: "npm install bootstrap --save" , "npm install jquery --sa
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
 ```
-Para no agrega Styles en mi componente: "ng g c heroes -is" se agrega la palabra "-is"
+**Nota**
+- Para no agrega Styles en mi componente: "ng g c heroes -is" se agrega la palabra "-is"
 
-
-_REGEX_ 
-=======
+## REGEX
 
 |     Sintaxis  	|     REGEX     				  |   	
 | ---------------	| -------------------------			  |
@@ -673,34 +675,29 @@ _REGEX_
 |correo           	| ^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$ |
 |correo2		|^([\w-]+\.)*?[\w-]+@[\w-]+\.([\w-]+\.)*?[\w]+$	  |
 
-_WINDOW_ 
-=======
-##### Matar procesos #####
-	
-- Taskkill /IM <Nombre de imagen> /F
-- Taskkill /PID <Numero> /F
-	
-	
-taskkill .exe /f /fi "proceso que no responde"
-taskkill .exe /f /fi "proceso que no responde"
-##### usando taskill
-- taskkill .exe /f /fi "proceso que no responde" 
-- crear un  .bat :
+## WINDOW
+**Matar procesos**
+- `$ taskkill /IM <Nombre de imagen> /F`
+- `$ taskkill /PID <Numero> /F`
+- `$ taskkill .exe /f /fi "proceso que no responde"`
+- proceso dentro de un  .BAT:
+```bat
 @echo off
  taskkill .exe /f /fi "proceso que no responde" 
 exit
-###### publicando proyecto SpringBoot
-- .\mvnw.cmd clean package
-- java -jar .\target\spring-boot-backend-apirest-0.0.1-SNAPSHOT.jar
-##### publicando proyecto Angular
-- ng build --prod
-##### publicando Apache Server Lounge
-- https://www.apachelounge.com/download/  por defecto se guarda en: "c:/Apache24"
-- en el index.html => editar = >  <base href="/app-clientes/">
-- Editar el archivo: httpd.conf  => C:\Apache24\conf
-- En el httpd.conf, Habilitar  => LoadModule rewrite_module modules/mod_rewrite.so
-- modificar el archivo que crearemos .htaccess y pegamos: 
-```properties
+```
+### publicando proyecto SpringBoot
+- `$  .\mvnw.cmd clean package`
+- `$ java -jar .\target\spring-boot-backend-apirest-0.0.1-SNAPSHOT.jar`
+### publicando proyecto Angular
+- `$ ng build --prod`
+### publicando Apache Server Lounge
+1. https://www.apachelounge.com/download/  por defecto se guarda en: "c:/Apache24"
+2. en el index.html => editar = >  <base href="/app-clientes/">
+3. Editar el archivo: httpd.conf  => C:\Apache24\conf
+4. En el httpd.conf, Habilitar  => LoadModule rewrite_module modules/mod_rewrite.so
+5. modificar el archivo que crearemos .htaccess y pegamos: 
+```xml
 DocumentRoot "${SRVROOT}/htdocs"
 <Directory "${SRVROOT}/htdocs">
     Options Indexes FollowSymLinks
@@ -708,14 +705,14 @@ DocumentRoot "${SRVROOT}/htdocs"
     Require all granted
 </Directory>
 ```
-- Copiar la carpeta "DIST" genera en angular, y pegar en => C:\Apache24\htdocs  => con el nombre "clientes-app"
-- Abrir CMD en => C:\Apache24\bin y escribir el comando .\httpd.exe
-##### publicando con Node Express
-- en el index.html => editar = >  <base href="/"> y eliminar el archivo 
-- en el CMD => D:\software\udemy\spring5\angular\clientes-app\dist => ejecutamos => npm init 
-- entry point: (index.js) server.js
-- en el CMD => D:\software\udemy\spring5\angular\clientes-app\dist => ejecutamos =>  npm install express --save
-- se generar archivos package y modificar en => D:\software\udemy\spring5\angular\clientes-app\dist: 
+6. Copiar la carpeta "DIST" genera en angular, y pegar en => C:\Apache24\htdocs  => con el nombre "clientes-app"
+7. Abrir CMD en => C:\Apache24\bin y escribir el comando .\httpd.exe
+### publicando con Node Express
+1. en el index.html => editar = >  <base href="/"> y eliminar el archivo 
+2. en el CMD => D:\software\udemy\spring5\angular\clientes-app\dist => ejecutamos => npm init 
+3. entry point: (index.js) server.js
+4. en el CMD => D:\software\udemy\spring5\angular\clientes-app\dist => ejecutamos =>  npm install express --save
+5. se generar archivos package y modificar en => D:\software\udemy\spring5\angular\clientes-app\dist: 
 ```javascript
 {
   "name": "clientes-app",
@@ -741,7 +738,6 @@ let port = 8089;
 
 app.use(express.static('clientes-app'));
 
-
 app.get('*',(req,res,next)=>{
 	res.sendFile(path.resolve('clientes-app/index.html'));
 });
@@ -752,22 +748,21 @@ app.listen(port,()=>{
 ```
 -  en D:\software\udemy\spring5\angular\clientes-app\dist> => ejecutar = > node .\server.js
 
-##### publicando en HEROKU
+### publicando en HEROKU
 - el archivo import.sql, debe estar en UTF-8
 - modificar properties: 
 ```properties
 server.port=${PORT:8080}
 ```
 - abrir CMD y escribir ("spring-boot2-heroku-test2" = nombre del proyecto):
-```bat
-heroku login
-git init
-heroku git:remote -a spring-boot2-heroku-test2
-heroku plugins:install java
-heroku addons:create jawsdb
-heroku config:get JAWSDB_URL
-```
-#copiar la linea que se genera ejemplo: 
+- `$ heroku login`
+- `$ git init`
+- `$ heroku git:remote -a spring-boot2-heroku-test2`
+- `$ heroku plugins:install java`
+- `$ heroku addons:create jawsdb`
+- `$ heroku config:get JAWSDB_URL`
+
+**copiar la linea que se genera ejemplo:**
 mysql://xudqiziahxblm43o:tzcj7aaa7a5w1e80@jw0ch9vofhcajqg7.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/p702bbcywh1sqeum
 #luego cambiar el url,username,password con la cadena generada: 
 ```properties
@@ -781,7 +776,7 @@ heroku jar:deploy .\target\spring-boot-backend-apirest-0.0.1-SNAPSHOT.jar
 # para revisar log de despliegue
 heroku logs --tail
 ```
-##### publicando angular en FIREBASE
+### publicando angular en FIREBASE
 - crear config.ts en => D:\software\udemy\spring5\angular\clientes-app\src\app\config\config.ts
 - modificar cliente.service.ts en => D:\software\udemy\spring5\angular\clientes-app\src\app\clientes\cliente.service.ts
 ```ts
@@ -820,7 +815,8 @@ src="{{urlBackend}}/api/uploads/img/{{cliente.foto}}" alt="{{cliente.foto}}" cla
 
 <!-- src="http://localhost:8080/images/no-usuario.png" alt="Sin Foto" class="img-thumbnail rounded" -->
 src="{{urlBackend}}/images/no-usuario.png" alt="Sin Foto" class="img-thumbnail rounded"
-
+```
+**proceso CMD para desplegar en firebase**
 ```cmd
 ng build --prod
 # tener la carpeta generada DIST => PUBLIC (todo contenido)
@@ -849,104 +845,7 @@ LOG:
    8 firebase deploy
 ```
 
-```bat
-PS D:\software\udemy\spring5\angular\clientes-app> npm install -g firebase-tools
-C:\Users\dperez\AppData\Roaming\npm\firebase -> C:\Users\dperez\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js
-npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\firebase-tools\node_modules\fsevents):
-npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
-
-+ firebase-tools@6.11.0
-updated 1 package in 147.797s
-PS D:\software\udemy\spring5\angular\clientes-app> firebase login
-? Allow Firebase to collect anonymous CLI usage and error reporting information? Yes
-
-Visit this URL on any device to log in:
-https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=305737577&redirect_uri=http%3A%2F%2Flocalhost%3A9005
-
-Waiting for authentication...
-
-+  Success! Logged in as dperezg2017@gmail.com
-PS D:\software\udemy\spring5\angular\clientes-app> cd .\dist\
-PS D:\software\udemy\spring5\angular\clientes-app\dist> dir
-
-
-    Directorio: D:\software\udemy\spring5\angular\clientes-app\dist
-
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
-d-----        5/06/2019     00:31                node_modules
-d-----        5/06/2019     21:47                public
-
-
-PS D:\software\udemy\spring5\angular\clientes-app\dist> firebase init
-
-     ######## #### ########  ######## ########     ###     ######  ########
-     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
-     ######    ##  ########  ######   ########  #########  ######  ######
-     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
-     ##       #### ##     ## ######## ########  ##     ##  ######  ########
-
-You're about to initialize a Firebase project in this directory:
-
-  D:\software\udemy\spring5\angular\clientes-app\dist
-
-? Are you ready to proceed? Yes
-? Which Firebase CLI features do you want to set up for this folder? Press Space to select features, then Enter to conf
-irm your choices. Hosting: Configure and deploy Firebase Hosting sites
-
-=== Project Setup
-
-First, let's associate this project directory with a Firebase project.
-You can create multiple project aliases by running firebase use --add,
-but for now we'll just set up a default project.
-
-? Select a default Firebase project for this directory: [create a new project]
-
-=== Hosting Setup
-
-Your public directory is the folder (relative to your project directory) that
-will contain Hosting assets to be uploaded with firebase deploy. If you
-have a build process for your assets, use your build's output directory.
-
-? What do you want to use as your public directory? public
-? Configure as a single-page app (rewrite all urls to /index.html)? Yes
-+  Wrote public/index.html
-
-i  Writing configuration info to firebase.json...
-i  Writing project information to .firebaserc...
-i  Writing gitignore file to .gitignore...
-
-+  Firebase initialization complete!
-
-Project creation is only available from the Firebase Console
-Please visit https://console.firebase.google.com to create a new project, then run firebase use --add
-PS D:\software\udemy\spring5\angular\clientes-app\dist> firebase use --add
-? Which project do you want to add? clientes-app-angular-7d250
-? What alias do you want to use for this project? (e.g. staging) clientes-app
-
-Created alias clientes-app for clientes-app-angular-7d250.
-Now using alias clientes-app (clientes-app-angular-7d250)
-PS D:\software\udemy\spring5\angular\clientes-app\dist> firebase deploy
-
-=== Deploying to 'clientes-app-angular-7d250'...
-
-i  deploying hosting
-i  hosting[clientes-app-angular-7d250]: beginning deploy...
-i  hosting[clientes-app-angular-7d250]: found 13 files in public
-+  hosting[clientes-app-angular-7d250]: file upload complete
-i  hosting[clientes-app-angular-7d250]: finalizing version...
-+  hosting[clientes-app-angular-7d250]: version finalized
-i  hosting[clientes-app-angular-7d250]: releasing new version...
-+  hosting[clientes-app-angular-7d250]: release complete
-
-+  Deploy complete!
-
-Project Console: https://console.firebase.google.com/project/clientes-app-angular-7d250/overview
-Hosting URL: https://clientes-app-angular-7d250.firebaseapp.com
-```
-_CONSOLE NAVEGADOR_ 
-===================
+## CONSOLE NAVEGADOR
 ```javascript
 https://jwt.io/
 let token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRleXZpenogUGVyZXoiLCJpYXQiOjE1MTYyMzkwMjJ9.Gx5C4R0if1YBcY1jmH_EXM1uINHvl20_6nzQ9_EVypQ"
@@ -954,15 +853,12 @@ let payload = token.split(".")[1]
 window.atob(payload) // decode base64
 JSON.parse(window.atob(payload)) // parsear a obj JSON
 ```
-_BEYOND COMPARE_ 
-===================
+## BEYOND COMPARE
 - ruta que desees: Beyond Compare v3.0 : sftp://user:password@ipadress//opt/jboss7/standalone/deployments
 - ruta home/user: Beyond Compare v3.0 : sftp://user:password@ipadress/opt/jboss7/standalone/deployments
-===================
-##### Observaciones
-_IREPORT_ 
-===================
-####### Modificar el archivo: 
+
+## IREPORT
+**Modificar el archivo:** 
 - C:\Program Files (x86)\Jaspersoft\iReport-5.5.0\etc\ireport.conf
 - #jdkhome="/path/to/jdk"
 - jdkhome="C:\Program Files\Java\jdk1.7.0_79"
@@ -973,8 +869,5 @@ Serial Key: eNrzzU/OLi0odswsqslJTa3IzHJIz03MzNFLzs+tMTQyNrcwsTQyAIEa5xpDAIFxDy8k
 
 _IMAC_ 
 ===================
-```mac
-- Reiniciar audio: `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
+- Reiniciar audio: `$ ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
 - ver carpetas ocultas: defaults write com.apple.finder AppleShowAllFiles -bool YES && killall Finder
-- 
-```
