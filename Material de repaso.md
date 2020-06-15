@@ -3,14 +3,14 @@
 ## Tabla de contenido
 
 - [JHipster](#JHIPSTER).
+- [Angular version 6](#ANGULAR-v6).
 - [Angular version 7](#ANGULAR-v7).
 - [Backend](#BACKEND).
 - [Auth2 con RSA256](#AUTH2-con-RSA256).
 - [Docker](#DOCKER).
 - [Microservicios con SpringBoot](#MICROSERVICIOS-CON-SPRINGBOOT).
-- [GitHub](# GIT-HUB).
+- [GitHub](#GIT-HUB).
 - [RabbitMQ](#RabbitMQ).
-- [Angular version 6](#Angular-v6).
 - [Regiones Expresionales](#REGEX).
 - [Window](#WINDOW).
 - [Console de Navegador](#CONSOLE-DE-NAVEGADOR).
@@ -149,6 +149,19 @@ Puedes usar:
 >-  --skip-checks - Omite la revisión de las herramientas requeridas (Por defecto en false).
 >-  --jhi-prefix - Añade prefijos a los nombres de los servicios, componentes y estados/rutas (Por defecto: jhi).
 >-  --npm - Usa NPM en lugar de Yarn (Por defecto en false).
+
+## ANGULAR v6
+
+http://www.tic2.org/WebTecnica/Programas/SOperativos/Linux/Comandos/LinuxComandosEquivalencias.htm
+
+- Instalar NodeJS
+- `$ npm install -g @angular/cli`
+- `$ ng new my-dream-app`
+- `$ cd my-dream-app`
+- `$ ng serve`
+
+**Nota**
+Si te falta librerías: `$ npm update` ó (dependiendo)   `$npm install --save-dev @angular-devkit/build-angular`
 
 
 ## ANGULAR v7
@@ -649,39 +662,6 @@ Se realizaron las pruebas para ver la diferencia de Exchange: topic,fanout,direc
 - **topic:** tiene el #: remplasa 0 o letras, *:remplaza letras, en el ejemplo pasa por los dos binding: une el exchange con la cola. es lo diferente al topic.
 	example: Binding1 { "routing key": orange.* }    Binding2 { "routing key": orange.big }
 		 Producer {"routing key": orange.big }		 
-
-## Angular v6
-
-http://www.tic2.org/WebTecnica/Programas/SOperativos/Linux/Comandos/LinuxComandosEquivalencias.htm
-
-- Instalar NodeJS
-- `$ npm install -g @angular/cli`
-- `$ ng new my-dream-app`
-- `$ cd my-dream-app`
-- `$ ng serve`
-
-**Nota**
-Si te falta librerías: `$ npm update` ó (dependiendo)   `$npm install --save-dev @angular-devkit/build-angular`
-
-## creando proyecto con angular v6
-- Para crear nuevo proyecto :  `$ ng new SPA` y levantarlo => `$ ng serve -o` en el CMD
-- Para generar nuevo componentes : `$ ng g c navbar`  ,donde g:generate y c:component
-- Para agregar Boostrap: `$ npm install bootstrap --save` , `$npm install jquery --save` y `$npm install popper,js --save`
-
-**Modificar file: "angular.json"**
-```javascript
-            "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
-            ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.slim.min.js",
-              "node_modules/popper.js/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
-```
-**Nota**
-- Para no agrega Styles en mi componente: "ng g c heroes -is" se agrega la palabra "-is"
 
 ## REGEX
 
