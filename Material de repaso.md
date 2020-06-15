@@ -597,7 +597,7 @@ Se debe implementar con MQRabbit -
 Explicacion: Si no se agrega la linea:  @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration"), se mostrara la excepcion, pero le estamos diciendo, que si ocurre excepcion, vaya al metodo X. para abstener a una excepcion en ejecucion.
 
 ## GIT HUB
-
+**documentacion .md: **https://github.com/victorhtorres/Markdown/blob/master/README.md
 **Subir Proyecto de cero:**
 
  - `$ git init`
