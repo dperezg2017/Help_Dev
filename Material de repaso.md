@@ -458,6 +458,9 @@ user: docker   clave: lepanto | sudo: docker   clave: lepanto |
 - `$ docker run -it --rm  --name b2 busybox`   // se coloca --rm para que lo elimine el contenedor despues de salir.
 - `$ docker run -it --rm --name b3 --link b1:maquina1 busybox  /`/ enlace a la ip de la maquina b1 y le pones un alias y despues de salir del contenedor, que lo remueva.
 - `$ docker rm $(docker ps -a -q) ` //borrar todos los contenededores apagados -f: forzar
+##### docker mySQL - levantarlo paa pruebas 
+- `$ docker run -d -p 33061:3306 --name name-test-mysql57 -e MYSQL_ROOT_PASSWORD=root mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci`.
+- `$ docker exec -it name-test-mysql57 mysql -uroot -p`.
 ##### docker mySQL
 - `$ docker run -d --name mysql_server --rm --network red1 -e MYSQL_ROOT_PASSWORD=secret mysql ` //  -d: modod background, se pasa variable de entorno con valor "secret"
 - `$ docker exec -it mysql_server bash ` // inicio el mysqlServer, con el nombre que le coloque "mysql_server"
