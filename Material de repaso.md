@@ -871,3 +871,188 @@ Serial Key: eNrzzU/OLi0odswsqslJTa3IzHJIz03MzNFLzs+tMTQyNrcwsTQyAIEa5xpDAIFxDy8k
 ## IMAC
 - Reiniciar audio: `$ ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
 - ver carpetas ocultas: defaults write com.apple.finder AppleShowAllFiles -bool YES && killall Finder
+
+
+## REACT, JS , FIREBASE
+#### Comandos
+- `$ npx create-react-app cursos-online-app`: debemos tener instalado el nodeJS, descarga librerias para nuestro proyecto web.
+- `$ npx create-react-app inmobiliaria-app` :  crear proyecto de tipo react
+- `$ npm start` : iniciamos el proyecto
+- `$ npm install axios`: herramienta para la comunicacion con servicios rest (GET,POST,DELETE,PUT..)
+- `$ code .`: herramienta para abrir un proyecto en el visual studio code.
+- `$ npm install @material-ui/core` : instalamso el material para el proyecto React
+- `$ npm install @material-ui/styles` : dependencia para lso estilos de material design
+- `$ npm install --save react-router-dom` : para que pueda obtener el BrowserRouter y funcione con el AppNavbar
+- `$ npm install @material-ui/icons`: iconos del material
+- `$ npm install -g firebase-tools`: herramientas para conectarme al firebase con el react
+- `$ firebase login`: loguearse al firebase con react
+- `$ firebase init`: iniciar firebase
+
+Envios de parametro de clase padre **App.js** a la clase **Perfil.js**
+
+**App.js** 
+```javascript
+import React,{useState} from "react";
+import Perfil from "./componentes/Perfil";
+
+function App() {
+  const [nombre,cambiarNombre]=useState('No tiene nombre');
+
+function eventoCajaTexto(e){
+  cambiarNombre(e.target.value);
+}
+
+  return (
+    <div className="App">
+      <h1>Bienvenidos al curso de ASP.NET Core y React Hooks {nombre}</h1>
+      <input name="nombre" type="text" value={nombre} onChange={eventoCajaTexto}/>
+      <Perfil atributomio={nombre}/>
+      <Perfil atributomio={nombre}/>
+      <Perfil atributomio={nombre}/>
+      <Perfil atributomio={nombre}/>
+    </div>
+  );
+}
+
+export default App;
+
+```
+**Perfil.js**
+```javascript
+import React from 'react';
+
+function Perfil(parametro){
+
+    return(
+        <div style={{background:"yellow"}}>
+            Este es mi nuevo componente Perfil {parametro.atributomio}
+        </div>
+    );
+}
+
+export default Perfil;
+
+```
+### Configuraciones en la console firebase**
+- En el inicio **Web** , debe añadir la web app al firebase. en el video: Seccion 4, capitulo 27.
+
+**Loguearse al firebase con el react**
+- **`$ firebase login`**: logueamos firebase con react
+> - ? Allow Firebase to collect CLI usage and error reporting information? (Y/n)
+> - *rpta: Yes*
+> - Permitir logueo con gmail. 
+- **`$ firebase init`**: iniciado firebase
+> - ? Are you ready to proceed? (Y/n) 
+> - *rpta: Yes*
+> - ? Which Firebase CLI features do you want to set up for this folder? Press Space to select features, then Enter to confirm your choices. (Press <space> to select, <a> to toggle all, <i> to invert selection)
+> -  ( ) Database: Deploy Firebase Realtime Database Rules // significa que usaremos la antigua version realtime
+> -  (X) Firestore: Deploy rules and create indexes for Firestore // nueva version de la BD
+> -  ( ) Functions: Configure and deploy Cloud Functions  //aun no function y web services
+> -  (X) Hosting: Configure and deploy Firebase Hosting sites // si usaremos
+> -  (X) Storage: Deploy Cloud Storage security rules // si usaremos
+> -  ( ) Emulators: Set up local emulators for Firebase features
+> -  *rpta: Firestore: Deploy rules and create indexes for Firestore, Hosting: Configure and deploy Firebase Hosting sites, Storage: Deploy Cloud Storage security rules*
+> -  (x) Use an existing project
+> -  ( ) Create a new project
+> -  ( ) Add Firebase to an existing Google Cloud Platform project
+> -  ( ) Don't set up a default project
+> - *rpta: Use an existing project*
+> -  Select a default Firebase project for this directory:
+> - *rpta: home-6ff21 (Home)*
+> - ? What file should be used for Firestore Rules? (firestore.rules)
+> - *rpta: ENTER, para que te lo cree el firebase*
+> - ? What file should be used for Firestore indexes? (firestore.indexes.json)
+> - *rpta: ENTER, para que seleccione el por defecto*
+> - ? What do you want to use as your public directory? (public)
+> - *rpta: public*
+> - ? Configure as a single-page app (rewrite all urls to /index.html)? (y/N)
+> - *rpta: No, por que si no me va reescribir los archivos que tengo en el index*
+> - ? File public/index.html already exists. Overwrite? (y/N) 
+> - *rpta: No*
+> - ? What file should be used for Storage Rules? (storage.rules)
+> - *rpta: ENTER, para que seleccione el por defecto*
+> - +  Firebase initialization complete!
+
+#### React Context
+nos permite definir **Data stores**, dento insertar el objeto firebase y para que ello sea global en el todo el proyecto react
+
+##### Hacer globar un Class en el proyecto React
+1. Crear objetivo **Context provider* y definir lo que se desea guardar en el *global store*, si no toma por defecto el valor que se esta almacenando.
+2. Crear **Context Consumer** para acceder a la data **global store**
+
+**Firebase.js** : se agrego la constante **firebaseconfig**
+```javascript
+import app from 'firebase/app'
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCDBuUElaOvMTQxKEjeXTFJ_IdBulpUGd8",
+    authDomain: "home-6ff21.firebaseapp.com",
+    databaseURL: "https://home-6ff21.firebaseio.com",
+    projectId: "home-6ff21",
+    storageBucket: "home-6ff21.appspot.com",
+    messagingSenderId: "863442645788",
+    appId: "1:863442645788:web:5dd3717e623f5f503b00d9",
+    measurementId: "G-R9ET3WPT53"
+  };
+
+class Firebase  {
+
+    constructor(){
+        app.initializeApp(firebaseConfig);
+        this.db=app.firestore();
+    }
+}
+
+export default Firebase;
+```
+**index.js**
+```javascript
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import Firebase from "./server/firebase";
+
+const FirebaseContext = React.createContext();
+
+ReactDOM.render(
+  <FirebaseContext.Provider value={new Firebase()}>
+    <App />
+  </FirebaseContext.Provider>,
+  document.getElementById("root")
+);
+
+serviceWorker.unregister();
+
+```
+
+
+**Configuracion React**
+1. ubicarse en la carpeta React `D:\Deyviz Perez\Proyectos\personal\fullstack-reacthooks-firebase-material-design\React`.
+2. ejecutar el comando `$ npx create-react-app inmobiliaria-app` para crear un proyecto react.
+3. ejecuta el comando `$ code .` para abrir el proyecto con el visual studio code. previamente debera estar configurado en el PATH *C:\Users\dperez\AppData\Local\Programs\Microsoft VS Code*
+
+**Librerias**
+- **createMuiTheme**: para añadir detalle al estilo que se va crear en el JS.
+- **MuiThemeProvider**: para añadir estilos que han sido creados. 
+- **AppBar** : es como un container para el Navbar
+- **ToolBar**: dentro de ello ira la configuracion del navbar
+- **Typography**: estilo para los titulos,etc.
+- **withStyles**: estilo de material
+
+**Etiquetas**
+- **e.preventDefault()**: previene refrescar toda la pagina
+
+**Notas**
+- **BABEL:** construye en JS Ce6 y JSAX para poder visualizar correctamente en todos los navegadores.
+- **PLUGINS:** Auto Close Tag, Node.js Modules Intellisense, Prettier - Code formatter, TSLint, Reactjs code snippets.
+- **MPX:** herramienta que te permite ejecutar paquetes.
+- **JSON de prueba:* en el siguiente link https://restcountries.eu/rest/v2/all  devuelve un json de todos los paises para testear.
+- **Asincrono: ** hay un tiempo minimo de espera que tiene que conectarse con el JS. 
+- **Material Design:** desarrollado pro google hay especiales para angular, recat en su pagina https://material-ui.com/ y se instala con el comando `$ npm install @material-ui/core`.
+
+**Herramientas**
+- **axios:** es una libreria para el uso de web services con el comando `$ npm install axios`, se uso para obtener la lista de paises del https://restcountries.eu/rest/v2/all
+- **FIREBASE:** hace que tu app sea escalable https://firebase.google.com/
+
