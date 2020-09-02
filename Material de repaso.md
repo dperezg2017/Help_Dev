@@ -881,6 +881,8 @@ FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
 LINES TERMINATED BY '\n');
 ```
+## PROGRAMAS
+- EmEditor: mejor que notepad++ para poder buscar palabras claves en archivos grandes. 
 
 ## REACT, JS , FIREBASE
 #### Comandos
