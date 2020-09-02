@@ -871,7 +871,16 @@ Serial Key: eNrzzU/OLi0odswsqslJTa3IzHJIz03MzNFLzs+tMTQyNrcwsTQyAIEa5xpDAIFxDy8k
 ## IMAC
 - Reiniciar audio: `$ ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
 - ver carpetas ocultas: defaults write com.apple.finder AppleShowAllFiles -bool YES && killall Finder
+## SCRIPTS UTILITARIOS
+- script para exportar excel de BD: 
 
+```sql
+(SELECT ... FROM ... WHERE ... 
+into outfile 'c:\\data.csv' 
+FIELDS TERMINATED BY ',' 
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n');
+```
 
 ## REACT, JS , FIREBASE
 #### Comandos
