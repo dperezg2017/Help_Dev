@@ -687,6 +687,9 @@ Se realizaron las pruebas para ver la diferencia de Exchange: topic,fanout,direc
  taskkill .exe /f /fi "proceso que no responde" 
 exit
 ```
+** Eliminar Credenciales en Cache**
+- Panel de control\Todos los elementos de Panel de control\Administrador de credenciales: quitar el antiguo
+
 ### publicando proyecto SpringBoot
 - `$  .\mvnw.cmd clean package`
 - `$ java -jar .\target\spring-boot-backend-apirest-0.0.1-SNAPSHOT.jar`
